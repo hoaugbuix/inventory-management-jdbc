@@ -13,7 +13,6 @@ import com.hoangbuix.dev.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -45,15 +44,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserEntity saveUser(UserEntity user) {
+    public UserEntity saveUser(UserEntity req) {
         // Check email exist
-//        UserEntity users = userDAO.findUserByEmailAndUsername(user.getEmail(), user.getUsername());
-//        if (users != null) {
+//        UserEntity user = userDAO.findUserByUsername(req.getUsername());
+//        if (user != null) {
 //            throw new DuplicateRecordException("Email đã tồn tại trong hệ thống. Vui lòng sử dụng email khác.");
 //        }
-        user.setActiveFlag(1);
-        user.setCreatedDate(new Date());
-        user.setUpdatedDate(new Date());
+        UserEntity user = UserMapper.toUser(req);
         int id = userDAO.saveUser(user);
         RoleEntity role = roleDAO.findRoleByName("user");
         UserRoleEntity userRole = new UserRoleEntity();

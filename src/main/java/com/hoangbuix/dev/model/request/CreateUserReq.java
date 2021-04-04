@@ -1,5 +1,6 @@
 package com.hoangbuix.dev.model.request;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
@@ -69,6 +70,7 @@ public class CreateUserReq {
             notes = "Mật khẩu trống",
             required = true
     )
+//    @JsonProperty("password")
     private String password;
 
 //    private int activeFlag;

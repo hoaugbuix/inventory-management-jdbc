@@ -7,7 +7,7 @@ import com.hoangbuix.dev.model.request.CreateUserReq;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
+import java.util.*;
 
 public class UserMapper implements RowMapper<UserEntity> {
     @Override
@@ -24,13 +24,27 @@ public class UserMapper implements RowMapper<UserEntity> {
             user.setActiveFlag(resultSet.getInt("active_flag"));
             user.setCreatedDate(resultSet.getDate("created_date"));
             user.setUpdatedDate(resultSet.getDate("updated_date"));
+            try {
+                RoleEntity role = new RoleEntity();
+                role.setId(resultSet.getInt("id"));
+                role.setRoleName(resultSet.getString("role_name"));
+                role.setDescription(resultSet.getString("description"));
+                role.setActiveFlag(resultSet.getInt("active_flag"));
+                role.setCreatedDate(resultSet.getDate("created_date"));
+                role.setUpdatedDate(resultSet.getDate("updated_date"));
+                Set<RoleEntity> roles = new HashSet<>();
+                roles.add(role);
+//                user.setRoles(roles);
+            }catch (SQLException e) {
+                return null;
+            }
             return user;
         }catch (SQLException e){
             return null;
         }
     }
 
-    public static UserEntity toEntity(CreateUserReq req){
+    public static UserEntity toUser(UserEntity req){
         UserEntity user = new UserEntity();
         user.setFirstName(req.getFirstName());
         user.setLastName(req.getLastName());
@@ -54,9 +68,10 @@ public class UserMapper implements RowMapper<UserEntity> {
         tmp.setAvatar(user.getAvatar());
         tmp.setEmail(user.getEmail());
         tmp.setUsername(user.getUsername());
-        tmp.setRoles(user.getRoles());
+//        tmp.setRoles(user.getRoles());
         tmp.setActiveFlag(user.getActiveFlag());
         tmp.setCreatedDate(user.getCreatedDate());
+        tmp.setUpdatedDate(user.getUpdatedDate());
         return tmp;
     }
 }

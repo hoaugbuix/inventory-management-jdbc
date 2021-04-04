@@ -2,6 +2,8 @@ package com.hoangbuix.dev.controller;
 
 import com.hoangbuix.dev.entity.UserEntity;
 import com.hoangbuix.dev.entity.UserRoleEntity;
+import com.hoangbuix.dev.model.mapper.UserMapper;
+import com.hoangbuix.dev.model.request.CreateUserReq;
 import com.hoangbuix.dev.service.UserRoleService;
 import com.hoangbuix.dev.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +48,6 @@ public class UserController {
     @PostMapping("/user/save")
     public ResponseEntity<?> saveUser(@Valid @RequestBody UserEntity req){
         UserEntity result = userService.saveUser(req);
-        return new ResponseEntity<>(result, HttpStatus.OK);
+        return new ResponseEntity<>(result, HttpStatus.CREATED);
     }
 }

@@ -21,12 +21,12 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
     ResourceBundle resourceBundle = ResourceBundle.getBundle("db");
     public Connection getConnection(){
         try {
-            Class.forName(resourceBundle.getString("driverName"));
+            Class.forName(resourceBundle.getString("driverName")).newInstance();
             String url = resourceBundle.getString("url");
             String user = resourceBundle.getString("user");
             String password = resourceBundle.getString("password");
             return DriverManager.getConnection(url, user, password);
-        }catch (ClassNotFoundException | SQLException e){
+        }catch (ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException e){
             log.info(e.getMessage());
             return null;
         }
@@ -55,10 +55,10 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
                 if (connection != null){
                     connection.close();
                 }
-                else if (statement != null){
+                if (statement != null){
                     statement.close();
                 }
-                else if (resultSet != null){
+                if (resultSet != null){
                     resultSet.close();
                 }
             }catch (SQLException e2){
@@ -117,7 +117,7 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
                 if (connection != null) {
                     connection.close();
                 }
-                else if (statement != null){
+                if (statement != null){
                     statement.close();
                 }
             }catch (SQLException e2){
@@ -158,10 +158,10 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
                 if (connection != null) {
                     connection.close();
                 }
-                else if (statement != null){
+                if (statement != null){
                     statement.close();
                 }
-                else if (resultSet != null){
+                if (resultSet != null){
                     resultSet.close();
                 }
             }catch (Exception e2){
@@ -194,10 +194,10 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
                 if (connection != null) {
                     connection.close();
                 }
-                else if (statement != null){
+                if (statement != null){
                     statement.close();
                 }
-                else if (resultSet != null){
+                if (resultSet != null){
                     resultSet.close();
                 }
             }catch (SQLException e2){

@@ -16,14 +16,12 @@ public class UserRoleMapper implements RowMapper<UserRoleEntity> {
             try {
                 UserEntity user = new UserEntity();
                 user.setId(resultSet.getInt("id"));
-                user.setEmail(resultSet.getString("email"));
                 userRole.setUsers(user);
                 RoleEntity role = new RoleEntity();
                 role.setId(resultSet.getInt("id"));
-                role.setRoleName(resultSet.getString("role_name"));
                 userRole.setRoles(role);
             }catch (SQLException e){
-                return null;
+                System.out.println(e.getMessage());
             }
             userRole.setActiveFlag(resultSet.getInt("active_flag"));
             userRole.setCreatedDate(resultSet.getDate("created_date"));

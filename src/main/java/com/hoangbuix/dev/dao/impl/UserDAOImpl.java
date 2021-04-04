@@ -14,9 +14,9 @@ public class UserDAOImpl extends BaseDAOImpl<UserEntity> implements UserDAO<User
     @Override
     public int saveUser(UserEntity user) {
         StringBuilder sql = new StringBuilder("INSERT INTO user");
-        sql.append(" (first_name, last_name, avatar, user_name, password,");
-        sql.append(" email, active_flag, created_date, updated_date)");
-        sql.append(" VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        sql.append(" (first_name, last_name, avatar, user_name, password, email," +
+                " active_flag, created_date, updated_date)");
+        sql.append(" values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
         return insert(sql.toString(), user.getFirstName(), user.getLastName(),
                 user.getAvatar(), user.getUsername(), user.getPassword(),
                 user.getEmail(), user.getActiveFlag(),
@@ -26,8 +26,8 @@ public class UserDAOImpl extends BaseDAOImpl<UserEntity> implements UserDAO<User
     @Override
     public void updateUser(UserEntity user) {
         StringBuilder sql = new StringBuilder("UPDATE user SET");
-        sql.append("first_name = ?, last_name = ?, avatar = ?," +
-                " user_name = ?, password = ?, email = ?, active_flag = ?, created_date = ?, updated_date = ?");
+        sql.append("first_name = ?, last_name = ?, avatar = ?,");
+        sql.append(" user_name = ?, password = ?, email = ?, active_flag = ?, created_date = ?, updated_date = ?");
         update(sql.toString(), user.getFirstName(), user.getLastName(),
                 user.getAvatar(), user.getUsername(), user.getPassword(),
                 user.getEmail(), user.getActiveFlag(), user.getCreatedDate(), user.getUpdatedDate());
@@ -41,7 +41,7 @@ public class UserDAOImpl extends BaseDAOImpl<UserEntity> implements UserDAO<User
 
     @Override
     public List<UserEntity> findAllUser() {
-        String sql = "SELECT * FROM user active_flag = 1 and";
+        String sql = "SELECT * FROM user where active_flag = 1";
         return query(sql, new UserMapper());
     }
 
