@@ -10,7 +10,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class AbstractDto<T> implements Serializable {
+public class AbstractDto<E> implements Serializable {
     private Integer id;
     private Integer activeFlag;
     private Date createdDate;

@@ -12,5 +12,5 @@ public interface UserService {
     UserEntity findUserByUsername(String username);
 //    UserEntity findByEmailAndUsername(String email, String username);
     List<UserEntity> getAllUser();
-    UserEntity saveUser(UserEntity req);
+    UserEntity saveUser(CreateUserReq req);
 }

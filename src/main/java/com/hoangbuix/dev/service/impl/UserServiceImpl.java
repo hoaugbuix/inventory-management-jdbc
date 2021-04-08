@@ -13,6 +13,8 @@ import com.hoangbuix.dev.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -44,21 +46,21 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserEntity saveUser(UserEntity req) {
+    public UserEntity saveUser(CreateUserReq req) {
         // Check email exist
-//        UserEntity user = userDAO.findUserByUsername(req.getUsername());
-//        if (user != null) {
-//            throw new DuplicateRecordException("Email đã tồn tại trong hệ thống. Vui lòng sử dụng email khác.");
-//        }
-        UserEntity user = UserMapper.toUser(req);
+        UserEntity user = userDAO.findUserByUsername(req.getUsername());
+        if (user != null) {
+            throw new DuplicateRecordException("Email đã tồn tại trong hệ thống. Vui lòng sử dụng email khác.");
+        }
+        user = UserMapper.toUser(req);
         int id = userDAO.saveUser(user);
         RoleEntity role = roleDAO.findRoleByName("user");
         UserRoleEntity userRole = new UserRoleEntity();
         userRole.setActiveFlag(1);
         userRole.setCreatedDate(new Date());
         userRole.setUpdatedDate(new Date());
-        userRole.setUsers(user);
-        userRole.setRoles(role);
+        userRole.setUserId(user.getId());
+        userRole.setRoleId(role.getId());
         userRoleDAO.save(userRole);
         return userDAO.findUserById(id);
     }

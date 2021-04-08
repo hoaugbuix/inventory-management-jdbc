@@ -13,10 +13,10 @@ import java.util.List;
 public class UserDAOImpl extends BaseDAOImpl<UserEntity> implements UserDAO<UserEntity> {
     @Override
     public int saveUser(UserEntity user) {
-        StringBuilder sql = new StringBuilder("INSERT INTO user");
-        sql.append(" (first_name, last_name, avatar, user_name, password, email," +
-                " active_flag, created_date, updated_date)");
-        sql.append(" values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        StringBuilder sql = new StringBuilder();
+        sql.append("INSERT INTO user");
+        sql.append("(first_name, last_name, avatar, user_name, password, email, active_flag, created_date, updated_date)");
+        sql.append("VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
         return insert(sql.toString(), user.getFirstName(), user.getLastName(),
                 user.getAvatar(), user.getUsername(), user.getPassword(),
                 user.getEmail(), user.getActiveFlag(),
@@ -47,21 +47,21 @@ public class UserDAOImpl extends BaseDAOImpl<UserEntity> implements UserDAO<User
 
     @Override
     public UserEntity findUserById(int id) {
-        String sql = "SELECT * FROM user WHERE active_flag = 1 and id = ?";
+        String sql = "SELECT * FROM user WHERE id = ?";
         List<UserEntity> user = query(sql, new UserMapper(), id);
         return user.isEmpty() ? null : user.get(0);
     }
 
     @Override
     public UserEntity findUserByUsername(String username) {
-        String sql = "select * from user where active_flag = 1 and user_name = ?";
+        String sql = "select * from user where user_name = ?";
         List<UserEntity> user = query(sql,new UserMapper(), username);
         return user.isEmpty() ? null : user.get(0);
     }
 
     @Override
     public UserEntity findUserByEmailAndUsername(String email, String username) {
-        String sql = "select * from user where active_flag = 1 and email = ? and user_name";
+        String sql = "select * from user where email = ? and user_name = ?";
         List<UserEntity> user = query(sql,new UserMapper(), email, username);
         return user.isEmpty() ? null : user.get(0);
     }

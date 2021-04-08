@@ -10,7 +10,6 @@ import javax.validation.constraints.*;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 public class CreateUserReq {
     @NotNull(message = "Tên trống")
     @NotEmpty(message = "Tên trống")
@@ -72,16 +71,4 @@ public class CreateUserReq {
     )
 //    @JsonProperty("password")
     private String password;
-
-//    private int activeFlag;
-
-//    @NotNull(message = "Role trống")
-//    @ApiModelProperty(
-//            example="[admin]",
-//            notes="Role trống",
-//            required=true
-//    )
-//    @JsonProperty("roles")
-////    private ArrayList<String> roles;
-//    private Collection<String> roles;
 }

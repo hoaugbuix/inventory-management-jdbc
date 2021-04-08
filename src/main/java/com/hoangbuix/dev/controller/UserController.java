@@ -6,6 +6,7 @@ import com.hoangbuix.dev.model.mapper.UserMapper;
 import com.hoangbuix.dev.model.request.CreateUserReq;
 import com.hoangbuix.dev.service.UserRoleService;
 import com.hoangbuix.dev.service.UserService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import java.util.List;
 
 @RestController
 public class UserController {
+    final Logger log = Logger.getLogger(UserController.class);
     @Autowired
     private UserService userService;
 
@@ -46,8 +48,8 @@ public class UserController {
     }
 
     @PostMapping("/user/save")
-    public ResponseEntity<?> saveUser(@Valid @RequestBody UserEntity req){
+    public ResponseEntity<?> saveUser(@Valid @RequestBody CreateUserReq req){
         UserEntity result = userService.saveUser(req);
-        return new ResponseEntity<>(result, HttpStatus.CREATED);
+        return new ResponseEntity<>(UserMapper.toDto(result), HttpStatus.OK);
     }
 }

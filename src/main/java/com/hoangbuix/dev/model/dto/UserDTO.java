@@ -19,7 +19,7 @@ public class UserDTO extends AbstractDto<UserEntity> {
     private String email;
     private String username;
     private String password;
-    private Set<RoleEntity> roles;
-    private Set<UserRoleEntity> userRoles = new HashSet<>();
-    private Integer roleID;
+//    private Set<RoleEntity> roles;
+//    private Set<UserRoleEntity> userRoles = new HashSet<>();
+//    private Integer roleID;
 }

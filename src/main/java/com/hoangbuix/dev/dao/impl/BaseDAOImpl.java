@@ -21,12 +21,12 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
     ResourceBundle resourceBundle = ResourceBundle.getBundle("db");
     public Connection getConnection(){
         try {
-            Class.forName(resourceBundle.getString("driverName")).newInstance();
+            Class.forName(resourceBundle.getString("driverName"));
             String url = resourceBundle.getString("url");
             String user = resourceBundle.getString("user");
             String password = resourceBundle.getString("password");
             return DriverManager.getConnection(url, user, password);
-        }catch (ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException e){
+        }catch (ClassNotFoundException |  SQLException e){
             log.info(e.getMessage());
             return null;
         }
@@ -49,6 +49,7 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
             }
             return results;
         }catch (SQLException e){
+            log.error(e.getMessage());
             return null;
         }finally {
             try {
@@ -131,13 +132,13 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
+        int id = 0;
         try {
-            int id = 0;
             connection = getConnection();
             connection.setAutoCommit(false);
             statement = connection.prepareStatement(sql, statement.RETURN_GENERATED_KEYS);
             setParameter(statement, parameters);
-            statement.executeUpdate();
+            statement.execute();
             resultSet = statement.getGeneratedKeys();
             if (resultSet.next()){
                 id = resultSet.getInt(1);
@@ -145,12 +146,12 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
             connection.commit();
             return id;
         }catch (SQLException e){
-            try {
-                if (connection != null) {
+            if(connection != null){
+                try {
                     connection.rollback();
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
                 }
-            }catch (SQLException e1){
-                e1.printStackTrace();
             }
         }
         finally {
@@ -168,7 +169,7 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
                 e2.printStackTrace();
             }
         }
-        return null;
+        return id;
     }
 
     @Override
