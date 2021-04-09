@@ -1,5 +1,7 @@
 package com.hoangbuix.dev.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -31,9 +33,13 @@ public class BaseEntity implements Serializable {
 
     @Column(name = "created_date")
     @CreatedDate
+    @Temporal(TemporalType.TIMESTAMP)
+//    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date createdDate;
 
     @Column(name = "updated_date")
     @LastModifiedDate
+    @Temporal(TemporalType.TIMESTAMP)
+//    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date updatedDate;
 }

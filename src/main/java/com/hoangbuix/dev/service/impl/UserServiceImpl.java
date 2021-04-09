@@ -13,6 +13,7 @@ import com.hoangbuix.dev.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.sql.Timestamp;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
@@ -55,13 +56,15 @@ public class UserServiceImpl implements UserService {
         user = UserMapper.toUser(req);
         int id = userDAO.saveUser(user);
         RoleEntity role = roleDAO.findRoleByName("user");
-        UserRoleEntity userRole = new UserRoleEntity();
-        userRole.setActiveFlag(1);
-        userRole.setCreatedDate(new Date());
-        userRole.setUpdatedDate(new Date());
-        userRole.setUserId(user.getId());
-        userRole.setRoleId(role.getId());
-        userRoleDAO.save(userRole);
+        if (id != 0){
+            UserRoleEntity userRole = new UserRoleEntity();
+            userRole.setActiveFlag(1);
+            userRole.setCreatedDate(new Timestamp(System.currentTimeMillis()));
+            userRole.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
+            userRole.setUserId(id);
+            userRole.setRoleId(role.getId());
+            userRoleDAO.save(userRole);
+        }
         return userDAO.findUserById(id);
     }
 }

@@ -28,6 +28,7 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
             return DriverManager.getConnection(url, user, password);
         }catch (ClassNotFoundException |  SQLException e){
             log.info(e.getMessage());
+            e.printStackTrace();
             return null;
         }
     }
@@ -76,16 +77,16 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
                 if (parameter instanceof Long){
                     statement.setLong(index, (Long) parameter);
                 }
-                else if (parameter instanceof String){
+                if (parameter instanceof String){
                     statement.setString(index, (String) parameter);
                 }
-                else if (parameter instanceof Integer){
+                if (parameter instanceof Integer){
                     statement.setInt(index, (Integer) parameter);
                 }
-                else if (parameter instanceof Timestamp){
+                if (parameter instanceof Timestamp){
                     statement.setTimestamp(index,(Timestamp) parameter);
                 }
-                else if (parameter instanceof Date){
+                if (parameter instanceof Date){
                     statement.setDate(index,(Date) parameter);
                 }
             }
@@ -132,13 +133,13 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
-        int id = 0;
         try {
+            int id = 0;
             connection = getConnection();
             connection.setAutoCommit(false);
             statement = connection.prepareStatement(sql, statement.RETURN_GENERATED_KEYS);
             setParameter(statement, parameters);
-            statement.execute();
+            statement.executeUpdate();
             resultSet = statement.getGeneratedKeys();
             if (resultSet.next()){
                 id = resultSet.getInt(1);
@@ -151,6 +152,7 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
                     connection.rollback();
                 } catch (SQLException e1) {
                     e1.printStackTrace();
+                    return null;
                 }
             }
         }
@@ -169,7 +171,7 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
                 e2.printStackTrace();
             }
         }
-        return id;
+        return null;
     }
 
     @Override

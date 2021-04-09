@@ -7,6 +7,7 @@ import com.hoangbuix.dev.model.request.CreateUserReq;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.*;
 
 public class UserMapper implements RowMapper<UserEntity> {
@@ -43,8 +44,8 @@ public class UserMapper implements RowMapper<UserEntity> {
 //        String hash = BCrypt.hashpw(req.getPassword(), BCrypt.gensalt(12));
             user.setPassword(req.getPassword());
             user.setActiveFlag(1);
-            user.setCreatedDate(new Date());
-            user.setUpdatedDate(new Date());
+            user.setCreatedDate(new Timestamp(System.currentTimeMillis()));
+            user.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
             return user;
         }catch (Exception e){
             e.printStackTrace();

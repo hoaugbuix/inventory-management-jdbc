@@ -16,7 +16,7 @@ public class UserRoleDAOImpl extends BaseDAOImpl<UserRoleEntity> implements User
     public int save(UserRoleEntity userRole) {
         StringBuilder sql = new StringBuilder();
         sql.append("INSERT INTO user_role ");
-        sql.append(" (user_id, role_id, active_flag, created_date, updated_date) ");
+        sql.append(" (user_id, role_id, active_flag, created_date, updated_date)");
         sql.append(" values (?, ?, ?, ?, ?)");
         return insert(sql.toString(), userRole.getUserId(),
                 userRole.getRoleId(), userRole.getActiveFlag(),

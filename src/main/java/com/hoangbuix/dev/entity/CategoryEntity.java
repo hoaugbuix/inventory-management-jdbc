@@ -9,6 +9,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @ApiModel(value = "Category Model")
 @Entity(name = "category")
 @Table(name = "category")

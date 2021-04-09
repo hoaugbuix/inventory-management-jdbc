@@ -37,3 +37,6 @@
 2021-04-04 15:05:16 INFO  BaseDAOImpl:16 - com.hoangbuix.dev.entity.UserEntity@1f676e70user init
 2021-04-04 15:06:24 INFO  BaseDAOImpl:16 - com.hoangbuix.dev.entity.UserEntity@31963e41user init
 2021-04-04 15:08:00 INFO  BaseDAOImpl:16 - com.hoangbuix.dev.entity.UserEntity@1bdd6df5user init
+2021-04-09 14:01:32 INFO  BaseDAOImpl:30 - Access denied for user 'root'@'localhost' (using password: NO)
+2021-04-09 14:03:11 INFO  BaseDAOImpl:30 - Access denied for user 'root'@'localhost' (using password: NO)
+2021-04-09 14:04:01 INFO  BaseDAOImpl:30 - Access denied for user 'root'@'localhost' (using password: NO)

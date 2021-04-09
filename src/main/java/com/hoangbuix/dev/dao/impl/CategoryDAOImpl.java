@@ -12,10 +12,13 @@ import java.util.List;
 @Repository
 @Transactional(rollbackFor = Exception.class)
 public class CategoryDAOImpl extends BaseDAOImpl<CategoryEntity> implements CategoryDAO<CategoryEntity> {
+
     @Override
     public int save(CategoryEntity category) {
-        String sql = "INSERT INTO category(name, code, description, active_flag, created_date, updated_date) VALUES (?, ?, ?, ?, ?, ?)";
-        return insert(sql, category.getName(),category.getCode(),
+        StringBuilder sql = new StringBuilder();
+        sql.append("INSERT INTO `category`(`name`,`code`,`description`,`active_flag`,`created_date`,`updated_date`)");
+        sql.append("VALUES (?, ?, ?, ?, ?, ?)");
+        return insert(sql.toString(), category.getName(),category.getCode(),
                 category.getDescription(),category.getActiveFlag(),
                 category.getCreatedDate(), category.getUpdatedDate());
     }
@@ -25,5 +28,12 @@ public class CategoryDAOImpl extends BaseDAOImpl<CategoryEntity> implements Cate
         String sql = "select * from category where id = ?";
         List<CategoryEntity> category = query(sql, new CategoryMapper(), id);
         return category.isEmpty() ? null : category.get(0);
+    }
+
+    @Override
+    public List<CategoryEntity> findByCode(String code) {
+        String sql = "select * from category where code = ?";
+        List<CategoryEntity> category = query(sql, new CategoryMapper(), code);
+        return category.isEmpty() ? null : category;
     }
 }
