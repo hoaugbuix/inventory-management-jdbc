@@ -40,3 +40,8 @@
 2021-04-09 14:01:32 INFO  BaseDAOImpl:30 - Access denied for user 'root'@'localhost' (using password: NO)
 2021-04-09 14:03:11 INFO  BaseDAOImpl:30 - Access denied for user 'root'@'localhost' (using password: NO)
 2021-04-09 14:04:01 INFO  BaseDAOImpl:30 - Access denied for user 'root'@'localhost' (using password: NO)
+2021-04-13 21:29:39 ERROR BaseDAOImpl:60 - Table 'inventory_management.getalluseruser' doesn't exist
+2021-04-13 21:31:38 ERROR BaseDAOImpl:60 - No value specified for parameter 1
+2021-04-13 21:32:17 ERROR BaseDAOImpl:60 - Table 'inventory_management.getalluseruser' doesn't exist
+2021-04-13 21:33:51 ERROR BaseDAOImpl:60 - Table 'inventory_management.getalluseruser' doesn't exist
+2021-04-13 21:34:45 ERROR BaseDAOImpl:61 - Table 'inventory_management.getalluseruser' doesn't exist

@@ -65,4 +65,25 @@ public class UserDAOImpl extends BaseDAOImpl<UserEntity> implements UserDAO<User
         List<UserEntity> user = query(sql,new UserMapper(), email, username);
         return user.isEmpty() ? null : user.get(0);
     }
+
+    @Override
+    public UserEntity getUserAndRole() {
+        return null;
+    }
+
+    @Override
+    public UserEntity findAll() {
+        String sql = "{call getAllUser()}";
+        List<UserEntity> user = query(sql, new UserMapper());
+        return user.isEmpty() ? null : user.get(0);
+    }
+
+    @Override
+    public int save(UserEntity user) {
+        String sql = "{call insertUser(?, ?, ?, ?, ?, ?, ?, ?, ?)}";
+        return insert(sql, user.getFirstName(), user.getLastName(), user.getAvatar(),
+                user.getEmail(), user.getUsername(), user.getPassword(), user.getActiveFlag(),
+                user.getCreatedDate(), user.getUpdatedDate());
+    }
+
 }

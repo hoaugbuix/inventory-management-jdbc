@@ -14,9 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
 
@@ -54,17 +51,27 @@ public class UserServiceImpl implements UserService {
             throw new DuplicateRecordException("Email đã tồn tại trong hệ thống. Vui lòng sử dụng email khác.");
         }
         user = UserMapper.toUser(req);
-        int id = userDAO.saveUser(user);
-        RoleEntity role = roleDAO.findRoleByName("user");
-        if (id != 0){
-            UserRoleEntity userRole = new UserRoleEntity();
-            userRole.setActiveFlag(1);
-            userRole.setCreatedDate(new Timestamp(System.currentTimeMillis()));
-            userRole.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
-            userRole.setUserId(id);
-            userRole.setRoleId(role.getId());
-            userRoleDAO.save(userRole);
-        }
+        int id = userDAO.save(user);
+//        RoleEntity role = roleDAO.findRoleByName("user");
+//        if (id != 0){
+//            UserRoleEntity userRole = new UserRoleEntity();
+//            userRole.setActiveFlag(1);
+//            userRole.setCreatedDate(new Timestamp(System.currentTimeMillis()));
+//            userRole.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
+//            userRole.setUserId(id);
+//            userRole.setRoleId(role.getId());
+//            userRoleDAO.save(userRole);
+//        }
         return userDAO.findUserById(id);
+    }
+
+    @Override
+    public UserEntity deleteUser(int id) {
+        return null;
+    }
+
+    @Override
+    public UserEntity findAll() {
+        return userDAO.findAll();
     }
 }

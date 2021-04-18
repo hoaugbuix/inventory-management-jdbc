@@ -38,13 +38,20 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
         List<E> results = new ArrayList<>();
         Connection connection = null;
         PreparedStatement statement = null;
+        CallableStatement callable = null;
         ResultSet resultSet = null;
         try {
             connection = getConnection();
+
+            callable = connection.prepareCall(sql);
+            setCallable(callable, parameters);
+            resultSet = callable.executeQuery();
+
             statement = connection.prepareStatement(sql);
-            // set Parameter
             setParameter(statement, parameters);
             resultSet = statement.executeQuery();
+
+
             while (resultSet.next()){
                 results.add(rowMapper.mapRow(resultSet));
             }
@@ -57,6 +64,9 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
                 if (connection != null){
                     connection.close();
                 }
+                if (callable != null){
+                    callable.close();
+                }
                 if (statement != null){
                     statement.close();
                 }
@@ -66,6 +76,32 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
             }catch (SQLException e2){
                 e2.printStackTrace();
             }
+        }
+    }
+
+    private void setCallable(CallableStatement callable, Object... parameters) {
+        try {
+            for (int i = 0; i < parameters.length; i++){
+                Object parameter = parameters[i];
+                int index = i + 1;
+                if (parameter instanceof Long){
+                    callable.setLong(index, (Long) parameter);
+                }
+                if (parameter instanceof String){
+                    callable.setString(index, (String) parameter);
+                }
+                if (parameter instanceof Integer){
+                    callable.setInt(index, (Integer) parameter);
+                }
+                if (parameter instanceof Timestamp){
+                    callable.setTimestamp(index,(Timestamp) parameter);
+                }
+                if (parameter instanceof Date){
+                    callable.setDate(index,(Date) parameter);
+                }
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
         }
     }
 
@@ -99,12 +135,19 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
     public void update(String sql, Object... parameters) {
         Connection connection = null;
         PreparedStatement statement = null;
+        CallableStatement callable =  null;
         try {
             connection = getConnection();
             connection.setAutoCommit(false);
+
+            callable = connection.prepareCall(sql);
+            setCallable(callable, parameters);
+            callable.executeQuery();
+
             statement = connection.prepareStatement(sql);
             setParameter(statement, parameters);
-            statement.executeUpdate();
+            statement.executeQuery();
+
             connection.commit();
         }catch (SQLException e){
             if (connection != null){
@@ -119,6 +162,9 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
                 if (connection != null) {
                     connection.close();
                 }
+                if (callable != null){
+                    callable.close();
+                }
                 if (statement != null){
                     statement.close();
                 }
@@ -132,18 +178,28 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
     public Integer insert(String sql, Object... parameters) {
         Connection connection = null;
         PreparedStatement statement = null;
+        CallableStatement callable = null;
         ResultSet resultSet = null;
         try {
             int id = 0;
             connection = getConnection();
             connection.setAutoCommit(false);
-            statement = connection.prepareStatement(sql, statement.RETURN_GENERATED_KEYS);
-            setParameter(statement, parameters);
-            statement.executeUpdate();
-            resultSet = statement.getGeneratedKeys();
-            if (resultSet.next()){
+
+            callable = connection.prepareCall(sql);
+            setCallable(callable, parameters);
+            callable.executeUpdate();
+            resultSet = callable.getGeneratedKeys();
+
+//            statement = connection.prepareStatement(sql, statement.RETURN_GENERATED_KEYS);
+//            setParameter(statement, parameters);
+//            statement.executeUpdate();
+//            resultSet = statement.getGeneratedKeys();
+
+            while (resultSet.next()){
                 id = resultSet.getInt(1);
             }
+            boolean r = callable.getMoreResults();
+
             connection.commit();
             return id;
         }catch (SQLException e){
@@ -160,6 +216,9 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
             try {
                 if (connection != null) {
                     connection.close();
+                }
+                if (callable != null){
+                    callable.close();
                 }
                 if (statement != null){
                     statement.close();

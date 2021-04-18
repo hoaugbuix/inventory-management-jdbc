@@ -10,4 +10,8 @@ public interface UserDAO<E> extends BaseDAO<E> {
     E findUserById(int id);
     E findUserByUsername(String username);
     E findUserByEmailAndUsername(String email, String username);
+    E getUserAndRole();
+
+    E findAll();
+    int save(E instance);
 }

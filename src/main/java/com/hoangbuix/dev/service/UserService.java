@@ -13,4 +13,7 @@ public interface UserService {
 //    UserEntity findByEmailAndUsername(String email, String username);
     List<UserEntity> getAllUser();
     UserEntity saveUser(CreateUserReq req);
+    UserEntity deleteUser(int id);
+
+    UserEntity findAll();
 }
