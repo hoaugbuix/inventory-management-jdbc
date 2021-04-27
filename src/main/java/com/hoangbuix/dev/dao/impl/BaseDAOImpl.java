@@ -2,6 +2,7 @@ package com.hoangbuix.dev.dao.impl;
 
 import com.hoangbuix.dev.dao.BaseDAO;
 import com.hoangbuix.dev.model.mapper.RowMapper;
+import com.sun.org.apache.bcel.internal.generic.RETURN;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -51,7 +52,6 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
             setParameter(statement, parameters);
             resultSet = statement.executeQuery();
 
-
             while (resultSet.next()){
                 results.add(rowMapper.mapRow(resultSet));
             }
@@ -81,22 +81,22 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
 
     private void setCallable(CallableStatement callable, Object... parameters) {
         try {
-            for (int i = 0; i < parameters.length; i++){
+                for (int i = 0; i < parameters.length; i++){
                 Object parameter = parameters[i];
                 int index = i + 1;
                 if (parameter instanceof Long){
                     callable.setLong(index, (Long) parameter);
                 }
-                if (parameter instanceof String){
+                else if (parameter instanceof String){
                     callable.setString(index, (String) parameter);
                 }
-                if (parameter instanceof Integer){
+                else if (parameter instanceof Integer){
                     callable.setInt(index, (Integer) parameter);
                 }
-                if (parameter instanceof Timestamp){
+                else if (parameter instanceof Timestamp){
                     callable.setTimestamp(index,(Timestamp) parameter);
                 }
-                if (parameter instanceof Date){
+                else if (parameter instanceof Date){
                     callable.setDate(index,(Date) parameter);
                 }
             }
@@ -177,29 +177,20 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
     @Override
     public Integer insert(String sql, Object... parameters) {
         Connection connection = null;
-        PreparedStatement statement = null;
         CallableStatement callable = null;
         ResultSet resultSet = null;
         try {
             int id = 0;
             connection = getConnection();
             connection.setAutoCommit(false);
-
             callable = connection.prepareCall(sql);
+            //set parameter
             setCallable(callable, parameters);
             callable.executeUpdate();
-            resultSet = callable.getGeneratedKeys();
-
-//            statement = connection.prepareStatement(sql, statement.RETURN_GENERATED_KEYS);
-//            setParameter(statement, parameters);
-//            statement.executeUpdate();
-//            resultSet = statement.getGeneratedKeys();
-
-            while (resultSet.next()){
+            resultSet = callable.getResultSet();
+            if (resultSet.next()){
                 id = resultSet.getInt(1);
             }
-            boolean r = callable.getMoreResults();
-
             connection.commit();
             return id;
         }catch (SQLException e){
@@ -208,6 +199,7 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
                     connection.rollback();
                 } catch (SQLException e1) {
                     e1.printStackTrace();
+                    log.error(e1.getMessage());
                     return null;
                 }
             }
@@ -220,14 +212,12 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
                 if (callable != null){
                     callable.close();
                 }
-                if (statement != null){
-                    statement.close();
-                }
                 if (resultSet != null){
                     resultSet.close();
                 }
             }catch (Exception e2){
                 e2.printStackTrace();
+                log.error(e2.getMessage());
             }
         }
         return null;

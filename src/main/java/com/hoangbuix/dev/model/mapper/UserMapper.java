@@ -19,9 +19,9 @@ public class UserMapper implements RowMapper<UserEntity> {
             user.setFirstName(resultSet.getString("first_name"));
             user.setLastName(resultSet.getString("last_name"));
             user.setAvatar(resultSet.getString("avatar"));
-            user.setEmail(resultSet.getString("email"));
             user.setUsername(resultSet.getString("user_name"));
             user.setPassword(resultSet.getString("password"));
+            user.setEmail(resultSet.getString("email"));
             user.setActiveFlag(resultSet.getInt("active_flag"));
             user.setCreatedDate(resultSet.getDate("created_date"));
             user.setUpdatedDate(resultSet.getDate("updated_date"));
@@ -55,7 +55,7 @@ public class UserMapper implements RowMapper<UserEntity> {
 
     public static UserDTO toDto(UserEntity user){
         UserDTO tmp = new UserDTO();
-        if (user.getId() != null){
+            if (user.getId() != null){
             tmp.setId(user.getId());
         }
         tmp.setFirstName(user.getFirstName());

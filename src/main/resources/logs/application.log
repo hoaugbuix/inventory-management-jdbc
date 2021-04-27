@@ -45,3 +45,49 @@
 2021-04-13 21:32:17 ERROR BaseDAOImpl:60 - Table 'inventory_management.getalluseruser' doesn't exist
 2021-04-13 21:33:51 ERROR BaseDAOImpl:60 - Table 'inventory_management.getalluseruser' doesn't exist
 2021-04-13 21:34:45 ERROR BaseDAOImpl:61 - Table 'inventory_management.getalluseruser' doesn't exist
+2021-04-27 05:24:50 INFO  BaseDAOImpl:103 - nullresult
+2021-04-27 05:25:03 INFO  BaseDAOImpl:103 - nullresult
+2021-04-27 05:26:58 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp17'result
+2021-04-27 05:27:17 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: CALL user_create('Hoang', 'Bui Van', 'dasq1s', 'hoangbuisp17', 'anhhoang123', 'buihoangsp17@gmail.com', 1, '2021-04-27 05:27:14.293', '2021-04-27 05:27:14.293')result
+2021-04-27 05:29:04 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp17'result
+2021-04-27 05:29:14 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: CALL user_create('Hoang', 'Bui Van', 'dasq1s', 'hoangbuisp17', 'anhhoang123', 'buihoangsp17@gmail.com', 1, '2021-04-27 05:29:10.615', '2021-04-27 05:29:10.615')result
+2021-04-27 05:31:11 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp17'result
+2021-04-27 05:31:18 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: CALL user_create('Hoang', 'Bui Van', 'dasq1s', 'hoangbuisp17', 'anhhoang123', 'buihoangsp17@gmail.com', 1, '2021-04-27 05:31:15.705', '2021-04-27 05:31:15.705')result
+2021-04-27 05:31:24 INFO  BaseDAOImpl:193 - callable: com.mysql.cj.jdbc.result.ResultSetImpl@4feac24a + null
+2021-04-27 05:31:51 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: SELECT * FROM user WHERE id = 0result
+2021-04-27 05:34:21 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp18'result
+2021-04-27 05:34:32 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: CALL user_create('Hoang', 'Bui Van', 'dasq1s', 'hoangbuisp18', 'anhhoang123', 'buihoangsp18@gmail.com', 1, '2021-04-27 05:34:27.815', '2021-04-27 05:34:27.815')result
+2021-04-27 05:34:43 INFO  BaseDAOImpl:193 - callable: com.mysql.cj.jdbc.result.ResultSetImpl@68afd786 + null + false + 1003 + 1003 + 1007 + 1
+2021-04-27 05:36:48 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: SELECT * FROM user WHERE id = 0result
+2021-04-27 05:37:19 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp19'result
+2021-04-27 05:37:25 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: CALL user_create('Hoang', 'Bui Van', 'dasq1s', 'hoangbuisp19', 'anhhoang123', 'buihoangsp19@gmail.com', 1, '2021-04-27 05:37:22.661', '2021-04-27 05:37:22.661')result
+2021-04-27 05:37:32 INFO  BaseDAOImpl:193 - callable: com.mysql.cj.jdbc.result.ResultSetImpl@56d749ba + null + false + 1003 + 1003 + 1007 + 1
+2021-04-27 13:35:13 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp19'result
+2021-04-27 13:37:03 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: CALL user_create('Hoang', 'Bui Van', 'dasq1s', 'hoangbuisp19', 'anhhoang123', 'buihoangsp19@gmail.com', 1, '2021-04-27 13:37:01.564', '2021-04-27 13:37:01.564')result
+2021-04-27 13:37:08 INFO  BaseDAOImpl:193 - callable: com.mysql.cj.jdbc.result.ResultSetImpl@72cba63f + null + false + 1003 + 1003 + 1007 + 1
+2021-04-27 13:45:21 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp19'result
+2021-04-27 13:45:50 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: CALL user_create('Hoang', 'Bui Van', 'dasq1s', 'hoangbuisp19', 'anhhoang123', 'buihoangsp19@gmail.com', 1, '2021-04-27 13:45:50.636', '2021-04-27 13:45:50.636')result
+2021-04-27 13:45:50 INFO  BaseDAOImpl:193 - callable: com.mysql.cj.jdbc.result.ResultSetImpl@1bdbefd0 + null + false + 1003 + 1003 + 1007 + 1
+2021-04-27 13:46:41 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp19'result
+2021-04-27 13:46:47 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: CALL user_create('Hoang', 'Bui Van', 'dasq1s', 'hoangbuisp19', 'anhhoang123', 'buihoangsp19@gmail.com', 1, '2021-04-27 13:46:44.997', '2021-04-27 13:46:44.997')result
+2021-04-27 13:46:49 INFO  BaseDAOImpl:193 - callable: com.mysql.cj.jdbc.result.ResultSetImpl@1560bb00 + null + false + 1003 + 1003 + 1007 + 1
+2021-04-27 13:48:23 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp19'result
+2021-04-27 13:48:32 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: CALL user_create('Hoang', 'Bui Van', 'dasq1s', 'hoangbuisp19', 'anhhoang123', 'buihoangsp19@gmail.com', 1, '2021-04-27 13:48:29.893', '2021-04-27 13:48:29.893')result
+2021-04-27 13:48:39 INFO  BaseDAOImpl:193 - callable: com.mysql.cj.jdbc.result.ResultSetImpl@2fcbf70b + null + false + 1003 + 1003 + 1007 + 1
+2021-04-27 13:59:49 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp19'result
+2021-04-27 14:04:46 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp19'result
+2021-04-27 14:07:41 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp20'result
+2021-04-27 14:08:30 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp20'result
+2021-04-27 14:10:10 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp20'result
+2021-04-27 14:10:38 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp20'result
+2021-04-27 14:12:14 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp20'result
+2021-04-27 14:14:23 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp20'result
+2021-04-27 14:15:32 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp20'result
+2021-04-27 14:17:09 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp20'result
+2021-04-27 14:18:36 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp20'result
+2021-04-27 14:22:25 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp20'result
+2021-04-27 14:23:54 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp20'result
+2021-04-27 14:25:43 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp20'result
+2021-04-27 14:26:03 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp21'result
+2021-04-27 14:26:14 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: CALL user_create('Hoang', 'Bui Van', 'dasq1s', 'hoangbuisp21', 'anhhoang123', 'buihoangsp21@gmail.com', 1, '2021-04-27 14:26:12.136', '2021-04-27 14:26:12.136')result
+2021-04-27 21:34:36 ERROR BaseDAOImpl:60 - No value specified for parameter 1
