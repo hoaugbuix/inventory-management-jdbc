@@ -1,6 +1,5 @@
 package com.hoangbuix.dev.model.mapper;
 
-import com.hoangbuix.dev.entity.RoleEntity;
 import com.hoangbuix.dev.entity.UserEntity;
 import com.hoangbuix.dev.model.dto.UserDTO;
 import com.hoangbuix.dev.model.request.CreateUserReq;
@@ -8,7 +7,6 @@ import com.hoangbuix.dev.model.request.CreateUserReq;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.util.*;
 
 public class UserMapper implements RowMapper<UserEntity> {
     @Override
