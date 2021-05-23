@@ -91,3 +91,36 @@
 2021-04-27 14:26:03 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: select * from user where user_name = 'hoangbuisp21'result
 2021-04-27 14:26:14 INFO  BaseDAOImpl:103 - com.mysql.cj.jdbc.CallableStatement: CALL user_create('Hoang', 'Bui Van', 'dasq1s', 'hoangbuisp21', 'anhhoang123', 'buihoangsp21@gmail.com', 1, '2021-04-27 14:26:12.136', '2021-04-27 14:26:12.136')result
 2021-04-27 21:34:36 ERROR BaseDAOImpl:60 - No value specified for parameter 1
+2021-05-20 16:24:44 INFO  CategoryServiceImpl:33 - Update category CategoryEntity(name=bot giat, code=bot-giat, description=day la bot giat)
+2021-05-20 16:31:21 INFO  CategoryServiceImpl:33 - Update category CategoryEntity(name=bot giat, code=bot-giat, description=day la bot giat)
+2021-05-20 16:32:56 INFO  CategoryServiceImpl:33 - Update category CategoryEntity(name=bot giats, code=bot-giats, description=day la bot giats)
+2021-05-20 16:34:19 INFO  CategoryServiceImpl:33 - Update category CategoryEntity(name=bot giats, code=bot-giats, description=day la bot giats)
+2021-05-20 16:38:48 INFO  CategoryServiceImpl:33 - Update category CategoryEntity(name=bot giatss, code=bot-giatss, description=day la bot giatss)
+2021-05-20 16:39:37 INFO  CategoryServiceImpl:33 - Update category CategoryEntity(name=bot giatss, code=bot-giatss, description=day la bot giatss)
+2021-05-20 16:40:14 INFO  CategoryServiceImpl:33 - Update category CategoryEntity(name=bot giatss, code=bot-giatss, description=day la bot giatss)
+2021-05-20 16:40:43 INFO  CategoryServiceImpl:33 - Update category CategoryEntity(name=bot giats, code=bot-giats, description=day la bot giats)
+2021-05-20 16:41:23 INFO  CategoryServiceImpl:33 - Update category CategoryEntity(name=bot giatss, code=bot-giatss, description=day la bot giatss)
+2021-05-20 16:55:22 INFO  CategoryServiceImpl:35 - Update category CategoryEntity(name=bot giats, code=bot-giats, description=day la bot giats)
+2021-05-20 20:29:23 INFO  CategoryServiceImpl:32 - Update category CategoryEntity(name=bot giats, code=bot-giats, description=day la bot giats)
+2021-05-20 20:36:18 INFO  CategoryServiceImpl:32 - Update category CategoryEntity(name=bot giats, code=bot-giats, description=day la bot giats)
+2021-05-20 20:36:58 INFO  CategoryServiceImpl:32 - Update category CategoryEntity(name=bot giats, code=bot-giats, description=day la bot giats)
+2021-05-20 20:37:34 INFO  CategoryServiceImpl:32 - Update category CategoryEntity(name=bot giatss, code=bot-giatss, description=day la bot giatss)
+2021-05-20 20:38:31 INFO  CategoryServiceImpl:32 - Update category CategoryEntity(name=bot giats, code=bot-giats, description=day la bot giats)
+2021-05-20 20:59:13 INFO  CategoryServiceImpl:32 - Update category CategoryEntity(name=bot giatss, code=bot-giatss, description=day la bot giatss)
+2021-05-20 21:24:48 INFO  CategoryServiceImpl:32 - Update category CategoryEntity(name=bot giats, code=bot-giats, description=day la bot giats)
+2021-05-20 21:28:43 INFO  CategoryServiceImpl:32 - Update category CategoryEntity(name=bot giatss, code=bot-giatss, description=day la bot giatss)
+2021-05-21 20:43:42 ERROR BaseDAOImpl:53 - Incorrect integer value: 'bot-giatss' for column '_code' at row 1
+2021-05-21 20:44:25 ERROR BaseDAOImpl:53 - Incorrect integer value: 'bot-giatss' for column '_code' at row 1
+2021-05-21 20:45:28 ERROR BaseDAOImpl:53 - Incorrect integer value: 'bot-giatss' for column '_code' at row 1
+2021-05-23 14:11:04 INFO  CategoryServiceImpl:32 - Update category CategoryEntity(name=bot giatss, code=bot-giatss, description=day la bot giatss)
+2021-05-23 14:11:26 INFO  CategoryServiceImpl:32 - Update category CategoryEntity(name=bot giats, code=bot-giats, description=day la bot giats)
+2021-05-23 14:11:49 INFO  CategoryServiceImpl:32 - Update category CategoryEntity(name=bot giat, code=bot-giat, description=day la bot giat)
+2021-05-23 14:12:10 INFO  CategoryServiceImpl:32 - Update category CategoryEntity(name=bot giats, code=bot-giats, description=day la bot giats)
+2021-05-23 14:12:25 INFO  CategoryServiceImpl:32 - Update category CategoryEntity(name=bot giat, code=bot-giat, description=day la bot giat)
+2021-05-23 14:30:37 INFO  CategoryServiceImpl:32 - Update category CategoryEntity(name=bot giats, code=bot-giats, description=day la bot giats)
+2021-05-23 14:31:01 INFO  CategoryServiceImpl:35 - Update category com.hoangbuix.dev.model.request.UpdateCategoryReq@1869608
+2021-05-23 14:31:17 INFO  CategoryServiceImpl:35 - Update category com.hoangbuix.dev.model.request.UpdateCategoryReq@159b2c6
+2021-05-23 14:32:25 INFO  CategoryServiceImpl:35 - Update category com.hoangbuix.dev.model.request.UpdateCategoryReq@1a91193
+2021-05-23 14:32:43 INFO  CategoryServiceImpl:35 - Update category com.hoangbuix.dev.model.request.UpdateCategoryReq@495b3f
+2021-05-23 14:32:44 INFO  CategoryServiceImpl:35 - Update category com.hoangbuix.dev.model.request.UpdateCategoryReq@1fbf12c
+2021-05-23 14:33:31 INFO  CategoryServiceImpl:35 - Update category com.hoangbuix.dev.model.request.UpdateCategoryReq@1a9cbbc

@@ -1,9 +1,9 @@
 use inventory_management;
 
 
-drop procedure if EXISTS user_update;
+drop procedure if EXISTS user_create;
 DELIMITER $$
-CREATE PROCEDURE user_update(
+CREATE PROCEDURE user_create(
      in _first_name   VARCHAR(100),
      in _last_name    VARCHAR(100) ,
      in _avatar       VARCHAR(255) ,
@@ -32,9 +32,9 @@ END$$
 DELIMITER ;
 
 -- update
-drop procedure if EXISTS user_create;
+drop procedure if EXISTS user_update;
 DELIMITER $$
-CREATE PROCEDURE user_create(
+CREATE PROCEDURE user_update(
      in _first_name   VARCHAR(100),
      in _last_name    VARCHAR(100) ,
      in _avatar       VARCHAR(255) ,
@@ -49,4 +49,21 @@ body:begin
 	password = _password, email = _email,active_flag = _active_flag, updated_date = _updated_date;
 END$$
 DELIMITER ;
+
+drop procedure if EXISTS user_getAll;
+DELIMITER $$
+CREATE PROCEDURE user_getAll()
+begin
+	select * from user where active_flag = 1 order by first_name;
+end$$
+DELIMITER ;
+
+drop procedure if EXISTS user_findUserById;
+DELIMITER $$
+CREATE PROCEDURE user_findUserById(inout _id int)
+begin
+	select * from user where active_flag = 1 and id = _id order by first_name;
+end$$
+DELIMITER ;
+
 

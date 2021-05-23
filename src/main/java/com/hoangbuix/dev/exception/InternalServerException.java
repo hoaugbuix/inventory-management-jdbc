@@ -3,9 +3,9 @@ package com.hoangbuix.dev.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(HttpStatus.BAD_REQUEST)
-public class DuplicateRecordException extends RuntimeException {
-    public DuplicateRecordException(String message) {
+@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+public class InternalServerException extends RuntimeException {
+    public InternalServerException(String message) {
         super(message);
     }
 }

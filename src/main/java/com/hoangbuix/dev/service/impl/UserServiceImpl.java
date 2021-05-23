@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserService {
             throw new DuplicateRecordException("Email đã tồn tại trong hệ thống. Vui lòng sử dụng email khác.");
         }
         user = UserMapper.toUser(req);
-        int id = userDAO.save(user);
+        int id = userDAO.saveUser(user);
 //        RoleEntity role = roleDAO.findRoleByName("user");
 //        if (id != 0){
 //            UserRoleEntity userRole = new UserRoleEntity();
@@ -70,8 +70,4 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
-    @Override
-    public UserEntity findAll() {
-        return userDAO.findAll();
-    }
 }

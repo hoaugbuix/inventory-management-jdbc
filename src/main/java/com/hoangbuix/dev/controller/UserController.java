@@ -36,11 +36,6 @@ public class UserController {
         return user;
     }
 
-    @GetMapping("/user/find-all")
-    private UserEntity findALl(){
-        return userService.findAll();
-    }
-
     @GetMapping("/user/find-by-username/{username}")
     public UserEntity getUserByUsername(@PathVariable String username){
         UserEntity user = userService.findUserByUsername(username);

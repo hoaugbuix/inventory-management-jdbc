@@ -1,9 +1,9 @@
 package com.hoangbuix.dev.dao;
 
-import java.util.List;
-
 public interface CategoryDAO<E> extends BaseDAO<E>{
-    int save(E instance);
+    int saveCategory(E instance);
+    void UpdateCategory(E instance);
     E findById(int id);
-    List<E> findByCode(String code);
+    E findByCode(String code);
+    int checkProductInCategory(int id);
 }

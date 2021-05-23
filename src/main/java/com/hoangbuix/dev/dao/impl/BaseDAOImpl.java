@@ -38,20 +38,13 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
     public <E> List<E> query(String sql, RowMapper<E> rowMapper, Object... parameters) {
         List<E> results = new ArrayList<>();
         Connection connection = null;
-        PreparedStatement statement = null;
         CallableStatement callable = null;
         ResultSet resultSet = null;
         try {
             connection = getConnection();
-
             callable = connection.prepareCall(sql);
             setCallable(callable, parameters);
             resultSet = callable.executeQuery();
-
-            statement = connection.prepareStatement(sql);
-            setParameter(statement, parameters);
-            resultSet = statement.executeQuery();
-
             while (resultSet.next()){
                 results.add(rowMapper.mapRow(resultSet));
             }
@@ -67,8 +60,40 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
                 if (callable != null){
                     callable.close();
                 }
-                if (statement != null){
-                    statement.close();
+                if (resultSet != null){
+                    resultSet.close();
+                }
+            }catch (SQLException e2){
+                e2.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public Integer queryId(String sql, RowMapper<E> rowMapper, Object... parameters) {
+        Connection connection = null;
+        CallableStatement callable = null;
+        ResultSet resultSet = null;
+        try {
+            int ids = 0;
+            connection = getConnection();
+            callable = connection.prepareCall(sql);
+            setCallable(callable, parameters);
+            resultSet = callable.executeQuery();
+            while (resultSet.next()){
+                ids = resultSet.getInt(1);
+            }
+            return ids;
+        }catch (SQLException e){
+            log.error(e.getMessage());
+            return null;
+        }finally {
+            try {
+                if (connection != null){
+                    connection.close();
+                }
+                if (callable != null){
+                    callable.close();
                 }
                 if (resultSet != null){
                     resultSet.close();
@@ -105,49 +130,16 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
         }
     }
 
-    private void setParameter(PreparedStatement statement, Object... parameters) {
-        try {
-            for (int i = 0; i < parameters.length; i++){
-                Object parameter = parameters[i];
-                int index = i + 1;
-                if (parameter instanceof Long){
-                    statement.setLong(index, (Long) parameter);
-                }
-                if (parameter instanceof String){
-                    statement.setString(index, (String) parameter);
-                }
-                if (parameter instanceof Integer){
-                    statement.setInt(index, (Integer) parameter);
-                }
-                if (parameter instanceof Timestamp){
-                    statement.setTimestamp(index,(Timestamp) parameter);
-                }
-                if (parameter instanceof Date){
-                    statement.setDate(index,(Date) parameter);
-                }
-            }
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
-    }
-
     @Override
     public void update(String sql, Object... parameters) {
         Connection connection = null;
-        PreparedStatement statement = null;
         CallableStatement callable =  null;
         try {
             connection = getConnection();
             connection.setAutoCommit(false);
-
             callable = connection.prepareCall(sql);
             setCallable(callable, parameters);
             callable.executeQuery();
-
-            statement = connection.prepareStatement(sql);
-            setParameter(statement, parameters);
-            statement.executeQuery();
-
             connection.commit();
         }catch (SQLException e){
             if (connection != null){
@@ -164,9 +156,6 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
                 }
                 if (callable != null){
                     callable.close();
-                }
-                if (statement != null){
-                    statement.close();
                 }
             }catch (SQLException e2){
                 e2.printStackTrace();
@@ -226,16 +215,16 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
     @Override
     public int count(String sql, Object... parameters) {
         Connection connection = null;
-        PreparedStatement statement = null;
+        CallableStatement callable = null;
         ResultSet resultSet = null;
         try {
             int count = 0;
             connection = getConnection();
-            statement = connection.prepareStatement(sql);
-            setParameter(statement, parameters);
-            resultSet = statement.executeQuery();
+            callable = connection.prepareCall(sql);
+            setCallable(callable, parameters);
+            resultSet = callable.executeQuery();
             while (resultSet.next()){
-                count = resultSet.getInt(1);
+                count = resultSet.getInt(0);
             }
             return count;
         }catch (SQLException e){
@@ -246,8 +235,8 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
                 if (connection != null) {
                     connection.close();
                 }
-                if (statement != null){
-                    statement.close();
+                if (callable != null){
+                    callable.close();
                 }
                 if (resultSet != null){
                     resultSet.close();
@@ -256,16 +245,5 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
                 return 0;
             }
         }
-    }
-    // regex
-    public String getGenericName() {
-        String s = getClass().getGenericSuperclass().toString();
-        Pattern pattern = Pattern.compile("\\<(.*?)\\>");
-        Matcher m = pattern.matcher(s);
-        String generic = "null";
-        if (m.find()) {
-            generic = m.group(1);
-        }
-        return generic;
     }
 }

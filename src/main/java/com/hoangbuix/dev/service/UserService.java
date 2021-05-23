@@ -14,6 +14,4 @@ public interface UserService {
     List<UserEntity> getAllUser();
     UserEntity saveUser(CreateUserReq req);
     UserEntity deleteUser(int id);
-
-    UserEntity findAll();
 }

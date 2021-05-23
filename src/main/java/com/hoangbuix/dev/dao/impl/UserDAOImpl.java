@@ -14,9 +14,7 @@ public class UserDAOImpl extends BaseDAOImpl<UserEntity> implements UserDAO<User
     @Override
     public int saveUser(UserEntity user) {
         StringBuilder sql = new StringBuilder();
-        sql.append("INSERT INTO user");
-        sql.append("(first_name, last_name, avatar, user_name, password, email, active_flag, created_date, updated_date)");
-        sql.append("VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        sql.append("call user_create(?, ?, ?, ?, ?, ?, ?, ?, ?)");
         return insert(sql.toString(), user.getFirstName(), user.getLastName(),
                 user.getAvatar(), user.getUsername(), user.getPassword(),
                 user.getEmail(), user.getActiveFlag(),
@@ -25,12 +23,11 @@ public class UserDAOImpl extends BaseDAOImpl<UserEntity> implements UserDAO<User
 
     @Override
     public void updateUser(UserEntity user) {
-        StringBuilder sql = new StringBuilder("UPDATE user SET");
-        sql.append("first_name = ?, last_name = ?, avatar = ?,");
-        sql.append(" user_name = ?, password = ?, email = ?, active_flag = ?, created_date = ?, updated_date = ?");
+        StringBuilder sql = new StringBuilder();
+        sql.append("call user_update(?, ?, ?, ?, ?, ?, ?, ?)");
         update(sql.toString(), user.getFirstName(), user.getLastName(),
                 user.getAvatar(), user.getUsername(), user.getPassword(),
-                user.getEmail(), user.getActiveFlag(), user.getCreatedDate(), user.getUpdatedDate());
+                user.getEmail(), user.getActiveFlag(), user.getUpdatedDate());
     }
 
     @Override
@@ -41,13 +38,13 @@ public class UserDAOImpl extends BaseDAOImpl<UserEntity> implements UserDAO<User
 
     @Override
     public List<UserEntity> findAllUser() {
-        String sql = "SELECT * FROM user where active_flag = 1";
+        String sql = "call user_getAll()";
         return query(sql, new UserMapper());
     }
 
     @Override
     public UserEntity findUserById(int id) {
-        String sql = "SELECT * FROM user WHERE id = ?";
+        String sql = "call user_findUserById(?)";
         List<UserEntity> user = query(sql, new UserMapper(), id);
         return user.isEmpty() ? null : user.get(0);
     }
@@ -67,23 +64,7 @@ public class UserDAOImpl extends BaseDAOImpl<UserEntity> implements UserDAO<User
     }
 
     @Override
-    public UserEntity getUserAndRole() {
+    public UserEntity findByUserAndRole() {
         return null;
     }
-
-    @Override
-    public UserEntity findAll() {
-        String sql = "{call getAllUser() }";
-        List<UserEntity> user = query(sql, new UserMapper());
-        return user.isEmpty() ? null : user.get(0);
-    }
-
-    @Override
-    public int save(UserEntity user) {
-        String sql = "{ call user_create(?, ?, ?, ?, ?, ?, ?, ?, ?) }";
-        return insert(sql, user.getFirstName(), user.getLastName(), user.getAvatar(),
-               user.getUsername(), user.getPassword(),  user.getEmail(), user.getActiveFlag(),
-                user.getCreatedDate(), user.getUpdatedDate());
-    }
-
 }
