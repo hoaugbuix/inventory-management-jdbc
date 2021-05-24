@@ -47,7 +47,7 @@ public class CategoryServiceImpl implements CategoryService {
             cate.setDescription(req.getDescription());
             cate.setActiveFlag(req.getActiveFlag());
             cate.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
-            categoryDAO.UpdateCategory(cate);
+            categoryDAO.updateCategory(cate);
         }catch (Exception e){
             throw new InternalServerException("Lỗi khi chỉnh sửa category");
         }
@@ -61,14 +61,13 @@ public class CategoryServiceImpl implements CategoryService {
         }
         // Check product in category
         int cateId = categoryDAO.checkProductInCategory(id);
-        System.out.printf("cate id: " + cateId);
         if (cateId == 1){
             throw new BadRequestException("Có sản phẩm thuộc category không thể xóa");
         }
         try {
             cate.setActiveFlag(0);
             cate.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
-            categoryDAO.UpdateCategory(cate);
+            categoryDAO.updateCategory(cate);
         }catch (Exception e){
             throw new InternalServerException("Lỗi khi xóa category");
         }

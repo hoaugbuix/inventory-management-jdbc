@@ -25,9 +25,12 @@ public class ProductInfoEntity extends BaseEntity{
     @Column(name = "img_url")
     private String imgUrl;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cate_id")
-    private CategoryEntity categories;
+    @Column(name = "cate_id")
+    private int cateId;
+
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "cate_id")
+//    private CategoryEntity categories;
 
 //    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "histories")
 //    private Set<HistoryEntity> histories;

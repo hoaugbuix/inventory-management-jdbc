@@ -6,7 +6,6 @@ import com.hoangbuix.dev.model.mapper.CategoryMapper;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -24,11 +23,18 @@ public class CategoryDAOImpl extends BaseDAOImpl<CategoryEntity> implements Cate
     }
 
     @Override
-    public void UpdateCategory(CategoryEntity category) {
+    public void updateCategory(CategoryEntity category) {
         StringBuilder sql = new StringBuilder();
         sql.append("call category_update(?, ?, ?, ?, ?)");
         update(sql.toString(),category.getName(), category.getCode(), category.getDescription(),
                 category.getActiveFlag(), category.getUpdatedDate());
+    }
+
+    @Override
+    public List<CategoryEntity> findAll() {
+        StringBuilder sql = new StringBuilder();
+        sql.append("call category_finALl()");
+        return query(sql.toString(), new CategoryMapper());
     }
 
     @Override

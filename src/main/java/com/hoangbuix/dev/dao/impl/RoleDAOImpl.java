@@ -12,9 +12,37 @@ import java.util.List;
 @Transactional(rollbackFor = Exception.class)
 public class RoleDAOImpl extends BaseDAOImpl<RoleEntity> implements RoleDAO<RoleEntity> {
     @Override
+    public int saveRole(RoleEntity role) {
+        StringBuilder sql = new StringBuilder();
+        sql.append("call role_create(?, ?, ?, ?, ?)");
+        return insert(sql.toString(), role.getRoleName(), role.getDescription(),
+                role.getActiveFlag(), role.getCreatedDate(), role.getUpdatedDate());
+    }
+
+    @Override
+    public void updateRole(RoleEntity role) {
+        StringBuilder sql = new StringBuilder();
+        sql.append("call role_update(?, ?, ?, ?)");
+        update(sql.toString(), role.getRoleName(), role.getDescription(), role.getActiveFlag(), role.getUpdatedDate());
+    }
+
+    @Override
+    public List<RoleEntity> findAll() {
+        String sql = "call findRoleAll()";
+        return query(sql, new RoleMapper());
+    }
+
+    @Override
     public RoleEntity findRoleByName(String roleName) {
-        String sql = "SELECT * FROM role WHERE active_flag = 1 AND role_name = ?";
+        String sql = "call findRoleByRoleName(?)";
         List<RoleEntity> role = query(sql, new RoleMapper(), roleName);
+        return role.isEmpty() ? null : role.get(0);
+    }
+
+    @Override
+    public RoleEntity findRoleById(int id) {
+        String sql = "call findRoleById(?)";
+        List<RoleEntity> role = query(sql, new RoleMapper(), id);
         return role.isEmpty() ? null : role.get(0);
     }
 }
