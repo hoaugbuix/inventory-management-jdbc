@@ -24,6 +24,10 @@ public class UpdateProductInfoReq {
 
     private String description;
 
+    private String imgUrl;
+
+    private int cateId;
+
     private int activeFlag;
 
     private Timestamp updatedDate;

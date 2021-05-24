@@ -22,4 +22,9 @@ public class CreateProductInfoReq {
     private String code;
 
     private String description;
+
+    private String imgUrl;
+
+    private int cateId;
+
 }

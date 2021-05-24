@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 @Component
 public class ProductInfoServiceImpl implements ProductInfoService {
@@ -20,6 +21,14 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     @Override
     public ProductInfoEntity save(CreateProductInfoReq req) {
         ProductInfoEntity product = new ProductInfoEntity();
+        product.setCode(req.getCode());
+        product.setName(req.getName());
+        product.setDescription(req.getDescription());
+        product.setImgUrl(req.getImgUrl());
+        product.setCateId(req.getCateId());
+        product.setActiveFlag(1);
+        product.setCreatedDate(new Timestamp(System.currentTimeMillis()));
+        product.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
         int id = productDAO.saveProductInfo(product);
         return productDAO.findProductInfoById(id);
     }
@@ -53,6 +62,11 @@ public class ProductInfoServiceImpl implements ProductInfoService {
         }catch (Exception e){
             throw new InternalServerException("");
         }
+    }
+
+    @Override
+    public List<ProductInfoEntity> findAll() {
+        return productDAO.findProductInfoAll();
     }
 
     @Override

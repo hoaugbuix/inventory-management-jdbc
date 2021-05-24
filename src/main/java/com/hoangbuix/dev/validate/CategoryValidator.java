@@ -8,8 +8,6 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import java.util.List;
-
 @Component
 public class CategoryValidator implements Validator {
     @Autowired
@@ -30,7 +28,7 @@ public class CategoryValidator implements Validator {
             CategoryEntity results = categoryService.findByCode(category.getCode());
             if (results != null) {
                 if (category.getId() != null && category.getId() != 0) {
-                    if (results.getId() != category.getId()) {
+                    if (results.getId()  != category.getId()) {
                         errors.rejectValue("code", "msg.code.exist");
                     }
                 } else {

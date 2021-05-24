@@ -53,7 +53,7 @@ public class CategoryDAOImpl extends BaseDAOImpl<CategoryEntity> implements Cate
 
     @Override
     public int checkProductInCategory(int id) {
-        String sql = "call checkProductInCategory(?)";
+        String sql = "call category_checkProductInCategory(?)";
         return queryId(sql, new CategoryMapper(), id);
     }
 }

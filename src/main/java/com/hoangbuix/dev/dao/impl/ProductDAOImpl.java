@@ -14,34 +14,34 @@ public class ProductDAOImpl extends BaseDAOImpl<ProductInfoEntity> implements Pr
 
     @Override
     public int saveProductInfo(ProductInfoEntity product) {
-        String sql = "call productInfo_create()";
+        String sql = "call productInfo_create(?, ?, ?, ?, ?, ?, ?, ?)";
         return insert(sql, product.getCode(), product.getName(), product.getDescription(),
-                product.getImgUrl(), product.getActiveFlag(), product.getCreatedDate(), product.getUpdatedDate());
+                product.getImgUrl(), product.getActiveFlag(), product.getCreatedDate(), product.getUpdatedDate(), product.getCateId());
     }
 
     @Override
     public void updateProductInfo(ProductInfoEntity product) {
         String sql ="call productInfo_update()";
         update(sql, product.getCode(), product.getName(), product.getDescription(),product.getImgUrl(),
-                product.getActiveFlag(), product.getUpdatedDate());
+                product.getActiveFlag(), product.getUpdatedDate(), product.getCateId());
     }
 
     @Override
     public List<ProductInfoEntity> findProductInfoAll() {
-        String sql = "";
+        String sql = "call productInfo_findProductInfoAll()";
         return query(sql, new ProductInfoMapper());
     }
 
     @Override
     public ProductInfoEntity findProductInfoById(int id) {
-        String sql = "";
+        String sql = "call productInfo_findProductInfoById(?)";
         List<ProductInfoEntity> product = query(sql, new ProductInfoMapper(), id);
         return product.isEmpty() ? null : product.get(0);
     }
 
     @Override
     public ProductInfoEntity findProductInfoByCode(String code) {
-        String sql = "";
+        String sql = "call productInfo_findProductInfoByCode(?)";
         List<ProductInfoEntity> product = query(sql, new ProductInfoMapper(), code);
         return product.isEmpty() ? null : product.get(0);
     }

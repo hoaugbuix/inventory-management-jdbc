@@ -124,3 +124,18 @@
 2021-05-23 14:32:43 INFO  CategoryServiceImpl:35 - Update category com.hoangbuix.dev.model.request.UpdateCategoryReq@495b3f
 2021-05-23 14:32:44 INFO  CategoryServiceImpl:35 - Update category com.hoangbuix.dev.model.request.UpdateCategoryReq@1fbf12c
 2021-05-23 14:33:31 INFO  CategoryServiceImpl:35 - Update category com.hoangbuix.dev.model.request.UpdateCategoryReq@1a9cbbc
+2021-05-24 13:05:46 ERROR BaseDAOImpl:53 - Unknown column '_id' in 'where clause'
+2021-05-24 13:06:20 ERROR BaseDAOImpl:53 - Unknown column '_id' in 'where clause'
+2021-05-24 13:31:38 ERROR BaseDAOImpl:53 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'productInfo_findProductInfoById(1)' at line 1
+2021-05-24 13:34:55 ERROR BaseDAOImpl:53 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'productInfo_findProductInfoById(2)' at line 1
+2021-05-24 13:36:34 ERROR BaseDAOImpl:53 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'productInfo_findProductInfoByCode('code-x')' at line 1
+2021-05-24 13:38:11 ERROR BaseDAOImpl:53 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'productInfo_findProductInfoByCode('code-x')' at line 1
+2021-05-24 13:39:02 ERROR BaseDAOImpl:53 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'productInfo_findProductInfoByCode('code-x')' at line 1
+2021-05-24 13:43:27 ERROR BaseDAOImpl:53 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'productInfo_findProductInfoByCode('code-x')' at line 1
+2021-05-24 13:43:38 ERROR BaseDAOImpl:53 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'productInfo_findProductInfoByCode('code-xx')' at line 1
+2021-05-24 13:46:33 ERROR BaseDAOImpl:53 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'productInfo_findProductInfoByCode('code-xx')' at line 1
+2021-05-24 13:47:57 ERROR BaseDAOImpl:53 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'productInfo_findProductInfoByCode('code-xx')' at line 1
+2021-05-24 13:49:43 ERROR BaseDAOImpl:53 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'productInfo_findProductInfoById(3)' at line 1
+2021-05-24 13:50:47 ERROR BaseDAOImpl:53 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'productInfo_findProductInfoById(4)' at line 1
+2021-05-24 13:52:07 ERROR BaseDAOImpl:53 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'productInfo_findProductInfoById(5)' at line 1
+2021-05-24 13:54:58 ERROR BaseDAOImpl:53 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'productInfo_findProductInfoByCode('code-xxx')' at line 1

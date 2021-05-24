@@ -27,7 +27,7 @@ END$$
 DELIMITER ;
 
 -- update
-drop procedure if EXISTS user_update;
+drop procedure if EXISTS category_update;
 DELIMITER $$
 CREATE PROCEDURE category_update(
      in _name    VARCHAR(255)  ,
@@ -58,9 +58,9 @@ begin
 end$$
 DELIMITER ;
 
-drop procedure if EXISTS checkProductInCategory;
+drop procedure if EXISTS category_checkProductInCategory;
 DELIMITER $$
-CREATE PROCEDURE checkProductInCategory(in _id int)
+CREATE PROCEDURE category_checkProductInCategory(in _id int)
 begin
 	select 1 from product_info where cate_id = _id;
 end$$
