@@ -28,7 +28,7 @@ public class RoleDAOImpl extends BaseDAOImpl<RoleEntity> implements RoleDAO<Role
 
     @Override
     public List<RoleEntity> findAll() {
-        String sql = "call findRoleAll()";
+        String sql = "call role_findAll()";
         return query(sql, new RoleMapper());
     }
 

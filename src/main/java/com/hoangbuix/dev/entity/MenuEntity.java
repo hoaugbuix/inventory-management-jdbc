@@ -3,6 +3,7 @@ package com.hoangbuix.dev.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Setter
@@ -25,5 +26,5 @@ public class MenuEntity extends BaseEntity{
     private int orderIndex;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "menus")
-    private Set<AuthEntity> auths;
+    private Set<AuthEntity> auths = new HashSet<>();
 }

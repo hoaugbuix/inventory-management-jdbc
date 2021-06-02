@@ -34,4 +34,7 @@ public class InvoiceEntity extends BaseEntity{
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
     private ProductInfoEntity productInfos;
+
+//    @Column(name = "product_id")
+//    private int productId;
 }

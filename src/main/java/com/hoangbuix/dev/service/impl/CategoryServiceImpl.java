@@ -3,6 +3,7 @@ package com.hoangbuix.dev.service.impl;
 import com.hoangbuix.dev.dao.CategoryDAO;
 import com.hoangbuix.dev.entity.CategoryEntity;
 import com.hoangbuix.dev.exception.BadRequestException;
+import com.hoangbuix.dev.exception.DuplicateRecordException;
 import com.hoangbuix.dev.exception.InternalServerException;
 import com.hoangbuix.dev.exception.NotFoundException;
 import com.hoangbuix.dev.model.request.CreateCategoryReq;
@@ -24,12 +25,18 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public CategoryEntity save(CreateCategoryReq req) {
         CategoryEntity cate = new CategoryEntity();
-        cate.setName(req.getName());
-        cate.setCode(req.getCode());
-        cate.setDescription(req.getDescription());
-        cate.setActiveFlag(1);
-        cate.setCreatedDate(new Timestamp(System.currentTimeMillis()));
-        cate.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
+        Object obj = categoryDAO.findByCode(req.getCode());
+        if (obj == null){
+            cate.setName(req.getName());
+            cate.setCode(req.getCode());
+            cate.setDescription(req.getDescription());
+            cate.setActiveFlag(1);
+            cate.setCreatedDate(new Timestamp(System.currentTimeMillis()));
+            cate.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
+        }else {
+            throw new DuplicateRecordException("da ton tai");
+        }
+
         int id = categoryDAO.saveCategory(cate);
         return categoryDAO.findById(id);
     }
@@ -38,7 +45,7 @@ public class CategoryServiceImpl implements CategoryService {
     public void update(int id, UpdateCategoryReq req) {
         log.info("Update category "+req.toString());
         CategoryEntity cate = categoryDAO.findById(id);
-        if (cate == null){
+        if (cate != null){
             throw new NotFoundException("Category khong ton tai");
         }
         try {

@@ -33,3 +33,11 @@ begin
 	select * from role where active_flag = 1 AND role_name = _roleName;
 end$$
 DELIMITER ;
+
+drop procedure if EXISTS role_findAll;
+DELIMITER $$
+CREATE PROCEDURE role_findAll()
+begin
+	select * from role;
+end$$
+DELIMITER ;

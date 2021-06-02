@@ -139,3 +139,5 @@
 2021-05-24 13:50:47 ERROR BaseDAOImpl:53 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'productInfo_findProductInfoById(4)' at line 1
 2021-05-24 13:52:07 ERROR BaseDAOImpl:53 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'productInfo_findProductInfoById(5)' at line 1
 2021-05-24 13:54:58 ERROR BaseDAOImpl:53 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'productInfo_findProductInfoByCode('code-xxx')' at line 1
+2021-06-01 17:12:45 ERROR BaseDAOImpl:53 - PROCEDURE inventory_management.findRoleAll does not exist
+2021-06-01 17:14:17 ERROR BaseDAOImpl:53 - PROCEDURE inventory_management.role_findAll does not exist

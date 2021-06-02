@@ -2,6 +2,7 @@ package com.hoangbuix.dev.service.impl;
 
 import com.hoangbuix.dev.dao.ProductDAO;
 import com.hoangbuix.dev.entity.ProductInfoEntity;
+import com.hoangbuix.dev.exception.DuplicateRecordException;
 import com.hoangbuix.dev.exception.InternalServerException;
 import com.hoangbuix.dev.exception.NotFoundException;
 import com.hoangbuix.dev.model.request.CreateProductInfoReq;
@@ -21,14 +22,19 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     @Override
     public ProductInfoEntity save(CreateProductInfoReq req) {
         ProductInfoEntity product = new ProductInfoEntity();
-        product.setCode(req.getCode());
-        product.setName(req.getName());
-        product.setDescription(req.getDescription());
-        product.setImgUrl(req.getImgUrl());
-        product.setCateId(req.getCateId());
-        product.setActiveFlag(1);
-        product.setCreatedDate(new Timestamp(System.currentTimeMillis()));
-        product.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
+        Object obj = productDAO.findProductInfoByCode(req.getCode());
+        if (obj == null){
+            product.setCode(req.getCode());
+            product.setName(req.getName());
+            product.setDescription(req.getDescription());
+            product.setImgUrl(req.getImgUrl());
+            product.setCateId(req.getCateId());
+            product.setActiveFlag(1);
+            product.setCreatedDate(new Timestamp(System.currentTimeMillis()));
+            product.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
+        } else {
+            throw new DuplicateRecordException("dup roi nha");
+        }
         int id = productDAO.saveProductInfo(product);
         return productDAO.findProductInfoById(id);
     }
@@ -45,7 +51,7 @@ public class ProductInfoServiceImpl implements ProductInfoService {
             product.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
             productDAO.updateProductInfo(product);
         }catch (Exception e){
-            throw new InternalServerException("");
+            throw new InternalServerException("xxx");
         }
     }
 
