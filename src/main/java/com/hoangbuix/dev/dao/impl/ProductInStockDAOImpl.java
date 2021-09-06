@@ -21,7 +21,7 @@ public class ProductInStockDAOImpl extends BaseDAOImpl<ProductInStockEntity> imp
     }
 
     @Override
-    public void update(ProductInStockEntity instance) {
+    public void update(ProductInStockEntity productInStock) {
 
     }
 
@@ -33,12 +33,16 @@ public class ProductInStockDAOImpl extends BaseDAOImpl<ProductInStockEntity> imp
 
     @Override
     public ProductInStockEntity findById(int id) {
-        return null;
+        String sql = "call productInStock_finById(?)";
+        List<ProductInStockEntity>productInStock = query(sql, new ProductInStockMapper(), id);
+        return productInStock.isEmpty() ? null : productInStock.get(0);
     }
 
     @Override
     public ProductInStockEntity findByCode(String code) {
-        return null;
+        String sql = "call productInStock_finByCode(?)";
+        List<ProductInStockEntity>productInStock = query(sql, new ProductInStockMapper(), code);
+        return productInStock.isEmpty() ? null : productInStock.get(0);
     }
 
     @Override

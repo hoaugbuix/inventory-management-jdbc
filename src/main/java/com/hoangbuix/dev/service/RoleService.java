@@ -1,8 +1,8 @@
 package com.hoangbuix.dev.service;
 
 import com.hoangbuix.dev.entity.RoleEntity;
-import com.hoangbuix.dev.model.request.CreateRoleReq;
-import com.hoangbuix.dev.model.request.UpdateRoleReq;
+import com.hoangbuix.dev.model.request.create.CreateRoleReq;
+import com.hoangbuix.dev.model.request.update.UpdateRoleReq;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

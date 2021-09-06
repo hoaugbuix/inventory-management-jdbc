@@ -1,7 +1,8 @@
 package com.hoangbuix.dev.service;
 
 import com.hoangbuix.dev.entity.UserEntity;
-import com.hoangbuix.dev.model.request.CreateUserReq;
+import com.hoangbuix.dev.model.dto.UserDTO;
+import com.hoangbuix.dev.model.request.update.UpdateUserReq;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +13,7 @@ public interface UserService {
     UserEntity findUserByUsername(String username);
 //    UserEntity findByEmailAndUsername(String email, String username);
     List<UserEntity> getAllUser();
-    UserEntity saveUser(CreateUserReq req);
-    UserEntity deleteUser(int id);
+    UserEntity saveUser(UserDTO req);
+    UserEntity updateUser(int id, UpdateUserReq req);
+    void deleteUser(int id);
 }

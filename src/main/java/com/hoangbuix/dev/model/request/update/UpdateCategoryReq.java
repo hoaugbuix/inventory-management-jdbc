@@ -1,4 +1,4 @@
-package com.hoangbuix.dev.model.request;
+package com.hoangbuix.dev.model.request.update;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,7 +14,7 @@ import java.sql.Timestamp;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UpdateProductInfoReq {
+public class UpdateCategoryReq {
     @NotNull(message = "Tên category trống")
     @NotEmpty(message = "Tên category trống")
     @Size(min = 1, max = 300, message = "Độ dài tên category từ 1 - 300 ký tự")
@@ -23,10 +23,6 @@ public class UpdateProductInfoReq {
     private String code;
 
     private String description;
-
-    private String imgUrl;
-
-    private int cateId;
 
     private int activeFlag;
 

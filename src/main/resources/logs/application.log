@@ -118,12 +118,12 @@
 2021-05-23 14:12:10 INFO  CategoryServiceImpl:32 - Update category CategoryEntity(name=bot giats, code=bot-giats, description=day la bot giats)
 2021-05-23 14:12:25 INFO  CategoryServiceImpl:32 - Update category CategoryEntity(name=bot giat, code=bot-giat, description=day la bot giat)
 2021-05-23 14:30:37 INFO  CategoryServiceImpl:32 - Update category CategoryEntity(name=bot giats, code=bot-giats, description=day la bot giats)
-2021-05-23 14:31:01 INFO  CategoryServiceImpl:35 - Update category com.hoangbuix.dev.model.request.UpdateCategoryReq@1869608
-2021-05-23 14:31:17 INFO  CategoryServiceImpl:35 - Update category com.hoangbuix.dev.model.request.UpdateCategoryReq@159b2c6
-2021-05-23 14:32:25 INFO  CategoryServiceImpl:35 - Update category com.hoangbuix.dev.model.request.UpdateCategoryReq@1a91193
-2021-05-23 14:32:43 INFO  CategoryServiceImpl:35 - Update category com.hoangbuix.dev.model.request.UpdateCategoryReq@495b3f
-2021-05-23 14:32:44 INFO  CategoryServiceImpl:35 - Update category com.hoangbuix.dev.model.request.UpdateCategoryReq@1fbf12c
-2021-05-23 14:33:31 INFO  CategoryServiceImpl:35 - Update category com.hoangbuix.dev.model.request.UpdateCategoryReq@1a9cbbc
+2021-05-23 14:31:01 INFO  CategoryServiceImpl:35 - Update category com.hoangbuix.dev.model.request.update.UpdateCategoryReq@1869608
+2021-05-23 14:31:17 INFO  CategoryServiceImpl:35 - Update category com.hoangbuix.dev.model.request.update.UpdateCategoryReq@159b2c6
+2021-05-23 14:32:25 INFO  CategoryServiceImpl:35 - Update category com.hoangbuix.dev.model.request.update.UpdateCategoryReq@1a91193
+2021-05-23 14:32:43 INFO  CategoryServiceImpl:35 - Update category com.hoangbuix.dev.model.request.update.UpdateCategoryReq@495b3f
+2021-05-23 14:32:44 INFO  CategoryServiceImpl:35 - Update category com.hoangbuix.dev.model.request.update.UpdateCategoryReq@1fbf12c
+2021-05-23 14:33:31 INFO  CategoryServiceImpl:35 - Update category com.hoangbuix.dev.model.request.update.UpdateCategoryReq@1a9cbbc
 2021-05-24 13:05:46 ERROR BaseDAOImpl:53 - Unknown column '_id' in 'where clause'
 2021-05-24 13:06:20 ERROR BaseDAOImpl:53 - Unknown column '_id' in 'where clause'
 2021-05-24 13:31:38 ERROR BaseDAOImpl:53 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'productInfo_findProductInfoById(1)' at line 1
@@ -141,3 +141,13 @@
 2021-05-24 13:54:58 ERROR BaseDAOImpl:53 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'productInfo_findProductInfoByCode('code-xxx')' at line 1
 2021-06-01 17:12:45 ERROR BaseDAOImpl:53 - PROCEDURE inventory_management.findRoleAll does not exist
 2021-06-01 17:14:17 ERROR BaseDAOImpl:53 - PROCEDURE inventory_management.role_findAll does not exist
+2021-09-03 00:14:35 ERROR BaseDAOImpl:53 - PROCEDURE inventory_management.menu_findMenuAll does not exist
+2021-09-03 01:18:55 ERROR BaseDAOImpl:53 - Incorrect number of arguments for PROCEDURE inventory_management.menuFindAll; expected 1, got 0
+2021-09-03 01:18:58 ERROR BaseDAOImpl:53 - Incorrect number of arguments for PROCEDURE inventory_management.menuFindAll; expected 1, got 0
+2021-09-03 01:18:59 ERROR BaseDAOImpl:53 - Incorrect number of arguments for PROCEDURE inventory_management.menuFindAll; expected 1, got 0
+2021-09-03 01:19:00 ERROR BaseDAOImpl:53 - Incorrect number of arguments for PROCEDURE inventory_management.menuFindAll; expected 1, got 0
+2021-09-03 01:21:13 ERROR BaseDAOImpl:53 - Incorrect number of arguments for PROCEDURE inventory_management.menuFindAll; expected 1, got 0
+2021-09-03 01:22:06 ERROR BaseDAOImpl:53 - Incorrect number of arguments for PROCEDURE inventory_management.menuFindAll; expected 1, got 0
+2021-09-03 18:55:06 ERROR BaseDAOImpl:53 - PROCEDURE inventory_management.history_findAll does not exist
+2021-09-03 18:55:12 ERROR BaseDAOImpl:53 - PROCEDURE inventory_management.history_findAll does not exist
+2021-09-03 19:18:57 ERROR BaseDAOImpl:53 - PROCEDURE inventory_management.history_findAll does not exist

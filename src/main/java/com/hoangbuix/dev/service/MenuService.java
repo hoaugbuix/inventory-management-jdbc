@@ -1,6 +1,7 @@
 package com.hoangbuix.dev.service;
 
 import com.hoangbuix.dev.entity.MenuEntity;
+import com.hoangbuix.dev.model.dto.MenuDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,6 +10,5 @@ import java.util.List;
 public interface MenuService {
     void changeStatus(int id);
     void updatePermission(int roleId, int menuId, int permission );
-    List<MenuEntity> findALl();
-
+    List<MenuDTO> findALl();
 }

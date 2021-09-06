@@ -27,7 +27,7 @@ public class InvoiceServiceImpl implements InvoiceService {
     @Override
     public InvoiceEntity save(InvoiceEntity invoice) {
         ProductInfoEntity productInfo = new ProductInfoEntity();
-//        productInfo.setId(invoice.getProductId());
+        productInfo.setId(invoice.getProductInfos().getId());
         invoice.setProductInfos(productInfo);
         invoice.setActiveFlag(1);
         invoice.setCreatedDate(new Timestamp(System.currentTimeMillis()));
@@ -42,7 +42,7 @@ public class InvoiceServiceImpl implements InvoiceService {
     public void update(InvoiceEntity invoice, int id) {
         int originQty = invoiceDAO.findById(id).getQty();
         ProductInfoEntity productInfo = new ProductInfoEntity();
-//        productInfo.setId(invoice.getProductId());
+        productInfo.setId(invoice.getProductInfos().getId());
         invoice.setProductInfos(productInfo);
         invoice.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
         InvoiceEntity invoice2 = new InvoiceEntity();

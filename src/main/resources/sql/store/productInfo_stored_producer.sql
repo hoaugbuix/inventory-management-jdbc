@@ -57,7 +57,7 @@ drop procedure if EXISTS productInfo_findProductInfoById;
 DELIMITER $$
 CREATE PROCEDURE productInfo_findProductInfoById(in _id int)
 begin
-	select * from product_info where active_flag = 1 and id = _id;
+	select * from product_info where active_flag = 1 or active_flag = 0 and id = _id;
 end$$
 DELIMITER ;
 
@@ -65,6 +65,6 @@ drop procedure if EXISTS productInfo_findProductInfoByCode;
 DELIMITER $$
 CREATE PROCEDURE productInfo_findProductInfoByCode(in _code varchar(100))
 begin
-	select * from product_info where active_flag = 1 and code = _code;
+	select * from product_info where active_flag = 1 or active_flag = 0 and code = _code;
 end$$
 DELIMITER ;

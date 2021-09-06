@@ -23,7 +23,8 @@ public class RoleDAOImpl extends BaseDAOImpl<RoleEntity> implements RoleDAO<Role
     public void updateRole(RoleEntity role) {
         StringBuilder sql = new StringBuilder();
         sql.append("call role_update(?, ?, ?, ?)");
-        update(sql.toString(), role.getRoleName(), role.getDescription(), role.getActiveFlag(), role.getUpdatedDate());
+        update(sql.toString(), role.getRoleName(), role.getDescription(),
+                role.getActiveFlag(), role.getUpdatedDate());
     }
 
     @Override

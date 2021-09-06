@@ -1,8 +1,8 @@
 package com.hoangbuix.dev.service;
 
 import com.hoangbuix.dev.entity.ProductInfoEntity;
-import com.hoangbuix.dev.model.request.CreateProductInfoReq;
-import com.hoangbuix.dev.model.request.UpdateProductInfoReq;
+import com.hoangbuix.dev.model.request.create.CreateProductInfoReq;
+import com.hoangbuix.dev.model.request.update.UpdateProductInfoReq;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

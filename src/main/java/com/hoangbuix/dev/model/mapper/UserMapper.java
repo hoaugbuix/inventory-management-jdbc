@@ -2,7 +2,7 @@ package com.hoangbuix.dev.model.mapper;
 
 import com.hoangbuix.dev.entity.UserEntity;
 import com.hoangbuix.dev.model.dto.UserDTO;
-import com.hoangbuix.dev.model.request.CreateUserReq;
+import com.hoangbuix.dev.model.request.create.CreateUserReq;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -28,45 +28,5 @@ public class UserMapper implements RowMapper<UserEntity> {
             e.printStackTrace();
             return null;
         }
-    }
-
-    public static UserEntity toUser(CreateUserReq req){
-        try {
-            UserEntity user = new UserEntity();
-            user.setFirstName(req.getFirstName());
-            user.setLastName(req.getLastName());
-            user.setAvatar(req.getAvatar());
-            user.setEmail(req.getEmail());
-            user.setUsername(req.getUsername());
-            //hash
-//        String hash = BCrypt.hashpw(req.getPassword(), BCrypt.gensalt(12));
-            user.setPassword(req.getPassword());
-            user.setActiveFlag(1);
-            user.setCreatedDate(new Timestamp(System.currentTimeMillis()));
-            user.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
-            return user;
-        }catch (Exception e){
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    public static UserDTO toDto(UserEntity user){
-        UserDTO tmp = new UserDTO();
-            if (user.getId() != null){
-            tmp.setId(user.getId());
-        }
-        tmp.setFirstName(user.getFirstName());
-        tmp.setLastName(user.getLastName());
-        tmp.setAvatar(user.getAvatar());
-        tmp.setEmail(user.getEmail());
-        tmp.setUsername(user.getUsername());
-        tmp.setPassword(user.getPassword());
-//        tmp.setRoles(user.getRoles());
-        tmp.setActiveFlag(user.getActiveFlag());
-        tmp.setCreatedDate(user.getCreatedDate());
-        tmp.setUpdatedDate(user.getUpdatedDate());
-
-        return tmp;
     }
 }

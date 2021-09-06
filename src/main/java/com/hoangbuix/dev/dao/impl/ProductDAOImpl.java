@@ -21,7 +21,7 @@ public class ProductDAOImpl extends BaseDAOImpl<ProductInfoEntity> implements Pr
 
     @Override
     public void updateProductInfo(ProductInfoEntity product) {
-        String sql ="call productInfo_update()";
+        String sql ="call productInfo_update(?,?,?,?,?,?,?)";
         update(sql, product.getCode(), product.getName(), product.getDescription(),product.getImgUrl(),
                 product.getActiveFlag(), product.getUpdatedDate(), product.getCateId());
     }

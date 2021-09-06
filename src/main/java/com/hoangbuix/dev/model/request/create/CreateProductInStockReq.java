@@ -1,4 +1,4 @@
-package com.hoangbuix.dev.model.request;
+package com.hoangbuix.dev.model.request.create;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

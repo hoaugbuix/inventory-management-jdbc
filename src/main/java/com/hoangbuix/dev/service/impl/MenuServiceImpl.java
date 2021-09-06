@@ -5,7 +5,10 @@ import com.hoangbuix.dev.dao.MenuDAO;
 import com.hoangbuix.dev.entity.AuthEntity;
 import com.hoangbuix.dev.entity.MenuEntity;
 import com.hoangbuix.dev.entity.RoleEntity;
+import com.hoangbuix.dev.model.converter.MenuConverter;
+import com.hoangbuix.dev.model.dto.MenuDTO;
 import com.hoangbuix.dev.service.MenuService;
+import com.hoangbuix.dev.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -15,16 +18,22 @@ import java.util.List;
 @Component
 public class MenuServiceImpl implements MenuService {
     @Autowired
-    private MenuDAO<MenuEntity> menuDAO;
+    private MenuDAO<MenuDTO> menuDAO;
 
     @Autowired
     private AuthDAO<AuthEntity> authDAO;
 
+    @Autowired
+    private RoleService roleService;
+
+    @Autowired
+    private MenuConverter menuConverter;
+
     @Override
     public void changeStatus(int id) {
-        MenuEntity menu = menuDAO.findById(id);
+        MenuDTO menu = menuDAO.findById(id);
         if (menu != null){
-            menu.setActiveFlag(menu.getActiveFlag()==1 ? 0 : 1);
+            menu.setActiveFlag(menu.getActiveFlag() == 1 ? 0 : 1);
             menuDAO.save(menu);
             return;
         }
@@ -40,12 +49,10 @@ public class MenuServiceImpl implements MenuService {
             if (permission == 1){
                 auth = new AuthEntity();
                 auth.setActiveFlag(1);
-                RoleEntity role = new RoleEntity();
-                role.setId(roleId);
-                MenuEntity menu = new MenuEntity();
-                menu.setId(menuId);
+                RoleEntity role = roleService.findRoleById(roleId);
+                MenuDTO menu = menuDAO.findById(menuId);
                 auth.setRoles(role);
-                auth.setMenus(menu);
+                auth.setMenus(menuConverter.toEntity(menu));
                 auth.setPermission(1);
                 auth.setCreatedDate(new Timestamp(System.currentTimeMillis()));
                 auth.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
@@ -55,7 +62,7 @@ public class MenuServiceImpl implements MenuService {
     }
 
     @Override
-    public List<MenuEntity> findALl() {
-        return menuDAO.findAll();
+    public List<MenuDTO> findALl() {
+       return menuDAO.findAll();
     }
 }

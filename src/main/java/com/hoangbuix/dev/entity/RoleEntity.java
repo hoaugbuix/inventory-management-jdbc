@@ -26,5 +26,5 @@ public class RoleEntity extends BaseEntity{
     private Set<UserEntity> users = new HashSet<>();
 
     @OneToMany(mappedBy = "roles", cascade = CascadeType.ALL)
-    private Set<AuthEntity> auths;
+    private Set<AuthEntity> auths = new HashSet<>();
 }

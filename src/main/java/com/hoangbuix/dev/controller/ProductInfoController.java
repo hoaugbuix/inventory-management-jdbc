@@ -1,8 +1,8 @@
 package com.hoangbuix.dev.controller;
 
 import com.hoangbuix.dev.entity.ProductInfoEntity;
-import com.hoangbuix.dev.model.request.CreateProductInfoReq;
-import com.hoangbuix.dev.model.request.UpdateProductInfoReq;
+import com.hoangbuix.dev.model.request.create.CreateProductInfoReq;
+import com.hoangbuix.dev.model.request.update.UpdateProductInfoReq;
 import com.hoangbuix.dev.service.ProductInfoService;
 import com.hoangbuix.dev.validate.ProductInfoValidator;
 import org.springframework.beans.factory.annotation.Autowired;

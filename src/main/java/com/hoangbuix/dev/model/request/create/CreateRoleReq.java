@@ -1,4 +1,4 @@
-package com.hoangbuix.dev.model.request;
+package com.hoangbuix.dev.model.request.create;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,17 +14,13 @@ import java.sql.Timestamp;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UpdateCategoryReq {
+public class CreateRoleReq {
     @NotNull(message = "Tên category trống")
     @NotEmpty(message = "Tên category trống")
     @Size(min = 1, max = 300, message = "Độ dài tên category từ 1 - 300 ký tự")
-    private String name;
-
-    private String code;
+    private String roleName;
 
     private String description;
 
     private int activeFlag;
-
-    private Timestamp updatedDate;
 }

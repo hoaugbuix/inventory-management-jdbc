@@ -1,8 +1,8 @@
 package com.hoangbuix.dev.controller;
 
 import com.hoangbuix.dev.entity.CategoryEntity;
-import com.hoangbuix.dev.model.request.CreateCategoryReq;
-import com.hoangbuix.dev.model.request.UpdateCategoryReq;
+import com.hoangbuix.dev.model.request.create.CreateCategoryReq;
+import com.hoangbuix.dev.model.request.update.UpdateCategoryReq;
 import com.hoangbuix.dev.service.CategoryService;
 import com.hoangbuix.dev.validate.CategoryValidator;
 import org.springframework.beans.factory.annotation.Autowired;
