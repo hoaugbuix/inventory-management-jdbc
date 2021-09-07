@@ -1,6 +1,8 @@
 package com.hoangbuix.dev.service.impl;
 
+import com.hoangbuix.dev.dao.CategoryDAO;
 import com.hoangbuix.dev.dao.ProductDAO;
+import com.hoangbuix.dev.entity.CategoryEntity;
 import com.hoangbuix.dev.entity.ProductInfoEntity;
 import com.hoangbuix.dev.exception.DuplicateRecordException;
 import com.hoangbuix.dev.exception.InternalServerException;
@@ -19,21 +21,27 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     @Autowired
     private ProductDAO<ProductInfoEntity> productDAO;
 
+    @Autowired
+    private CategoryDAO<CategoryEntity> categoryDAO;
+
     @Override
     public ProductInfoEntity save(CreateProductInfoReq req) {
         ProductInfoEntity product = new ProductInfoEntity();
-        Object obj = productDAO.findProductInfoByCode(req.getCode());
+        Object obj =  productDAO.findProductInfoByCode(req.getCode());
+        CategoryEntity category = categoryDAO.findById(req.getCateId());
         if (obj == null) {
             product.setCode(req.getCode());
             product.setName(req.getName());
             product.setDescription(req.getDescription());
             product.setImgUrl(req.getImgUrl());
-            product.setCateId(req.getCateId());
+            if (category.getId() != null && category.getId() != 0){
+                product.setCateId(category.getId());
+            }else  {
+                throw new NotFoundException("Không tìm thấy");
+            }
             product.setActiveFlag(1);
             product.setCreatedDate(new Timestamp(System.currentTimeMillis()));
             product.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
-        } else {
-            throw new DuplicateRecordException("dup roi nha");
         }
         int id = productDAO.saveProductInfo(product);
         return productDAO.findProductInfoById(id);

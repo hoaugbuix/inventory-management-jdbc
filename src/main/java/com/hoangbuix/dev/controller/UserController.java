@@ -32,7 +32,6 @@ public class UserController {
 //    public List<UserRoleEntity> getAllUserRole(){
 //        return userRoleService.findAll();
 //    }
-//
 
     @GetMapping("/user/find-by-id/{id}")
     public UserEntity getUserById(@PathVariable int id) {

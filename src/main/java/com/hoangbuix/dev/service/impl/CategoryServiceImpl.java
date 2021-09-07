@@ -83,7 +83,11 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public List<CategoryEntity> findAll() {
-        return categoryDAO.findAll();
+        List<CategoryEntity> categories=  categoryDAO.findAll();
+        if (categories.isEmpty()){
+            throw new NotFoundException("Category not found");
+        }
+        return categories;
     }
 
     @Override

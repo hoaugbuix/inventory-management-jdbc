@@ -1,6 +1,5 @@
 package com.hoangbuix.dev.entity;
 
-import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -20,7 +19,7 @@ import java.util.Date;
 public class BaseEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ApiModelProperty(notes = "The database generated ID")
+//    @ApiModelProperty(notes = "The database generated ID")
     @Column(name = "id")
     private Integer id;
 

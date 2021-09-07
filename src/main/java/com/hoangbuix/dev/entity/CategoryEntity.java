@@ -1,6 +1,5 @@
 package com.hoangbuix.dev.entity;
 
-import io.swagger.annotations.ApiModel;
 import lombok.*;
 
 import javax.persistence.Column;
@@ -13,7 +12,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@ApiModel(value = "Category Model")
+//@ApiModel(value = "Category Model")
 @Entity(name = "category")
 @Table(name = "category")
 public class CategoryEntity extends BaseEntity {
