@@ -12,7 +12,7 @@ public class UserConverter {
         return entity;
     }
 
-    public UserDTO toDTO(UserEntity entity){
+    public UserDTO toDTO(UserEntity entity) {
         UserDTO dto = new UserDTO();
         if (entity.getId() != null) {
             dto.setId(entity.getId());
@@ -20,7 +20,7 @@ public class UserConverter {
         return dto;
     }
 
-    public UserEntity toEntity(UserDTO dto, UserEntity entity){
+    public UserEntity toEntity(UserDTO dto, UserEntity entity) {
         return entity;
     }
 }

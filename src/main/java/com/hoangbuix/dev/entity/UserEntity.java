@@ -1,9 +1,7 @@
 package com.hoangbuix.dev.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -11,6 +9,7 @@ import java.util.Set;
 
 @Setter
 @Getter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "user")
@@ -34,6 +33,7 @@ public class UserEntity extends BaseEntity {
     @Column(name = "password")
     private String password;
 
+    @JsonIgnore
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "user_role",
             joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},

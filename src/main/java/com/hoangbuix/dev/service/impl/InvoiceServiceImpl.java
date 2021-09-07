@@ -55,12 +55,17 @@ public class InvoiceServiceImpl implements InvoiceService {
     }
 
     @Override
-    public List<InvoiceEntity> findAll() {
-        return invoiceDAO.findAll();
+    public List<InvoiceEntity> findAll(int type) {
+        return invoiceDAO.findAll(type);
     }
 
     @Override
     public InvoiceEntity findById(int id) {
         return invoiceDAO.findById(id);
+    }
+
+    @Override
+    public List<InvoiceEntity> findByCode(String code) {
+        return null;
     }
 }

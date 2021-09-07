@@ -12,7 +12,7 @@ public class InvoiceMapper implements RowMapper<InvoiceEntity> {
             InvoiceEntity invoice = new InvoiceEntity();
             invoice.setId(resultSet.getInt("id"));
             return invoice;
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }

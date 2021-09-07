@@ -3,12 +3,12 @@ package com.hoangbuix.dev.service.impl;
 import com.hoangbuix.dev.dao.AuthDAO;
 import com.hoangbuix.dev.dao.MenuDAO;
 import com.hoangbuix.dev.entity.AuthEntity;
-import com.hoangbuix.dev.entity.MenuEntity;
 import com.hoangbuix.dev.entity.RoleEntity;
 import com.hoangbuix.dev.model.converter.MenuConverter;
 import com.hoangbuix.dev.model.dto.MenuDTO;
 import com.hoangbuix.dev.service.MenuService;
 import com.hoangbuix.dev.service.RoleService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,6 +17,7 @@ import java.util.List;
 
 @Component
 public class MenuServiceImpl implements MenuService {
+    private final Logger log = Logger.getLogger(MenuServiceImpl.class);
     @Autowired
     private MenuDAO<MenuDTO> menuDAO;
 
@@ -32,7 +33,7 @@ public class MenuServiceImpl implements MenuService {
     @Override
     public void changeStatus(int id) {
         MenuDTO menu = menuDAO.findById(id);
-        if (menu != null){
+        if (menu != null) {
             menu.setActiveFlag(menu.getActiveFlag() == 1 ? 0 : 1);
             menuDAO.save(menu);
             return;
@@ -42,11 +43,11 @@ public class MenuServiceImpl implements MenuService {
     @Override
     public void updatePermission(int roleId, int menuId, int permission) {
         AuthEntity auth = authDAO.findByRoleIdAndMenuId(roleId, menuId);
-        if (auth != null){
+        if (auth != null) {
             auth.setPermission(permission);
             authDAO.update(auth);
-        }else {
-            if (permission == 1){
+        } else {
+            if (permission == 1) {
                 auth = new AuthEntity();
                 auth.setActiveFlag(1);
                 RoleEntity role = roleService.findRoleById(roleId);
@@ -63,6 +64,7 @@ public class MenuServiceImpl implements MenuService {
 
     @Override
     public List<MenuDTO> findALl() {
-       return menuDAO.findAll();
+        log.info("show menu list");
+        return menuDAO.findAll();
     }
 }

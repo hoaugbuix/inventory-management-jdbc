@@ -1,12 +1,10 @@
 package com.hoangbuix.dev.model.dto;
 
-import com.hoangbuix.dev.entity.RoleEntity;
 import com.hoangbuix.dev.entity.UserEntity;
-import com.hoangbuix.dev.entity.UserRoleEntity;
-import lombok.*;
-
-import java.util.HashSet;
-import java.util.Set;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Setter
 @Getter

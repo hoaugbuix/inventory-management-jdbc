@@ -1,7 +1,6 @@
 package com.hoangbuix.dev.dao.impl;
 
 import com.hoangbuix.dev.dao.MenuDAO;
-import com.hoangbuix.dev.entity.MenuEntity;
 import com.hoangbuix.dev.model.dto.MenuDTO;
 import com.hoangbuix.dev.model.mapper.MenuMapper;
 import org.springframework.stereotype.Repository;

@@ -17,8 +17,8 @@ public class CategoryDAOImpl extends BaseDAOImpl<CategoryEntity> implements Cate
     public int saveCategory(CategoryEntity category) {
         StringBuilder sql = new StringBuilder();
         sql.append("call category_create(?, ?, ?, ?, ?, ?)");
-        return insert(sql.toString(), category.getName(),category.getCode(),
-                category.getDescription(),category.getActiveFlag(),
+        return insert(sql.toString(), category.getName(), category.getCode(),
+                category.getDescription(), category.getActiveFlag(),
                 category.getCreatedDate(), category.getUpdatedDate());
     }
 
@@ -26,7 +26,7 @@ public class CategoryDAOImpl extends BaseDAOImpl<CategoryEntity> implements Cate
     public void updateCategory(CategoryEntity category) {
         StringBuilder sql = new StringBuilder();
         sql.append("call category_update(?, ?, ?, ?, ?)");
-        update(sql.toString(),category.getName(), category.getCode(), category.getDescription(),
+        update(sql.toString(), category.getName(), category.getCode(), category.getDescription(),
                 category.getActiveFlag(), category.getUpdatedDate());
     }
 

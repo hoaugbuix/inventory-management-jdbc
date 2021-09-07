@@ -17,14 +17,15 @@ public class ProductInStockServiceImpl implements ProductInStockService {
     final Logger log = Logger.getLogger(ProductInStockServiceImpl.class);
     @Autowired
     private ProductInStockDAO<ProductInStockEntity> productInStockDAO;
+
     @Override
     public ProductInStockEntity saveOrUpdate(InvoiceEntity invoice) {
         log.info("product in stock");
         int id = 0;
-        if (invoice.getProductInfos() != null){
+        if (invoice.getProductInfos() != null) {
             String code = invoice.getProductInfos().getCode();
             ProductInStockEntity product = productInStockDAO.findByCode(code);
-            if (product != null){
+            if (product != null) {
                 log.info("updated qty=" + invoice.getQty() + " and price=" + invoice.getPrice());
                 product.setQty(invoice.getQty());
                 product.setPrice(invoice.getPrice());
@@ -41,7 +42,7 @@ public class ProductInStockServiceImpl implements ProductInStockService {
                 product.setActiveFlag(1);
                 product.setCreatedDate(new Timestamp(System.currentTimeMillis()));
                 product.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
-            id = productInStockDAO.save(product);
+                id = productInStockDAO.save(product);
             }
         }
         return id != 0 ? productInStockDAO.findById(id) : null;

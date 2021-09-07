@@ -1,6 +1,7 @@
 -- drop schema inventory_management;
 -- create schema inventory_management;
-use inventory_management;
+use
+inventory_management;
 
 CREATE TABLE user
 (
@@ -78,13 +79,14 @@ CREATE TABLE category
     PRIMARY KEY (id)
 );
 
-CREATE TABLE product_in_stock (
-    id INTEGER NOT NULL AUTO_INCREMENT,
-    product_id INTEGER NOT NULL,
-    qty INTEGER NOT NULL,
-    price DECIMAL(15 , 2 ) NOT NULL,
-    active_flag INTEGER NOT NULL DEFAULT 1,
-    created_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+CREATE TABLE product_in_stock
+(
+    id           INTEGER        NOT NULL AUTO_INCREMENT,
+    product_id   INTEGER        NOT NULL,
+    qty          INTEGER        NOT NULL,
+    price        DECIMAL(15, 2) NOT NULL,
+    active_flag  INTEGER        NOT NULL DEFAULT 1,
+    created_date TIMESTAMP      NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_date TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );

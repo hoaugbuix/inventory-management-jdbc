@@ -19,7 +19,7 @@ public class ProductInfoMapper implements RowMapper<ProductInfoEntity> {
             product.setUpdatedDate(resultSet.getDate("updated_date"));
             product.setCateId(resultSet.getInt("cate_id"));
             return product;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }

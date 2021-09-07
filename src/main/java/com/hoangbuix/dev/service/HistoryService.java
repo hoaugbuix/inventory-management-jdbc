@@ -9,6 +9,8 @@ import java.util.List;
 @Service
 public interface HistoryService {
     HistoryEntity save(InvoiceEntity invoice, String action);
+
     List<HistoryEntity> findAll();
+
     HistoryEntity findById(int id);
 }

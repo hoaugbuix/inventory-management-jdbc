@@ -151,3 +151,418 @@
 2021-09-03 18:55:06 ERROR BaseDAOImpl:53 - PROCEDURE inventory_management.history_findAll does not exist
 2021-09-03 18:55:12 ERROR BaseDAOImpl:53 - PROCEDURE inventory_management.history_findAll does not exist
 2021-09-03 19:18:57 ERROR BaseDAOImpl:53 - PROCEDURE inventory_management.history_findAll does not exist
+2021-09-06 12:15:34 INFO  MenuServiceImpl:69 - menu list[AbstractDto(id=1, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=2, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=3, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=4, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=5, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=6, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=7, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=8, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=9, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=10, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=11, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=12, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=13, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=14, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=15, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=16, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=17, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=18, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=19, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=20, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=21, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=22, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=23, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=24, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=25, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=26, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=27, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=28, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=29, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02), AbstractDto(id=30, activeFlag=1, createdDate=2021-09-02, updatedDate=2021-09-02)]
+2021-09-06 12:25:09 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 12:52:27 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 12:57:19 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 12:57:19 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 12:57:19 INFO  MenuController:45 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 12:57:19 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 12:57:19 INFO  MenuController:45 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 12:57:19 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 12:57:19 INFO  MenuController:45 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 12:57:19 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 12:57:19 INFO  MenuController:45 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 12:57:19 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 12:57:19 INFO  MenuController:45 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 12:57:19 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 12:57:19 INFO  MenuController:45 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 12:57:19 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 12:57:19 INFO  MenuController:45 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 12:57:19 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 12:57:19 INFO  MenuController:45 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 12:57:19 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 12:57:19 INFO  MenuController:45 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 12:57:19 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 12:57:19 INFO  MenuController:45 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 12:57:19 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 12:57:19 INFO  MenuController:45 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 12:57:19 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 12:57:19 INFO  MenuController:45 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 12:57:19 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 12:57:19 INFO  MenuController:45 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 12:57:19 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 12:57:19 INFO  MenuController:45 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 12:57:19 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 12:57:19 INFO  MenuController:45 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 12:57:19 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 12:57:19 INFO  MenuController:45 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 12:57:19 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 12:57:19 INFO  MenuController:45 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 12:57:19 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 12:57:19 INFO  MenuController:45 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 12:57:19 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 12:57:19 INFO  MenuController:45 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 12:57:19 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 12:57:19 INFO  MenuController:45 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 13:56:14 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 13:56:14 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:56:14 INFO  MenuController:46 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 13:56:14 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:56:14 INFO  MenuController:46 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 13:56:14 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:56:14 INFO  MenuController:46 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 13:56:14 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:56:14 INFO  MenuController:46 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 13:56:14 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:56:14 INFO  MenuController:46 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 13:56:14 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:56:14 INFO  MenuController:46 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 13:56:14 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:56:14 INFO  MenuController:46 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 13:56:14 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:56:14 INFO  MenuController:46 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 13:56:14 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:56:14 INFO  MenuController:46 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 13:56:14 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:56:14 INFO  MenuController:46 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 13:56:14 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:56:14 INFO  MenuController:46 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 13:56:14 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:56:14 INFO  MenuController:46 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 13:56:14 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:56:14 INFO  MenuController:46 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 13:56:14 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:56:14 INFO  MenuController:46 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 13:56:14 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:56:14 INFO  MenuController:46 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 13:56:14 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:56:14 INFO  MenuController:46 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 13:56:14 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:56:14 INFO  MenuController:46 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 13:56:14 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:56:14 INFO  MenuController:46 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 13:56:14 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:56:14 INFO  MenuController:46 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 13:56:14 INFO  MenuController:40 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:56:14 INFO  MenuController:46 - {1=0, 2=0, 3=0, 4=0}
+2021-09-06 13:59:34 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 13:59:34 INFO  MenuController:36 - []
+2021-09-06 13:59:34 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:59:34 INFO  MenuController:36 - []
+2021-09-06 13:59:34 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:59:34 INFO  MenuController:36 - []
+2021-09-06 13:59:34 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:59:34 INFO  MenuController:36 - []
+2021-09-06 13:59:34 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:59:34 INFO  MenuController:36 - []
+2021-09-06 13:59:34 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:59:34 INFO  MenuController:36 - []
+2021-09-06 13:59:34 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:59:34 INFO  MenuController:36 - []
+2021-09-06 13:59:34 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:59:34 INFO  MenuController:36 - []
+2021-09-06 13:59:34 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:59:34 INFO  MenuController:36 - []
+2021-09-06 13:59:34 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:59:34 INFO  MenuController:36 - []
+2021-09-06 13:59:34 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:59:34 INFO  MenuController:36 - []
+2021-09-06 13:59:34 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:59:34 INFO  MenuController:36 - []
+2021-09-06 13:59:34 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:59:34 INFO  MenuController:36 - []
+2021-09-06 13:59:34 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:59:34 INFO  MenuController:36 - []
+2021-09-06 13:59:34 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:59:34 INFO  MenuController:36 - []
+2021-09-06 13:59:34 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:59:34 INFO  MenuController:36 - []
+2021-09-06 13:59:34 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:59:34 INFO  MenuController:36 - []
+2021-09-06 13:59:34 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:59:34 INFO  MenuController:36 - []
+2021-09-06 13:59:34 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:59:34 INFO  MenuController:36 - []
+2021-09-06 13:59:34 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 13:59:34 INFO  MenuController:36 - []
+2021-09-06 13:59:34 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:01:49 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 14:01:49 INFO  MenuController:36 - 
+2021-09-06 14:01:49 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:01:52 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 14:01:52 INFO  MenuController:36 - 
+2021-09-06 14:01:52 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:02:26 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 14:02:26 INFO  MenuController:36 - []
+2021-09-06 14:02:26 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:02:26 INFO  MenuController:36 - []
+2021-09-06 14:02:26 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:02:26 INFO  MenuController:36 - []
+2021-09-06 14:02:26 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:02:26 INFO  MenuController:36 - []
+2021-09-06 14:02:26 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:02:26 INFO  MenuController:36 - []
+2021-09-06 14:02:26 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:02:26 INFO  MenuController:36 - []
+2021-09-06 14:02:26 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:02:26 INFO  MenuController:36 - []
+2021-09-06 14:02:26 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:02:26 INFO  MenuController:36 - []
+2021-09-06 14:02:26 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:02:26 INFO  MenuController:36 - []
+2021-09-06 14:02:26 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:02:26 INFO  MenuController:36 - []
+2021-09-06 14:02:26 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:02:26 INFO  MenuController:36 - []
+2021-09-06 14:02:26 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:02:26 INFO  MenuController:36 - []
+2021-09-06 14:02:26 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:02:26 INFO  MenuController:36 - []
+2021-09-06 14:02:26 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:02:26 INFO  MenuController:36 - []
+2021-09-06 14:02:26 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:02:26 INFO  MenuController:36 - []
+2021-09-06 14:02:26 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:02:26 INFO  MenuController:36 - []
+2021-09-06 14:02:26 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:02:26 INFO  MenuController:36 - []
+2021-09-06 14:02:26 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:02:26 INFO  MenuController:36 - []
+2021-09-06 14:02:26 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:02:26 INFO  MenuController:36 - []
+2021-09-06 14:02:26 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:02:26 INFO  MenuController:36 - []
+2021-09-06 14:02:26 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:09:38 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 14:09:38 INFO  MenuController:36 - 
+2021-09-06 14:09:38 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:15:20 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 14:15:21 INFO  MenuController:36 - [com.hoangbuix.dev.entity.AuthEntity@424246ef]
+2021-09-06 14:15:21 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:15:21 INFO  MenuController:44 - 1-----p
+2021-09-06 14:20:43 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 14:20:43 INFO  MenuController:36 - [com.hoangbuix.dev.entity.AuthEntity@4c142567]
+2021-09-06 14:20:43 INFO  MenuController:41 - {1=0, 2=0, 3=0, 4=0}---
+2021-09-06 14:25:27 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 14:29:00 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 14:29:41 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 14:29:41 INFO  MenuController:42 - 1-----p
+2021-09-06 14:29:41 INFO  MenuController:42 - 2-----p
+2021-09-06 14:29:41 INFO  MenuController:42 - 3-----p
+2021-09-06 14:29:41 INFO  MenuController:42 - 4-----p
+2021-09-06 14:29:41 INFO  MenuController:42 - 5-----p
+2021-09-06 14:29:41 INFO  MenuController:42 - 6-----p
+2021-09-06 14:29:41 INFO  MenuController:42 - 7-----p
+2021-09-06 14:29:41 INFO  MenuController:42 - 8-----p
+2021-09-06 14:29:41 INFO  MenuController:42 - 9-----p
+2021-09-06 14:29:41 INFO  MenuController:42 - 10-----p
+2021-09-06 14:29:41 INFO  MenuController:42 - 11-----p
+2021-09-06 14:29:41 INFO  MenuController:42 - 12-----p
+2021-09-06 14:29:41 INFO  MenuController:42 - 13-----p
+2021-09-06 14:29:41 INFO  MenuController:42 - 14-----p
+2021-09-06 14:29:41 INFO  MenuController:42 - 15-----p
+2021-09-06 14:29:41 INFO  MenuController:42 - 16-----p
+2021-09-06 14:29:41 INFO  MenuController:42 - 17-----p
+2021-09-06 14:29:41 INFO  MenuController:42 - 18-----p
+2021-09-06 14:29:41 INFO  MenuController:42 - 19-----p
+2021-09-06 14:29:41 INFO  MenuController:42 - 20-----p
+2021-09-06 14:31:49 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 14:31:49 INFO  MenuController:42 - 1-----p
+2021-09-06 14:31:49 INFO  MenuController:42 - 2-----p
+2021-09-06 14:31:49 INFO  MenuController:42 - 3-----p
+2021-09-06 14:31:49 INFO  MenuController:42 - 4-----p
+2021-09-06 14:31:49 INFO  MenuController:42 - 5-----p
+2021-09-06 14:31:49 INFO  MenuController:42 - 6-----p
+2021-09-06 14:31:49 INFO  MenuController:42 - 7-----p
+2021-09-06 14:31:49 INFO  MenuController:42 - 8-----p
+2021-09-06 14:31:49 INFO  MenuController:42 - 9-----p
+2021-09-06 14:31:49 INFO  MenuController:42 - 10-----p
+2021-09-06 14:31:49 INFO  MenuController:42 - 11-----p
+2021-09-06 14:31:49 INFO  MenuController:42 - 12-----p
+2021-09-06 14:31:49 INFO  MenuController:42 - 13-----p
+2021-09-06 14:31:49 INFO  MenuController:42 - 14-----p
+2021-09-06 14:31:49 INFO  MenuController:42 - 15-----p
+2021-09-06 14:31:49 INFO  MenuController:42 - 16-----p
+2021-09-06 14:31:49 INFO  MenuController:42 - 17-----p
+2021-09-06 14:31:49 INFO  MenuController:42 - 18-----p
+2021-09-06 14:31:49 INFO  MenuController:42 - 19-----p
+2021-09-06 14:31:49 INFO  MenuController:42 - 20-----p
+2021-09-06 14:34:28 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 14:34:28 INFO  MenuController:42 - 1-----p
+2021-09-06 14:34:28 INFO  MenuController:42 - 2-----p
+2021-09-06 14:34:28 INFO  MenuController:42 - 3-----p
+2021-09-06 14:34:28 INFO  MenuController:42 - 4-----p
+2021-09-06 14:34:28 INFO  MenuController:42 - 5-----p
+2021-09-06 14:34:28 INFO  MenuController:42 - 6-----p
+2021-09-06 14:34:28 INFO  MenuController:42 - 7-----p
+2021-09-06 14:34:28 INFO  MenuController:42 - 8-----p
+2021-09-06 14:34:28 INFO  MenuController:42 - 9-----p
+2021-09-06 14:34:28 INFO  MenuController:42 - 10-----p
+2021-09-06 14:34:28 INFO  MenuController:42 - 11-----p
+2021-09-06 14:34:28 INFO  MenuController:42 - 12-----p
+2021-09-06 14:34:28 INFO  MenuController:42 - 13-----p
+2021-09-06 14:34:28 INFO  MenuController:42 - 14-----p
+2021-09-06 14:34:28 INFO  MenuController:42 - 15-----p
+2021-09-06 14:34:28 INFO  MenuController:42 - 16-----p
+2021-09-06 14:34:28 INFO  MenuController:42 - 17-----p
+2021-09-06 14:34:28 INFO  MenuController:42 - 18-----p
+2021-09-06 14:34:28 INFO  MenuController:42 - 19-----p
+2021-09-06 14:34:28 INFO  MenuController:42 - 20-----p
+2021-09-06 14:43:59 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 14:43:59 INFO  MenuController:43 - 1-----p
+2021-09-06 14:43:59 INFO  MenuController:43 - 2-----p
+2021-09-06 14:43:59 INFO  MenuController:43 - 3-----p
+2021-09-06 14:43:59 INFO  MenuController:43 - 4-----p
+2021-09-06 14:43:59 INFO  MenuController:43 - 5-----p
+2021-09-06 14:43:59 INFO  MenuController:43 - 6-----p
+2021-09-06 14:43:59 INFO  MenuController:43 - 7-----p
+2021-09-06 14:43:59 INFO  MenuController:43 - 8-----p
+2021-09-06 14:43:59 INFO  MenuController:43 - 9-----p
+2021-09-06 14:43:59 INFO  MenuController:43 - 10-----p
+2021-09-06 14:43:59 INFO  MenuController:43 - 11-----p
+2021-09-06 14:43:59 INFO  MenuController:43 - 12-----p
+2021-09-06 14:43:59 INFO  MenuController:43 - 13-----p
+2021-09-06 14:43:59 INFO  MenuController:43 - 14-----p
+2021-09-06 14:43:59 INFO  MenuController:43 - 15-----p
+2021-09-06 14:43:59 INFO  MenuController:43 - 16-----p
+2021-09-06 14:43:59 INFO  MenuController:43 - 17-----p
+2021-09-06 14:43:59 INFO  MenuController:43 - 18-----p
+2021-09-06 14:43:59 INFO  MenuController:43 - 19-----p
+2021-09-06 14:43:59 INFO  MenuController:43 - 20-----p
+2021-09-06 14:50:09 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 14:50:09 INFO  MenuController:43 - 1-----p
+2021-09-06 14:50:09 INFO  MenuController:43 - 2-----p
+2021-09-06 14:50:09 INFO  MenuController:43 - 3-----p
+2021-09-06 14:50:09 INFO  MenuController:43 - 4-----p
+2021-09-06 14:50:09 INFO  MenuController:43 - 5-----p
+2021-09-06 14:50:09 INFO  MenuController:43 - 6-----p
+2021-09-06 14:50:09 INFO  MenuController:43 - 7-----p
+2021-09-06 14:50:09 INFO  MenuController:43 - 8-----p
+2021-09-06 14:50:09 INFO  MenuController:43 - 9-----p
+2021-09-06 14:50:09 INFO  MenuController:43 - 10-----p
+2021-09-06 14:50:09 INFO  MenuController:43 - 11-----p
+2021-09-06 14:50:09 INFO  MenuController:43 - 12-----p
+2021-09-06 14:50:09 INFO  MenuController:43 - 13-----p
+2021-09-06 14:50:09 INFO  MenuController:43 - 14-----p
+2021-09-06 14:50:09 INFO  MenuController:43 - 15-----p
+2021-09-06 14:50:09 INFO  MenuController:43 - 16-----p
+2021-09-06 14:50:09 INFO  MenuController:43 - 17-----p
+2021-09-06 14:50:09 INFO  MenuController:43 - 18-----p
+2021-09-06 14:50:09 INFO  MenuController:43 - 19-----p
+2021-09-06 14:50:09 INFO  MenuController:43 - 20-----p
+2021-09-06 14:52:16 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 14:57:19 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 14:57:19 INFO  MenuController:43 - 1-----p
+2021-09-06 14:57:19 INFO  MenuController:43 - 2-----p
+2021-09-06 14:57:19 INFO  MenuController:43 - 3-----p
+2021-09-06 14:57:19 INFO  MenuController:43 - 4-----p
+2021-09-06 14:57:19 INFO  MenuController:43 - 5-----p
+2021-09-06 14:57:19 INFO  MenuController:43 - 6-----p
+2021-09-06 14:57:19 INFO  MenuController:43 - 7-----p
+2021-09-06 14:57:19 INFO  MenuController:43 - 8-----p
+2021-09-06 14:57:19 INFO  MenuController:43 - 9-----p
+2021-09-06 14:57:19 INFO  MenuController:43 - 10-----p
+2021-09-06 14:57:19 INFO  MenuController:43 - 11-----p
+2021-09-06 14:57:19 INFO  MenuController:43 - 12-----p
+2021-09-06 14:57:19 INFO  MenuController:43 - 13-----p
+2021-09-06 14:57:19 INFO  MenuController:43 - 14-----p
+2021-09-06 14:57:19 INFO  MenuController:43 - 15-----p
+2021-09-06 14:57:19 INFO  MenuController:43 - 16-----p
+2021-09-06 14:57:19 INFO  MenuController:43 - 17-----p
+2021-09-06 14:57:19 INFO  MenuController:43 - 18-----p
+2021-09-06 14:57:19 INFO  MenuController:43 - 19-----p
+2021-09-06 14:57:19 INFO  MenuController:43 - 20-----p
+2021-09-06 14:57:21 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 14:57:21 INFO  MenuController:43 - 1-----p
+2021-09-06 14:57:21 INFO  MenuController:43 - 2-----p
+2021-09-06 14:57:21 INFO  MenuController:43 - 3-----p
+2021-09-06 14:57:21 INFO  MenuController:43 - 4-----p
+2021-09-06 14:57:21 INFO  MenuController:43 - 5-----p
+2021-09-06 14:57:21 INFO  MenuController:43 - 6-----p
+2021-09-06 14:57:21 INFO  MenuController:43 - 7-----p
+2021-09-06 14:57:21 INFO  MenuController:43 - 8-----p
+2021-09-06 14:57:21 INFO  MenuController:43 - 9-----p
+2021-09-06 14:57:21 INFO  MenuController:43 - 10-----p
+2021-09-06 14:57:21 INFO  MenuController:43 - 11-----p
+2021-09-06 14:57:21 INFO  MenuController:43 - 12-----p
+2021-09-06 14:57:21 INFO  MenuController:43 - 13-----p
+2021-09-06 14:57:21 INFO  MenuController:43 - 14-----p
+2021-09-06 14:57:21 INFO  MenuController:43 - 15-----p
+2021-09-06 14:57:21 INFO  MenuController:43 - 16-----p
+2021-09-06 14:57:21 INFO  MenuController:43 - 17-----p
+2021-09-06 14:57:21 INFO  MenuController:43 - 18-----p
+2021-09-06 14:57:21 INFO  MenuController:43 - 19-----p
+2021-09-06 14:57:21 INFO  MenuController:43 - 20-----p
+2021-09-06 15:03:08 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 15:03:10 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 15:24:09 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 15:24:09 INFO  MenuController:45 - 1-----p
+2021-09-06 15:24:09 INFO  MenuController:45 - 2-----p
+2021-09-06 15:24:09 INFO  MenuController:45 - 3-----p
+2021-09-06 15:24:09 INFO  MenuController:45 - 4-----p
+2021-09-06 15:24:09 INFO  MenuController:45 - 5-----p
+2021-09-06 15:24:09 INFO  MenuController:45 - 6-----p
+2021-09-06 15:24:09 INFO  MenuController:45 - 7-----p
+2021-09-06 15:24:09 INFO  MenuController:45 - 8-----p
+2021-09-06 15:24:09 INFO  MenuController:45 - 9-----p
+2021-09-06 15:24:09 INFO  MenuController:45 - 10-----p
+2021-09-06 15:24:09 INFO  MenuController:45 - 11-----p
+2021-09-06 15:24:09 INFO  MenuController:45 - 12-----p
+2021-09-06 15:24:09 INFO  MenuController:45 - 13-----p
+2021-09-06 15:24:09 INFO  MenuController:45 - 14-----p
+2021-09-06 15:24:09 INFO  MenuController:45 - 15-----p
+2021-09-06 15:24:09 INFO  MenuController:45 - 16-----p
+2021-09-06 15:24:09 INFO  MenuController:45 - 17-----p
+2021-09-06 15:24:09 INFO  MenuController:45 - 18-----p
+2021-09-06 15:24:09 INFO  MenuController:45 - 19-----p
+2021-09-06 15:24:09 INFO  MenuController:45 - 20-----p
+2021-09-06 15:24:15 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 15:24:15 INFO  MenuController:45 - 1-----p
+2021-09-06 15:24:15 INFO  MenuController:45 - 2-----p
+2021-09-06 15:24:15 INFO  MenuController:45 - 3-----p
+2021-09-06 15:24:15 INFO  MenuController:45 - 4-----p
+2021-09-06 15:24:15 INFO  MenuController:45 - 5-----p
+2021-09-06 15:24:15 INFO  MenuController:45 - 6-----p
+2021-09-06 15:24:15 INFO  MenuController:45 - 7-----p
+2021-09-06 15:24:15 INFO  MenuController:45 - 8-----p
+2021-09-06 15:24:15 INFO  MenuController:45 - 9-----p
+2021-09-06 15:24:15 INFO  MenuController:45 - 10-----p
+2021-09-06 15:24:15 INFO  MenuController:45 - 11-----p
+2021-09-06 15:24:15 INFO  MenuController:45 - 12-----p
+2021-09-06 15:24:15 INFO  MenuController:45 - 13-----p
+2021-09-06 15:24:15 INFO  MenuController:45 - 14-----p
+2021-09-06 15:24:15 INFO  MenuController:45 - 15-----p
+2021-09-06 15:24:15 INFO  MenuController:45 - 16-----p
+2021-09-06 15:24:15 INFO  MenuController:45 - 17-----p
+2021-09-06 15:24:15 INFO  MenuController:45 - 18-----p
+2021-09-06 15:24:15 INFO  MenuController:45 - 19-----p
+2021-09-06 15:24:15 INFO  MenuController:45 - 20-----p
+2021-09-06 15:26:48 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 15:26:48 INFO  MenuController:45 - 1-----p
+2021-09-06 15:26:48 INFO  MenuController:45 - 2-----p
+2021-09-06 15:26:48 INFO  MenuController:45 - 3-----p
+2021-09-06 15:26:48 INFO  MenuController:45 - 4-----p
+2021-09-06 15:26:48 INFO  MenuController:45 - 5-----p
+2021-09-06 15:26:48 INFO  MenuController:45 - 6-----p
+2021-09-06 15:26:48 INFO  MenuController:45 - 7-----p
+2021-09-06 15:26:48 INFO  MenuController:45 - 8-----p
+2021-09-06 15:26:48 INFO  MenuController:45 - 9-----p
+2021-09-06 15:26:48 INFO  MenuController:45 - 10-----p
+2021-09-06 15:26:48 INFO  MenuController:45 - 11-----p
+2021-09-06 15:26:48 INFO  MenuController:45 - 12-----p
+2021-09-06 15:26:48 INFO  MenuController:45 - 13-----p
+2021-09-06 15:26:48 INFO  MenuController:45 - 14-----p
+2021-09-06 15:26:48 INFO  MenuController:45 - 15-----p
+2021-09-06 15:26:48 INFO  MenuController:45 - 16-----p
+2021-09-06 15:26:48 INFO  MenuController:45 - 17-----p
+2021-09-06 15:26:48 INFO  MenuController:45 - 18-----p
+2021-09-06 15:26:48 INFO  MenuController:45 - 19-----p
+2021-09-06 15:26:48 INFO  MenuController:45 - 20-----p
+2021-09-06 16:12:55 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 22:31:58 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 22:37:02 INFO  MenuServiceImpl:68 - show menu list
+2021-09-06 22:38:37 ERROR BaseDAOImpl:53 - PROCEDURE inventory_management.history_findAll does not exist
+2021-09-06 22:38:39 ERROR BaseDAOImpl:53 - PROCEDURE inventory_management.history_findAll does not exist
+2021-09-06 23:19:59 ERROR BaseDAOImpl:51 - Unknown column 'hn.id' in 'on clause'
+2021-09-06 23:22:31 INFO  MenuServiceImpl:67 - show menu list
+2021-09-06 23:31:45 INFO  HistoryController:28 - show list histories
+2021-09-06 23:33:59 INFO  HistoryController:31 - show list histories
+2021-09-07 01:24:22 INFO  HistoryController:31 - show list histories
+2021-09-07 01:56:07 INFO  HistoryController:31 - show list histories
+2021-09-07 02:40:49 INFO  GoodsReceiptController:56 - show list invoice
+2021-09-07 02:40:49 ERROR BaseDAOImpl:51 - PROCEDURE inventory_management.invoice_findAll does not exist
+2021-09-07 02:51:12 INFO  GoodsReceiptController:56 - show list invoice
+2021-09-07 02:51:12 ERROR BaseDAOImpl:51 - Incorrect number of arguments for PROCEDURE inventory_management.invoice_findAll; expected 0, got 1
+2021-09-07 02:53:11 INFO  GoodsReceiptController:56 - show list invoice
+2021-09-07 02:54:14 INFO  GoodsReceiptController:56 - show list invoice

@@ -4,15 +4,19 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Setter
 @Getter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "product_info")
 @Table(name = "product_info")
-public class ProductInfoEntity extends BaseEntity{
+public class ProductInfoEntity extends BaseEntity {
     @Column(name = "code")
     private String code;
 

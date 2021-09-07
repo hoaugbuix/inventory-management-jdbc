@@ -1,5 +1,6 @@
 package com.hoangbuix.dev.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -8,11 +9,12 @@ import java.util.Date;
 
 @Setter
 @Getter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "invoice")
 @Table(name = "invoice")
-public class InvoiceEntity extends BaseEntity{
+public class InvoiceEntity extends BaseEntity {
     @Column(name = "code")
     private String code;
 
@@ -31,6 +33,7 @@ public class InvoiceEntity extends BaseEntity{
     @Column(name = "from_date")
     private Date fromDate;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
     private ProductInfoEntity productInfos;

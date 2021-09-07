@@ -10,9 +10,14 @@ import java.util.List;
 @Service
 public interface ProductInfoService {
     ProductInfoEntity save(CreateProductInfoReq req);
+
     void update(int id, UpdateProductInfoReq req);
+
     void delete(int id);
+
     List<ProductInfoEntity> findAll();
+
     ProductInfoEntity findByCode(String code);
+
     ProductInfoEntity findById(int id);
 }

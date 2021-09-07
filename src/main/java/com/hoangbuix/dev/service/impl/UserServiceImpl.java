@@ -59,7 +59,7 @@ public class UserServiceImpl implements UserService {
         user = userConverter.toEntity(req);
         int id = userDAO.saveUser(user);
         RoleEntity role = roleDAO.findRoleByName("user");
-        if (id != 0){
+        if (id != 0) {
             UserRoleEntity userRole = new UserRoleEntity();
             userRole.setActiveFlag(1);
             userRole.setCreatedDate(new Timestamp(System.currentTimeMillis()));
@@ -74,12 +74,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserEntity updateUser(int id, UpdateUserReq req) {
         UserEntity user = userDAO.findUserById(id);
-        if(user == null) {
+        if (user == null) {
             throw new NotFoundException("");
         }
         try {
             userDAO.updateUser(user);
-        }catch (Exception e){
+        } catch (Exception e) {
             throw new InternalServerException("xxx");
         }
         return null;

@@ -33,8 +33,8 @@ public class InvoiceDAOImpl extends BaseDAOImpl<InvoiceEntity> implements Invoic
     }
 
     @Override
-    public List<InvoiceEntity> findAll() {
-        String sql = "call invoice_findAll()";
-        return query(sql, new InvoiceMapper());
+    public List<InvoiceEntity> findAll(int type) {
+        String sql = "call invoice_findAll(?)";
+        return query(sql, new InvoiceMapper(), type);
     }
 }

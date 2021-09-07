@@ -17,7 +17,7 @@ public class RoleMapper implements RowMapper<RoleEntity> {
             role.setCreatedDate(resultSet.getDate("created_date"));
             role.setUpdatedDate(resultSet.getDate("updated_date"));
             return role;
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             return null;
         }
     }

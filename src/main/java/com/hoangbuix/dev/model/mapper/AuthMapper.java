@@ -12,7 +12,7 @@ public class AuthMapper implements RowMapper<AuthEntity> {
             AuthEntity auth = new AuthEntity();
             auth.setId(resultSet.getInt("id"));
             return auth;
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }

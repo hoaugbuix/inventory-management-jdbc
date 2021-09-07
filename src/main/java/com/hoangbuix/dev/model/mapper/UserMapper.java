@@ -1,12 +1,9 @@
 package com.hoangbuix.dev.model.mapper;
 
 import com.hoangbuix.dev.entity.UserEntity;
-import com.hoangbuix.dev.model.dto.UserDTO;
-import com.hoangbuix.dev.model.request.create.CreateUserReq;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 
 public class UserMapper implements RowMapper<UserEntity> {
     @Override
@@ -24,7 +21,7 @@ public class UserMapper implements RowMapper<UserEntity> {
             user.setCreatedDate(resultSet.getDate("created_date"));
             user.setUpdatedDate(resultSet.getDate("updated_date"));
             return user;
-        }catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }

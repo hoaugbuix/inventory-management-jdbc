@@ -18,7 +18,7 @@ public class ProductInStockMapper implements RowMapper<ProductInStockEntity> {
                 product.setCode(resultSet.getString("code"));
                 product.setName(resultSet.getString("name"));
                 productInStock.setProductInfos(product);
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             productInStock.setQty(resultSet.getInt("qty"));
@@ -27,7 +27,7 @@ public class ProductInStockMapper implements RowMapper<ProductInStockEntity> {
             productInStock.setCreatedDate(resultSet.getDate("created_date"));
             productInStock.setUpdatedDate(resultSet.getDate("updated_date"));
             return productInStock;
-        }catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }

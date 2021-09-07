@@ -28,7 +28,7 @@ public class CategoryValidator implements Validator {
             CategoryEntity results = categoryService.findByCode(category.getCode());
             if (results != null) {
                 if (category.getId() != null && category.getId() != 0) {
-                    if (results.getId()  != category.getId()) {
+                    if (results.getId() != category.getId()) {
                         errors.rejectValue("code", "msg.code.exist");
                     }
                 } else {

@@ -9,5 +9,6 @@ import java.util.List;
 @Service
 public interface ProductInStockService {
     ProductInStockEntity saveOrUpdate(InvoiceEntity req);
+
     List<ProductInStockEntity> findAll();
 }

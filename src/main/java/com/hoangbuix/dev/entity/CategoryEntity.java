@@ -3,17 +3,20 @@ package com.hoangbuix.dev.entity;
 import io.swagger.annotations.ApiModel;
 import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Setter
 @Getter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @ApiModel(value = "Category Model")
 @Entity(name = "category")
 @Table(name = "category")
-public class CategoryEntity extends BaseEntity{
+public class CategoryEntity extends BaseEntity {
     @Column(name = "name")
     private String name;
 

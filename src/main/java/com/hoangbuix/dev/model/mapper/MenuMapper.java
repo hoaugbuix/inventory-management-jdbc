@@ -1,12 +1,12 @@
 package com.hoangbuix.dev.model.mapper;
 
 import com.hoangbuix.dev.entity.AuthEntity;
-import com.hoangbuix.dev.entity.MenuEntity;
+import com.hoangbuix.dev.entity.RoleEntity;
 import com.hoangbuix.dev.model.dto.MenuDTO;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Set;
+import java.util.Collections;
 
 public class MenuMapper implements RowMapper<MenuDTO> {
     @Override
@@ -21,8 +21,22 @@ public class MenuMapper implements RowMapper<MenuDTO> {
             menu.setActiveFlag(resultSet.getInt("active_flag"));
             menu.setCreatedDate(resultSet.getDate("created_date"));
             menu.setUpdatedDate(resultSet.getDate("updated_date"));
+            try {
+                RoleEntity role = new RoleEntity();
+                role.setId(resultSet.getInt("id"));
+                AuthEntity auth = new AuthEntity();
+                auth.setId(resultSet.getInt("id"));
+                auth.setPermission(resultSet.getInt("permission"));
+                auth.setActiveFlag(resultSet.getInt("active_flag"));
+                auth.setCreatedDate(resultSet.getDate("created_date"));
+                auth.setUpdatedDate(resultSet.getDate("updated_date"));
+                auth.setRoles(role);
+                menu.setAuths(Collections.singleton(auth));
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
             return menu;
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }

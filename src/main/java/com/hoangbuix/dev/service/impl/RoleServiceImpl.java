@@ -23,7 +23,7 @@ public class RoleServiceImpl implements RoleService {
     public RoleEntity saveRole(CreateRoleReq req) {
         RoleEntity role = new RoleEntity();
         Object obj = roleDAO.findRoleByName(req.getRoleName());
-        if (obj == null){
+        if (obj == null) {
             role.setRoleName(req.getRoleName());
             role.setDescription(req.getDescription());
             role.setActiveFlag(1);
@@ -39,7 +39,7 @@ public class RoleServiceImpl implements RoleService {
     @Override
     public void updateRole(int id, UpdateRoleReq req) {
         RoleEntity role = roleDAO.findRoleById(id);
-        if (role == null){
+        if (role == null) {
             throw new NotFoundException("Role không tồn tại");
         }
         try {
@@ -48,7 +48,7 @@ public class RoleServiceImpl implements RoleService {
             role.setActiveFlag(req.getActiveFlag());
             role.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
             roleDAO.updateRole(role);
-        }catch (Exception e){
+        } catch (Exception e) {
             throw new InternalServerException("Lỗi khi chỉnh sửa role");
         }
     }
@@ -56,14 +56,14 @@ public class RoleServiceImpl implements RoleService {
     @Override
     public void deleteRole(int id) {
         RoleEntity role = roleDAO.findRoleById(id);
-        if (role == null){
+        if (role == null) {
             throw new NotFoundException("Role không tồn tại");
         }
         try {
             role.setActiveFlag(0);
             role.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
             roleDAO.updateRole(role);
-        }catch (Exception e){
+        } catch (Exception e) {
             throw new InternalServerException("Lỗi xóa role");
         }
     }

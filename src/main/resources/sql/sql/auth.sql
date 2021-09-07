@@ -1,4 +1,5 @@
-use inventory_management;
+use
+inventory_management;
 
 INSERT INTO auth(role_id, menu_id, permission)
 VALUES (1, 1, 1),

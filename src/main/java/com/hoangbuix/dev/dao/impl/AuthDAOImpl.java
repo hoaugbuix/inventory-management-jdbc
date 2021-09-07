@@ -3,7 +3,6 @@ package com.hoangbuix.dev.dao.impl;
 import com.hoangbuix.dev.dao.AuthDAO;
 import com.hoangbuix.dev.entity.AuthEntity;
 import com.hoangbuix.dev.model.mapper.AuthMapper;
-import com.hoangbuix.dev.model.mapper.HistoryMapper;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,14 +14,14 @@ public class AuthDAOImpl extends BaseDAOImpl<AuthEntity> implements AuthDAO<Auth
     @Override
     public void save(AuthEntity auth) {
         String sql = "call auth_create(?,?,?,?,?,?)";
-        insert(sql,auth.getRoles(), auth.getMenus(), auth.getPermission(),
+        insert(sql, auth.getRoles(), auth.getMenus(), auth.getPermission(),
                 auth.getActiveFlag(), auth.getCreatedDate(), auth.getUpdatedDate());
     }
 
     @Override
     public void update(AuthEntity auth) {
         String sql = "call auth_update(?,?,?,?,?)";
-        update(sql, auth.getRoles(), auth.getMenus(), auth. getPermission(),
+        update(sql, auth.getRoles(), auth.getMenus(), auth.getPermission(),
                 auth.getActiveFlag(), auth.getUpdatedDate());
     }
 

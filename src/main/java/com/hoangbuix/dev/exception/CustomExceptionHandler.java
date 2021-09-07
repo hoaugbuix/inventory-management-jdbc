@@ -14,7 +14,6 @@ import org.springframework.web.context.request.WebRequest;
 
 import java.util.List;
 import java.util.Locale;
-import java.util.stream.Collectors;
 
 @RestControllerAdvice
 public class CustomExceptionHandler {

@@ -18,7 +18,7 @@ public class CategoryMapper implements RowMapper<CategoryEntity> {
             category.setCreatedDate(resultSet.getDate("created_date"));
             category.setUpdatedDate(resultSet.getDate("updated_date"));
             return category;
-        }catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }

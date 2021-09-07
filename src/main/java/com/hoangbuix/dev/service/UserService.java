@@ -10,10 +10,15 @@ import java.util.List;
 @Service
 public interface UserService {
     UserEntity findById(int id);
+
     UserEntity findUserByUsername(String username);
-//    UserEntity findByEmailAndUsername(String email, String username);
+
+    //    UserEntity findByEmailAndUsername(String email, String username);
     List<UserEntity> getAllUser();
+
     UserEntity saveUser(UserDTO req);
+
     UserEntity updateUser(int id, UpdateUserReq req);
+
     void deleteUser(int id);
 }

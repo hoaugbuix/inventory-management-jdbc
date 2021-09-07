@@ -34,14 +34,14 @@ public class ProductInStockDAOImpl extends BaseDAOImpl<ProductInStockEntity> imp
     @Override
     public ProductInStockEntity findById(int id) {
         String sql = "call productInStock_finById(?)";
-        List<ProductInStockEntity>productInStock = query(sql, new ProductInStockMapper(), id);
+        List<ProductInStockEntity> productInStock = query(sql, new ProductInStockMapper(), id);
         return productInStock.isEmpty() ? null : productInStock.get(0);
     }
 
     @Override
     public ProductInStockEntity findByCode(String code) {
         String sql = "call productInStock_finByCode(?)";
-        List<ProductInStockEntity>productInStock = query(sql, new ProductInStockMapper(), code);
+        List<ProductInStockEntity> productInStock = query(sql, new ProductInStockMapper(), code);
         return productInStock.isEmpty() ? null : productInStock.get(0);
     }
 

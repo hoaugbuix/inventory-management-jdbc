@@ -33,7 +33,7 @@ public class UserDAOImpl extends BaseDAOImpl<UserEntity> implements UserDAO<User
     @Override
     public void deleteUser(int id) {
         String sql = "UPDATE user SET active_flag = 0, updated_date = now() WHERE id = ?";
-        update(sql,id);
+        update(sql, id);
     }
 
     @Override
@@ -52,14 +52,14 @@ public class UserDAOImpl extends BaseDAOImpl<UserEntity> implements UserDAO<User
     @Override
     public UserEntity findUserByUsername(String username) {
         String sql = "select * from user where user_name = ?";
-        List<UserEntity> user = query(sql,new UserMapper(), username);
+        List<UserEntity> user = query(sql, new UserMapper(), username);
         return user.isEmpty() ? null : user.get(0);
     }
 
     @Override
     public UserEntity findUserByEmailAndUsername(String email, String username) {
         String sql = "select * from user where email = ? and user_name = ?";
-        List<UserEntity> user = query(sql,new UserMapper(), email, username);
+        List<UserEntity> user = query(sql, new UserMapper(), email, username);
         return user.isEmpty() ? null : user.get(0);
     }
 

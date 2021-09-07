@@ -25,7 +25,7 @@ public class UserRoleDAOImpl extends BaseDAOImpl<UserRoleEntity> implements User
 
     @Override
     public List<UserRoleEntity> findAll() {
-        String sql ="select * from user_role";
+        String sql = "select * from user_role";
         return query(sql, new UserRoleMapper());
     }
 }

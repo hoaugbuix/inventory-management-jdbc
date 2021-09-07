@@ -23,7 +23,7 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     public ProductInfoEntity save(CreateProductInfoReq req) {
         ProductInfoEntity product = new ProductInfoEntity();
         Object obj = productDAO.findProductInfoByCode(req.getCode());
-        if (obj == null){
+        if (obj == null) {
             product.setCode(req.getCode());
             product.setName(req.getName());
             product.setDescription(req.getDescription());
@@ -42,7 +42,7 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     @Override
     public void update(int id, UpdateProductInfoReq req) {
         ProductInfoEntity product = productDAO.findProductInfoById(id);
-        if (product == null){
+        if (product == null) {
             throw new NotFoundException("");
         }
         try {
@@ -50,7 +50,7 @@ public class ProductInfoServiceImpl implements ProductInfoService {
             product.setCreatedDate(new Timestamp(System.currentTimeMillis()));
             product.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
             productDAO.updateProductInfo(product);
-        }catch (Exception e){
+        } catch (Exception e) {
             throw new InternalServerException("xxx");
         }
     }
@@ -58,14 +58,14 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     @Override
     public void delete(int id) {
         ProductInfoEntity product = productDAO.findProductInfoById(id);
-        if (product == null){
+        if (product == null) {
             throw new NotFoundException("");
         }
         try {
             product.setActiveFlag(0);
             product.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
             productDAO.updateProductInfo(product);
-        }catch (Exception e){
+        } catch (Exception e) {
             throw new InternalServerException("");
         }
     }
