@@ -641,3 +641,8 @@
 2021-09-14 00:17:50 INFO  GoodsReceiptController:80 - 
 2021-09-14 02:44:54 INFO  BaseDAOImpl:27 - dedHikariProxyConnection@665382455 wrapping com.mysql.cj.jdbc.ConnectionImpl@3527404f
 2021-09-14 02:44:54 ERROR BaseDAOImpl:56 - PROCEDURE inventory_management.category_finALl does not exist
+2021-09-14 03:58:01 INFO  BaseDAOImpl:27 - dedHikariProxyConnection@1454984443 wrapping com.mysql.cj.jdbc.ConnectionImpl@7497f736
+2021-09-14 03:58:08 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-14 03:58:08 INFO  BaseDAOImpl:27 - dedHikariProxyConnection@8291121 wrapping com.mysql.cj.jdbc.ConnectionImpl@20071133
+2021-09-14 03:58:08 INFO  BaseDAOImpl:27 - dedHikariProxyConnection@320864880 wrapping com.mysql.cj.jdbc.ConnectionImpl@b3617ae
+2021-09-14 03:58:08 INFO  BaseDAOImpl:27 - dedHikariProxyConnection@1088898644 wrapping com.mysql.cj.jdbc.ConnectionImpl@79ecd841

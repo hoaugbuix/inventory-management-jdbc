@@ -3,6 +3,7 @@ package com.hoangbuix.dev.dao.impl;
 import com.hoangbuix.dev.dao.InvoiceDAO;
 import com.hoangbuix.dev.entity.InvoiceEntity;
 import com.hoangbuix.dev.model.mapper.InvoiceMapper;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,6 +12,7 @@ import java.util.List;
 @Repository
 @Transactional(rollbackFor = Exception.class)
 public class InvoiceDAOImpl extends BaseDAOImpl<InvoiceEntity> implements InvoiceDAO<InvoiceEntity> {
+    final static Logger log = Logger.getLogger(InvoiceDAOImpl.class);
     @Override
     public int save(InvoiceEntity invoice) {
         String sql = "call invoice_create(?,?,?,?,?,?,?,?,?)";
@@ -34,11 +36,15 @@ public class InvoiceDAOImpl extends BaseDAOImpl<InvoiceEntity> implements Invoic
 
     @Override
     public InvoiceEntity findByCode(String code) {
-        return null;
+        log.info("Find By Code");
+        String sql = "call invoice_findByCode(?)";
+        List<InvoiceEntity> invoice = query(sql, new InvoiceMapper(), code);
+        return invoice.isEmpty() ? null : invoice.get(0);
     }
 
     @Override
     public List<InvoiceEntity> findAll(int type) {
+        log.info("Find All");
         String sql = "call invoice_findAll(?)";
         return query(sql, new InvoiceMapper(), type);
     }
