@@ -3,6 +3,7 @@ package com.hoangbuix.dev.controller;
 import com.hoangbuix.dev.entity.InvoiceEntity;
 import com.hoangbuix.dev.entity.ProductInfoEntity;
 import com.hoangbuix.dev.exception.NotFoundException;
+import com.hoangbuix.dev.model.request.create.CreateInvoiceReq;
 import com.hoangbuix.dev.service.InvoiceService;
 import com.hoangbuix.dev.service.ProductInfoService;
 import com.hoangbuix.dev.service.impl.GoodsReceiptReportImpl;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -62,19 +64,20 @@ public class GoodsReceiptController {
     }
 
     @PostMapping("/goods-receipt/save")
-    private ResponseEntity<?> save(InvoiceEntity invoice, int id){
+    private ResponseEntity<?> save(@Valid @RequestBody CreateInvoiceReq req){
         InvoiceEntity result = null;
-        invoice.setType(Constant.TYPE_GOODS_RECEIPT);
-        if(invoice.getId()!=null && invoice.getId()!=0) {
+        InvoiceEntity invoice = (InvoiceEntity) invoiceService.findByCode(req.getCode());
+        req.setType(Constant.TYPE_GOODS_RECEIPT);
+        if(invoice.getId() != null && invoice.getId() !=0) {
             try {
-                invoiceService.update(invoice, id);
+                invoiceService.update(req);
             } catch (Exception e) {
                 e.printStackTrace();
                 log.error(e.getMessage());
             }
         }else {
             try {
-                result = invoiceService.save(invoice);
+                result = invoiceService.save(req);
             } catch (Exception e) {
                 e.printStackTrace();
                 log.info(e.getMessage());
@@ -84,9 +87,13 @@ public class GoodsReceiptController {
     }
 
     @PutMapping("/goods-receipt/edit/{id}")
-    private ResponseEntity<?> edit(@PathVariable int id, @RequestBody InvoiceEntity invoice){
-        try {
-            invoiceService.update(invoice, id);
+    private ResponseEntity<?> edit(@PathVariable int id, @RequestBody CreateInvoiceReq invoice){
+        try {log.info("Edit invoice with id="+id);
+            InvoiceEntity result = invoiceService.findById(id);
+            if (result != null) {
+                result.setActiveFlag(invoice.getActiveFlag());
+                invoiceService.update(invoice);
+            }
         }catch (Exception e){
             e.printStackTrace();
             log.info(e.getMessage());
@@ -108,7 +115,7 @@ public class GoodsReceiptController {
     private ResponseEntity<?> export(HttpServletResponse response) throws IOException {
         InvoiceEntity invoice = new InvoiceEntity();
         invoice.setType(Constant.TYPE_GOODS_RECEIPT);
-        List<InvoiceEntity> listInvoice = invoiceService.findByCode(invoice.getCode());
+        InvoiceEntity listInvoice = invoiceService.findByCode(invoice.getCode());
         response.setContentType("application/octet-stream");
         DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
         String currentDateTime = dateFormatter.format(new Date());
@@ -117,7 +124,7 @@ public class GoodsReceiptController {
         String headerValue = "attachment; filename=users_" + currentDateTime + ".xlsx";
         response.setHeader(headerKey, headerValue);
 
-        GoodsReceiptReportImpl goodsReceiptReport = new GoodsReceiptReportImpl(listInvoice);
+        GoodsReceiptReportImpl goodsReceiptReport = new GoodsReceiptReportImpl((List<InvoiceEntity>) listInvoice);
         goodsReceiptReport.export(response);
         return new ResponseEntity<>("export success!", HttpStatus.OK);
     }

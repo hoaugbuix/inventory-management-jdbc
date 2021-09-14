@@ -1,8 +1,10 @@
 package com.hoangbuix.dev.service.impl;
 
 import com.hoangbuix.dev.dao.InvoiceDAO;
+import com.hoangbuix.dev.dao.ProductDAO;
 import com.hoangbuix.dev.entity.InvoiceEntity;
 import com.hoangbuix.dev.entity.ProductInfoEntity;
+import com.hoangbuix.dev.model.request.create.CreateInvoiceReq;
 import com.hoangbuix.dev.service.HistoryService;
 import com.hoangbuix.dev.service.InvoiceService;
 import com.hoangbuix.dev.service.ProductInStockService;
@@ -24,10 +26,15 @@ public class InvoiceServiceImpl implements InvoiceService {
     @Autowired
     private InvoiceDAO<InvoiceEntity> invoiceDAO;
 
+    @Autowired
+    private ProductDAO<ProductInfoEntity> productDAO;
+
     @Override
-    public InvoiceEntity save(InvoiceEntity invoice) {
-        ProductInfoEntity productInfo = new ProductInfoEntity();
-        productInfo.setId(invoice.getProductInfos().getId());
+    public InvoiceEntity save(CreateInvoiceReq req) {
+        InvoiceEntity invoice = new InvoiceEntity();
+        ProductInfoEntity productInfo = productDAO.findProductInfoByCode(req.getProductCode());
+        invoice.setCode(req.getCode());
+        invoice.setType(req.getType());
         invoice.setProductInfos(productInfo);
         invoice.setActiveFlag(1);
         invoice.setCreatedDate(new Timestamp(System.currentTimeMillis()));
@@ -39,19 +46,18 @@ public class InvoiceServiceImpl implements InvoiceService {
     }
 
     @Override
-    public void update(InvoiceEntity invoice, int id) {
-        int originQty = invoiceDAO.findById(id).getQty();
-        ProductInfoEntity productInfo = new ProductInfoEntity();
-        productInfo.setId(invoice.getProductInfos().getId());
-        invoice.setProductInfos(productInfo);
-        invoice.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
-        InvoiceEntity invoice2 = new InvoiceEntity();
-        invoice2.setProductInfos(invoice.getProductInfos());
-        invoice2.setQty(invoice.getQty() - originQty);
-        invoice2.setPrice(invoice.getPrice());
-        invoiceDAO.update(invoice);
-        historyService.save(invoice, Constant.ACTION_EDIT);
-        productInStockService.saveOrUpdate(invoice2);
+    public void update(CreateInvoiceReq invoice) {
+//        int originQty = invoiceDAO.findById(invoice.getId()).getQty();
+//        ProductInfoEntity productInfo = productDAO.findProductInfoByCode(invoice.getProductInfos().getCode());
+//        invoice.setProductInfos(productInfo);
+//        invoice.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
+//        InvoiceEntity invoice2 = new InvoiceEntity();
+//        invoice2.setProductInfos(invoice.getProductInfos());
+//        invoice2.setQty(invoice.getQty() - originQty);
+//        invoice2.setPrice(invoice.getPrice());
+//        invoiceDAO.update(invoice);
+//        historyService.save(invoice, Constant.ACTION_EDIT);
+//        productInStockService.saveOrUpdate(invoice2);
     }
 
     @Override
@@ -65,7 +71,7 @@ public class InvoiceServiceImpl implements InvoiceService {
     }
 
     @Override
-    public List<InvoiceEntity> findByCode(String code) {
+    public InvoiceEntity findByCode(String code) {
         return null;
     }
 }

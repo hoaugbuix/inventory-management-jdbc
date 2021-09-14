@@ -3,9 +3,12 @@ package com.hoangbuix.dev.dao.impl;
 import com.hoangbuix.dev.dao.BaseDAO;
 import com.hoangbuix.dev.model.mapper.RowMapper;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,12 +17,14 @@ import java.util.ResourceBundle;
 @Repository
 @Transactional(rollbackFor = Exception.class)
 public class BaseDAOImpl<E> implements BaseDAO<E> {
+    @Autowired
+    private DataSource dataSource;
     final static Logger log = Logger.getLogger(BaseDAOImpl.class);
 
     ResourceBundle resourceBundle = ResourceBundle.getBundle("db");
-
     public Connection getConnection() {
         try {
+            log.info("ded" + dataSource.getConnection());
             Class.forName(resourceBundle.getString("driverName"));
             String url = resourceBundle.getString("url");
             String user = resourceBundle.getString("user");

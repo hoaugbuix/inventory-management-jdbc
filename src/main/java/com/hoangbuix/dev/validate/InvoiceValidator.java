@@ -29,10 +29,10 @@ public class InvoiceValidator implements Validator {
         ValidationUtils.rejectIfEmpty(errors, "qty", "msg.required");
         ValidationUtils.rejectIfEmpty(errors, "price", "msg.required");
         if (invoice.getCode() != null) {
-            List<InvoiceEntity> results = invoiceService.findByCode( invoice.getCode());
-            if (results != null && !results.isEmpty()) {
+            InvoiceEntity results = invoiceService.findByCode( invoice.getCode());
+            if (results != null ) {
                 if (invoice.getId() != null && invoice.getId() != 0) {
-                    if (results.get(0).getId() != invoice.getId()) {
+                    if (results.getId() != invoice.getId()) {
                         errors.rejectValue("code", "msg.code.exist");
                     }
                 } else {

@@ -19,7 +19,6 @@ public class CreateCategoryReq {
     @Size(min = 1, max = 300, message = "Độ dài tên category từ 1 - 300 ký tự")
     private String name;
 
-
     private String code;
 
     private String description;

@@ -67,10 +67,10 @@ drop procedure if EXISTS productInfo_findProductInfoById;
 DELIMITER $$
 CREATE PROCEDURE productInfo_findProductInfoById(in _id int)
 begin
-select *
-from product_info
-where active_flag = 1
-   or active_flag = 0 and id = _id;
+select p.*
+from product_info p inner join category c on p.cate_id = c.id
+where p.active_flag = 1
+   or p.active_flag = 0 and p.id = _id;
 end$$
 DELIMITER ;
 

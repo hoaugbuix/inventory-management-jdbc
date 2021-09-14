@@ -9,5 +9,7 @@ public interface InvoiceDAO<E> extends BaseDAO<E> {
 
     E findById(int id);
 
+    E findByCode(String code);
+
     List<E> findAll(int type);
 }
