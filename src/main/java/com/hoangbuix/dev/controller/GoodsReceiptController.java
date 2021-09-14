@@ -66,9 +66,10 @@ public class GoodsReceiptController {
     @PostMapping("/goods-receipt/save")
     private ResponseEntity<?> save(@Valid @RequestBody CreateInvoiceReq req){
         InvoiceEntity result = null;
-        InvoiceEntity invoice = (InvoiceEntity) invoiceService.findByCode(req.getCode());
+        InvoiceEntity invoice =  invoiceService.findByCode(req.getCode());
         req.setType(Constant.TYPE_GOODS_RECEIPT);
-        if(invoice.getId() != null && invoice.getId() !=0) {
+        if(invoice != null) {
+            log.info("update invoice");
             try {
                 invoiceService.update(req);
             } catch (Exception e) {
@@ -107,6 +108,15 @@ public class GoodsReceiptController {
         InvoiceEntity invoice = invoiceService.findById(id);
         if (invoice.getCode() == null){
             throw new NotFoundException("No find " + id);
+        }
+        return new ResponseEntity<>(invoice, HttpStatus.OK);
+    }
+
+    @GetMapping("/goods-receipt/view-code/{code}")
+    private ResponseEntity<?> findByCode(@PathVariable String code){
+        InvoiceEntity invoice = invoiceService.findByCode(code);
+        if (invoice.getCode() == null){
+            throw new NotFoundException("No find " + code);
         }
         return new ResponseEntity<>(invoice, HttpStatus.OK);
     }

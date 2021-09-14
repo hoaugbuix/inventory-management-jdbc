@@ -73,6 +73,6 @@ public class InvoiceServiceImpl implements InvoiceService {
 
     @Override
     public InvoiceEntity findByCode(String code) {
-        return null;
+        return invoiceDAO.findByCode(code);
     }
 }

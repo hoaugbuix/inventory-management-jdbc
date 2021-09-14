@@ -33,7 +33,7 @@ public class CategoryDAOImpl extends BaseDAOImpl<CategoryEntity> implements Cate
     @Override
     public List<CategoryEntity> findAll() {
         StringBuilder sql = new StringBuilder();
-        sql.append("call category_finALl()");
+        sql.append("call category_findALl()");
         return query(sql.toString(), new CategoryMapper());
     }
 

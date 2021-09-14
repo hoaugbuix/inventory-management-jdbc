@@ -51,6 +51,17 @@ END$$
 DELIMITER ;
 --
 
+drop procedure if EXISTS category_findAll;
+DELIMITER $$
+CREATE PROCEDURE category_findAll()
+begin
+select *
+from category
+where active_flag = 1 or active_flag =0;
+end$$
+DELIMITER ;
+
+
 drop procedure if EXISTS category_findCategoryById;
 DELIMITER $$
 CREATE PROCEDURE category_findCategoryById(inout _id int)
@@ -72,6 +83,8 @@ where active_flag = 1
   and code = _code;
 end$$
 DELIMITER ;
+
+
 
 drop procedure if EXISTS category_checkProductInCategory;
 DELIMITER $$

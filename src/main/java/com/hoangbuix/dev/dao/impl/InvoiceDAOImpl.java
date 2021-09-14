@@ -15,16 +15,17 @@ public class InvoiceDAOImpl extends BaseDAOImpl<InvoiceEntity> implements Invoic
     final static Logger log = Logger.getLogger(InvoiceDAOImpl.class);
     @Override
     public int save(InvoiceEntity invoice) {
-        String sql = "call invoice_create(?,?,?,?,?,?,?,?,?)";
-        return insert(sql, invoice.getCode(), invoice.getType(), invoice.getProductInfos(), invoice.getQty(), invoice.getPrice(),
-                invoice.getFromDate(), invoice.getActiveFlag(), invoice.getCreatedDate(), invoice.getUpdatedDate());
+        String sql = "call invoice_create(?,?,?,?,?,?,?,?,?,?)";
+        return insert(sql, invoice.getCode(), invoice.getType(), invoice.getProductInfos().getId(),
+                invoice.getQty(), invoice.getPrice(),
+                invoice.getToDate(), invoice.getFromDate(), invoice.getActiveFlag(), invoice.getCreatedDate(), invoice.getUpdatedDate());
     }
 
     @Override
     public void update(InvoiceEntity invoice) {
-        String sql = "call invoice_update(?,?,?,?,?,?,?,?)";
-        update(sql, invoice.getCode(), invoice.getType(), invoice.getProductInfos(), invoice.getQty(),
-                invoice.getPrice(), invoice.getFromDate(), invoice.getActiveFlag(), invoice.getUpdatedDate());
+        String sql = "call invoice_update(?,?,?,?,?,?,?,?,?)";
+        update(sql, invoice.getCode(), invoice.getType(), invoice.getProductInfos().getId(), invoice.getQty(),
+                invoice.getPrice(),invoice.getToDate(), invoice.getFromDate(), invoice.getActiveFlag(), invoice.getUpdatedDate());
     }
 
     @Override

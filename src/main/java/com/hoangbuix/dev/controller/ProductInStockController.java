@@ -1,6 +1,7 @@
 package com.hoangbuix.dev.controller;
 
 import com.hoangbuix.dev.entity.ProductInStockEntity;
+import com.hoangbuix.dev.exception.NotFoundException;
 import com.hoangbuix.dev.service.ProductInStockService;
 import lombok.RequiredArgsConstructor;
 import org.apache.log4j.Logger;
@@ -25,6 +26,9 @@ public class ProductInStockController {
     @GetMapping("/product-in-stock/list")
     public ResponseEntity<?> findAll() {
         List<ProductInStockEntity> productInStock = productInStockService.findAll();
-        return new ResponseEntity<>(productInStock.isEmpty() ? null : productInStock.get(0), HttpStatus.OK);
+        if (productInStock.isEmpty()){
+            throw new NotFoundException("no find");
+        }
+        return new ResponseEntity<>(productInStock, HttpStatus.OK);
     }
 }
