@@ -57,3 +57,19 @@
 2021-09-14 23:30:49 ERROR BaseDAOImpl:51 - PROCEDURE inventory_management.category_finALl does not exist
 2021-09-14 23:30:52 INFO  BaseDAOImpl:21 - connecting
 2021-09-14 23:30:52 ERROR BaseDAOImpl:51 - PROCEDURE inventory_management.category_finALl does not exist
+2021-09-14 23:34:02 INFO  BaseDAOImpl:21 - connecting
+2021-09-14 23:34:15 INFO  GoodsIssueController:55 - show list invoice
+2021-09-14 23:34:15 INFO  InvoiceDAOImpl:48 - Find All
+2021-09-14 23:34:15 INFO  BaseDAOImpl:21 - connecting
+2021-09-14 23:34:26 INFO  GoodsReceiptController:58 - show list invoice
+2021-09-14 23:34:26 INFO  InvoiceDAOImpl:48 - Find All
+2021-09-14 23:34:26 INFO  BaseDAOImpl:21 - connecting
+2021-09-14 23:40:55 INFO  GoodsReceiptController:58 - show list invoice
+2021-09-14 23:40:55 INFO  InvoiceDAOImpl:48 - Find All
+2021-09-14 23:40:55 INFO  BaseDAOImpl:21 - connecting
+2021-09-15 00:03:32 INFO  GoodsReceiptController:58 - show list invoice
+2021-09-15 00:03:32 INFO  InvoiceDAOImpl:48 - Find All
+2021-09-15 00:03:32 INFO  BaseDAOImpl:21 - connecting
+2021-09-15 00:05:05 INFO  GoodsReceiptController:58 - show list invoice
+2021-09-15 00:05:05 INFO  InvoiceDAOImpl:48 - Find All
+2021-09-15 00:05:05 INFO  BaseDAOImpl:21 - connecting
