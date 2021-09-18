@@ -23,7 +23,7 @@ BEGIN
                 select count(h.id)
                 from history h
                 where h.action_name = _action_name) > 0 then
-        SET @message_text = CONCAT('product_info \'', name, '\' already exists');
+        SET @message_text = CONCAT('product_info \'', null, '\' already exists');
         SIGNAL
             SQLSTATE '45000' SET MESSAGE_TEXT = @message_text;
     else

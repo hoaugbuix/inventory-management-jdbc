@@ -7,6 +7,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.util.Date;
 
 @Getter
@@ -25,9 +26,9 @@ public class CreateInvoiceReq {
     private int qty;
     private BigDecimal price;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd" , timezone = "GMT+8")
-    private Date toDate;
+    private Timestamp toDate;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd" , timezone = "GMT+8")
-    private Date fromDate;
+    private Timestamp fromDate;
     private int productId;
     private int activeFlag;
     private Date createdDate;

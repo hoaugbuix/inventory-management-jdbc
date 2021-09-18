@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -116,6 +117,8 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
                     callable.setTimestamp(index, (Timestamp) parameter);
                 } else if (parameter instanceof Date) {
                     callable.setDate(index, (Date) parameter);
+                } else if (parameter instanceof BigDecimal){
+                    callable.setBigDecimal(index, (BigDecimal) parameter);
                 }
             }
         } catch (SQLException e) {

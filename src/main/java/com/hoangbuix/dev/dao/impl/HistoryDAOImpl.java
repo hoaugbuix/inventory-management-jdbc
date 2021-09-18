@@ -13,9 +13,11 @@ import java.util.List;
 public class HistoryDAOImpl extends BaseDAOImpl<HistoryEntity> implements HistoryDAO<HistoryEntity> {
     @Override
     public int save(HistoryEntity history) {
+        log.info("save history = " + history);
         String sql = "call history_create(?,?,?,?,?,?,?,?)";
-        return insert(sql, history.getActionName(), history.getType(), history.getProductInfo(), history.getQty(),
-                history.getPrice(), history.getActiveFlag(), history.getCreatedDate(), history.getUpdatedDate());
+        return insert(sql, history.getActionName(), history.getType(), history.getProductInfo().getId(),
+                history.getQty(), history.getPrice(), history.getActiveFlag(), history.getCreatedDate(),
+                history.getUpdatedDate());
     }
 
     @Override

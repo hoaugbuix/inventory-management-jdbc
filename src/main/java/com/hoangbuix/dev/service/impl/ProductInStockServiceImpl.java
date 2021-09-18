@@ -24,9 +24,9 @@ public class ProductInStockServiceImpl implements ProductInStockService {
     @Override
     public ProductInStockEntity saveOrUpdate(InvoiceEntity invoice) {
         log.info("product in stock");
-        ProductInfoEntity productInfo = productDAO.findProductInfoById(invoice.getProductId());
+        ProductInfoEntity productInfo = productDAO.findProductInfoById(invoice.getProductInfos().getId());
         int id = 0;
-        if (invoice.getProductId() != 0) {
+        if (invoice.getProductInfos().getId() != 0) {
             String code = productInfo.getCode();
             ProductInStockEntity product = productInStockDAO.findByCode(code);
             if (product != null) {
@@ -49,7 +49,7 @@ public class ProductInStockServiceImpl implements ProductInStockService {
                 id = productInStockDAO.save(product);
             }
         }
-        return id != 0 ? productInStockDAO.findById(id) : null;
+        return productInStockDAO.findById(id);
     }
 
     @Override

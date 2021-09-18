@@ -82,7 +82,7 @@ public class GoodsReceiptReportImpl extends AbstractXlsView implements GoodsRece
             createCell(row, columnCount++, invoice.getId(), style);
             createCell(row, columnCount++, invoice.getQty(), style);
             createCell(row, columnCount++, invoice.getPrice().toString(), style);
-            createCell(row, columnCount++, invoice.getProductId(), style);
+            createCell(row, columnCount++, invoice.getProductInfos().toString(), style);
             createCell(row, columnCount++, DateUtil.dateToString(invoice.getUpdatedDate()), style);
         }
     }

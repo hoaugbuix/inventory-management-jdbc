@@ -14,15 +14,15 @@ public class InvoiceMapper implements RowMapper<InvoiceEntity> {
             invoice.setId(resultSet.getInt("id"));
             invoice.setCode(resultSet.getString("code"));
             invoice.setType(resultSet.getInt("type"));
-//            try {
-//                ProductInfoEntity productInfo = new ProductInfoEntity();
-//                productInfo.setId(resultSet.getInt("id"));
-//                productInfo.setCode(resultSet.getString("code"));
-//                invoice.setProductInfos(productInfo);
-//            }catch (Exception e){
-//                e.printStackTrace();
-//            }
-            invoice.setProductId(resultSet.getInt("product_id"));
+            try {
+                ProductInfoEntity productInfo = new ProductInfoEntity();
+                productInfo.setId(resultSet.getInt("id"));
+                productInfo.setCode(resultSet.getString("code"));
+                invoice.setProductInfos(productInfo);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+//            invoice.setProductId(resultSet.getInt("product_id"));
             invoice.setQty(resultSet.getInt("qty"));
             invoice.setPrice(resultSet.getBigDecimal("price"));
             invoice.setToDate(resultSet.getDate("to_date"));

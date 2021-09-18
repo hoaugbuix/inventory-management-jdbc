@@ -67,9 +67,9 @@ public class GoodsReceiptController {
     private ResponseEntity<?> save(@Valid @RequestBody CreateInvoiceReq req){
         log.info("code = " + req.getCode());
         InvoiceEntity invoice =  invoiceService.findByCode(req.getCode());
-log.info("vvvv" + invoice.toString());
+        InvoiceEntity result = null;
         req.setType(Constant.TYPE_GOODS_RECEIPT);
-        if(invoice.getId()!= null && invoice.getId() != 0) {
+        if(invoice != null) {
             log.info("update invoice");
             try {
                 invoiceService.update(req);
@@ -79,14 +79,13 @@ log.info("vvvv" + invoice.toString());
             }
         }else {
             try {
-                InvoiceEntity invoice1 = invoiceService.save(req);
-                log.info("result save " + invoice1.toString());
+                result = invoiceService.save(req);
             } catch (Exception e2) {
                 e2.printStackTrace();
                 log.info(e2.getMessage());
             }
         }
-        return new ResponseEntity<>("Update success", HttpStatus.OK);
+        return new ResponseEntity<>(result != null ? result : "Update success", HttpStatus.OK);
     }
 
     @PutMapping("/goods-receipt/edit/{id}")

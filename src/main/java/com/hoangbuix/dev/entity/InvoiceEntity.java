@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Digits;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -25,6 +27,8 @@ public class InvoiceEntity extends BaseEntity {
     private int qty;
 
     @Column(name = "price")
+    @DecimalMin(value = "0.0", inclusive = false)
+    @Digits(integer=3, fraction=2)
     private BigDecimal price;
 
     @Column(name = "to_date")
@@ -33,11 +37,11 @@ public class InvoiceEntity extends BaseEntity {
     @Column(name = "from_date")
     private Date fromDate;
 
-//    @JsonIgnore
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "product_id")
-//    private ProductInfoEntity productInfos;
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id")
+    private ProductInfoEntity productInfos;
 
-    @Column(name = "product_id")
-    private int productId;
+//    @Column(name = "product_id")
+//    private int productId;
 }

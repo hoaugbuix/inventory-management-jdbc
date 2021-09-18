@@ -17,15 +17,15 @@ public class InvoiceDAOImpl extends BaseDAOImpl<InvoiceEntity> implements Invoic
     public int save(InvoiceEntity invoice) {
         log.info("save invoice"+ invoice.toString());
         String sql = "call invoice_create(?,?,?,?,?,?,?,?,?,?)";
-        return insert(sql, invoice.getCode(), invoice.getType(), invoice.getProductId(), invoice.getQty(), invoice.getPrice(),
+        return insert(sql, invoice.getCode(), invoice.getType(), invoice.getProductInfos().getId(), invoice.getQty(), invoice.getPrice(),
                 invoice.getToDate(), invoice.getFromDate(), invoice.getActiveFlag(), invoice.getCreatedDate(), invoice.getUpdatedDate());
     }
 
     @Override
     public void update(InvoiceEntity invoice) {
         String sql = "call invoice_update(?,?,?,?,?,?,?,?,?)";
-        update(sql, invoice.getCode(), invoice.getType(), invoice.getProductId(), invoice.getQty(),
-                invoice.getPrice(),invoice.getToDate(), invoice.getFromDate(), invoice.getActiveFlag(), invoice.getUpdatedDate());
+        update(sql, invoice.getCode(), invoice.getType(), invoice.getProductInfos().getId(), invoice.getQty(),
+                invoice.getPrice(), invoice.getToDate(), invoice.getFromDate(), invoice.getActiveFlag(), invoice.getUpdatedDate());
     }
 
     @Override
@@ -37,7 +37,7 @@ public class InvoiceDAOImpl extends BaseDAOImpl<InvoiceEntity> implements Invoic
 
     @Override
     public InvoiceEntity findByCode(String code) {
-        log.info("Find By Code");
+        log.info("Find By Code = " + code);
         String sql = "call invoice_findByCode(?)";
         List<InvoiceEntity> invoice = query(sql, new InvoiceMapper(), code);
         return invoice.isEmpty() ? null : invoice.get(0);
