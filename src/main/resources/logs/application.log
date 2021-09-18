@@ -210,3 +210,8 @@
 2021-09-18 16:25:04 INFO  InvoiceDAOImpl:40 - Find By Code = abcdefghiklmnzxfx
 2021-09-18 16:25:06 INFO  InvoiceDAOImpl:18 - save invoiceInvoiceEntity(code=abcdefghiklmnzxfx, type=1, qty=15, price=20000, toDate=2021-09-13 16:00:00.0, fromDate=2021-09-24 16:00:00.0, productInfos=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
 2021-09-18 16:25:22 INFO  BaseDAOImpl:16 - save history = HistoryEntity(actionName=Add, type=1, qty=15, price=20000, productInfo=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-18 16:26:31 INFO  GoodsReceiptController:68 - code = abcdefghiklmnzfx
+2021-09-18 16:26:37 INFO  InvoiceDAOImpl:40 - Find By Code = abcdefghiklmnzfx
+2021-09-18 16:26:47 INFO  InvoiceDAOImpl:40 - Find By Code = abcdefghiklmnzfx
+2021-09-18 16:27:05 INFO  InvoiceDAOImpl:18 - save invoiceInvoiceEntity(code=abcdefghiklmnzfx, type=1, qty=15, price=20000, toDate=2021-09-13 16:00:00.0, fromDate=2021-09-24 16:00:00.0, productInfos=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-18 16:27:21 INFO  BaseDAOImpl:16 - save history = HistoryEntity(actionName=Add, type=1, qty=15, price=20000, productInfo=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
