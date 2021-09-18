@@ -1,5 +1,6 @@
 package com.hoangbuix.dev.service.impl;
 
+import com.hoangbuix.dev.dao.ProductDAO;
 import com.hoangbuix.dev.dao.ProductInStockDAO;
 import com.hoangbuix.dev.entity.InvoiceEntity;
 import com.hoangbuix.dev.entity.ProductInStockEntity;
@@ -17,13 +18,16 @@ public class ProductInStockServiceImpl implements ProductInStockService {
     final Logger log = Logger.getLogger(ProductInStockServiceImpl.class);
     @Autowired
     private ProductInStockDAO<ProductInStockEntity> productInStockDAO;
+    @Autowired
+    private ProductDAO<ProductInfoEntity> productDAO;
 
     @Override
     public ProductInStockEntity saveOrUpdate(InvoiceEntity invoice) {
         log.info("product in stock");
+        ProductInfoEntity productInfo = productDAO.findProductInfoById(invoice.getProductId());
         int id = 0;
-        if (invoice.getProductInfos() != null) {
-            String code = invoice.getProductInfos().getCode();
+        if (invoice.getProductId() != 0) {
+            String code = productInfo.getCode();
             ProductInStockEntity product = productInStockDAO.findByCode(code);
             if (product != null) {
                 log.info("updated qty=" + invoice.getQty() + " and price=" + invoice.getPrice());
@@ -34,7 +38,7 @@ public class ProductInStockServiceImpl implements ProductInStockService {
             } else {
                 log.info("insert product in stock=" + invoice.getQty() + " and price=" + invoice.getPrice());
                 product = new ProductInStockEntity();
-                ProductInfoEntity productInfo = new ProductInfoEntity();
+//                ProductInfoEntity productInfo = new ProductInfoEntity();
 //                productInfo.setId(invoice.getId());
                 product.setProductInfos(productInfo);
                 product.setQty(invoice.getQty());

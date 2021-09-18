@@ -1,5 +1,5 @@
 use
-QuanLyThuVien
+    QuanLyThuVien
 
 
 Create
@@ -32,8 +32,8 @@ proc sp_LuuTacGia
 @HoTenTacGia nvarchar(100),
 @DiaChi nvarchar(100)
 as
-	insert TacGia (HoTenTacGia, DiaChi)
-	values (@HoTenTacGia, @DiaChi)
+insert TacGia (HoTenTacGia, DiaChi)
+values (@HoTenTacGia, @DiaChi)
 
 
 create
@@ -52,9 +52,9 @@ proc sp_LuuLoaiSach
 @LoaiSach nvarchar(100),
 @KieuSach nvarchar(100)
 as
-	insert LoaiSach (LoaiSach, KieuSach)
-	values (@LoaiSach, @KieuSach)
-	
+insert LoaiSach (LoaiSach, KieuSach)
+values (@LoaiSach, @KieuSach)
+
 
 create
 proc sp_CapNhatLoaiSach
@@ -85,11 +85,11 @@ proc sp_ThemSach
 @MaTacGia int,
 @MaLoai int
 as
-	insert into Sach(TenSach, SoLuong, MaTacGia, MaLoai)
-	values (@TenSach, @SoLuong, @MaTacGia, @MaLoai)
-	
-	
-	
+insert into Sach(TenSach, SoLuong, MaTacGia, MaLoai)
+values (@TenSach, @SoLuong, @MaTacGia, @MaLoai)
+
+
+
 create
 proc sp_CapNhatSach
 @MaSach int,

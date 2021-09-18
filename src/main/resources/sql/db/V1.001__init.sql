@@ -1,7 +1,7 @@
 -- drop schema inventory_management;
 -- create schema inventory_management;
 use
-inventory_management;
+    inventory_management;
 
 CREATE TABLE user
 (
@@ -15,7 +15,7 @@ CREATE TABLE user
     -- verification_code VARCHAR(100) NOT NULL,
     active_flag  INTEGER      NOT NULL DEFAULT 1,
     created_date TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_date TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_date TIMESTAMP    NULL     DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );
 
@@ -26,19 +26,19 @@ CREATE TABLE user_role
     role_id      INTEGER   NOT NULL,
     active_flag  INTEGER   NOT NULL DEFAULT 1,
     created_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_date TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_date TIMESTAMP NULL     DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );
 
 
 CREATE TABLE role
 (
-    id           INTEGER     NOT NULL AUTO_INCREMENT,
-    role_name    VARCHAR(50) NOT NULL,
+    id           INTEGER      NOT NULL AUTO_INCREMENT,
+    role_name    VARCHAR(50)  NOT NULL,
     description  VARCHAR(255) NULL,
-    active_flag  INTEGER              DEFAULT 1,
-    created_date TIMESTAMP   NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_date TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    active_flag  INTEGER               DEFAULT 1,
+    created_date TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_date TIMESTAMP    NULL     DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );
 
@@ -50,7 +50,7 @@ CREATE TABLE auth
     permission   INTEGER   NOT NULL DEFAULT 1,
     active_flag  INTEGER   NOT NULL DEFAULT 1,
     created_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_date TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_date TIMESTAMP NULL     DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );
 
@@ -63,7 +63,7 @@ CREATE TABLE menu
     order_index  INTEGER      NOT NULL DEFAULT 1,
     active_flag  INTEGER      NOT NULL DEFAULT 1,
     created_date TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_date TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_date TIMESTAMP    NULL     DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );
 
@@ -75,7 +75,7 @@ CREATE TABLE category
     description  TEXT,
     active_flag  INTEGER      NOT NULL DEFAULT 1,
     created_date TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_date TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_date TIMESTAMP    NULL     DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );
 
@@ -87,7 +87,7 @@ CREATE TABLE product_in_stock
     price        DECIMAL(15, 2) NOT NULL,
     active_flag  INTEGER        NOT NULL DEFAULT 1,
     created_date TIMESTAMP      NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_date TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_date TIMESTAMP      NULL     DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );
 
@@ -101,7 +101,7 @@ CREATE TABLE product_info
     img_url      VARCHAR(200) NOT NULL,
     active_flag  INTEGER      NOT NULL DEFAULT 1,
     created_date TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_date TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_date TIMESTAMP    NULL     DEFAULT CURRENT_TIMESTAMP,
     cate_id      INTEGER      NOT NULL,
     PRIMARY KEY (id)
 );
@@ -118,7 +118,7 @@ CREATE TABLE history
     price        DECIMAL(15, 2) NOT NULL,
     active_flag  INTEGER        NOT NULL DEFAULT 1,
     created_date TIMESTAMP      NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_date TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_date TIMESTAMP      NULL     DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );
 
@@ -135,7 +135,7 @@ CREATE TABLE invoice
     from_date    TIMESTAMP      NOT NULL DEFAULT CURRENT_TIMESTAMP,
     active_flag  INTEGER        NOT NULL DEFAULT 1,
     created_date TIMESTAMP      NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_date TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_date TIMESTAMP      NULL     DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );
 ALTER TABLE user_role

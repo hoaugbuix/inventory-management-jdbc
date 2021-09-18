@@ -33,11 +33,11 @@ public class InvoiceEntity extends BaseEntity {
     @Column(name = "from_date")
     private Date fromDate;
 
-    @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_id")
-    private ProductInfoEntity productInfos;
+//    @JsonIgnore
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "product_id")
+//    private ProductInfoEntity productInfos;
 
-//    @Column(name = "product_id")
-//    private int productId;
+    @Column(name = "product_id")
+    private int productId;
 }

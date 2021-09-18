@@ -1,11 +1,8 @@
-package com.hoangbuix.dev.model.request.create;
+package com.hoangbuix.dev.model.request.update;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -14,7 +11,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class CreateInvoiceReq {
+public class UpdateInvoiceReq {
 //    @NotNull(message = "Tên invoice trống")
 //    @NotEmpty(message = "Tên invoice trống")
 //    @Size(min = 1, max = 300, message = "Độ dài tên invoice từ 1 - 300 ký tự")

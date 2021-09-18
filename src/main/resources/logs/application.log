@@ -1,75 +1,75 @@
-2021-09-14 11:00:56 INFO  InvoiceDAOImpl:39 - Find By Code
-2021-09-14 11:00:56 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 11:02:13 INFO  InvoiceDAOImpl:39 - Find By Code
-2021-09-14 11:02:13 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 11:11:30 INFO  InvoiceDAOImpl:39 - Find By Code
-2021-09-14 11:11:30 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 11:11:47 INFO  InvoiceDAOImpl:39 - Find By Code
-2021-09-14 11:11:47 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 11:11:48 INFO  InvoiceDAOImpl:39 - Find By Code
-2021-09-14 11:11:48 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 11:11:59 INFO  InvoiceDAOImpl:39 - Find By Code
-2021-09-14 11:11:59 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 11:12:10 INFO  InvoiceDAOImpl:39 - Find By Code
-2021-09-14 11:12:10 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 11:12:11 INFO  InvoiceDAOImpl:39 - Find By Code
-2021-09-14 11:12:11 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 11:12:11 INFO  InvoiceDAOImpl:39 - Find By Code
-2021-09-14 11:12:11 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 11:16:15 INFO  InvoiceDAOImpl:39 - Find By Code
-2021-09-14 11:16:15 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 11:17:24 INFO  InvoiceDAOImpl:39 - Find By Code
-2021-09-14 11:17:29 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 11:18:09 INFO  InvoiceDAOImpl:39 - Find By Code
-2021-09-14 11:18:11 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 11:19:35 INFO  InvoiceDAOImpl:39 - Find By Code
-2021-09-14 11:19:38 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 11:21:11 INFO  InvoiceDAOImpl:39 - Find By Code
-2021-09-14 11:21:14 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 11:26:31 INFO  InvoiceDAOImpl:39 - Find By Code
-2021-09-14 11:26:31 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 11:49:18 INFO  InvoiceDAOImpl:39 - Find By Code
-2021-09-14 11:49:18 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 11:49:33 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 11:49:42 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 11:49:42 INFO  GoodsReceiptController:84 - 
-2021-09-14 15:09:27 INFO  InvoiceDAOImpl:40 - Find By Code
-2021-09-14 15:09:27 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 15:09:27 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 15:09:27 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 15:09:27 INFO  GoodsReceiptController:84 - 
-2021-09-14 23:24:29 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 23:24:46 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 23:25:07 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 23:25:07 INFO  MenuServiceImpl:67 - show menu list
-2021-09-14 23:25:07 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 23:25:23 INFO  HistoryController:31 - show list histories
-2021-09-14 23:25:23 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 23:25:36 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 23:25:44 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 23:26:35 INFO  HistoryController:31 - show list histories
-2021-09-14 23:26:35 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 23:26:41 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 23:29:37 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 23:29:59 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 23:29:59 ERROR BaseDAOImpl:51 - PROCEDURE inventory_management.category_finALl does not exist
-2021-09-14 23:30:49 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 23:30:49 ERROR BaseDAOImpl:51 - PROCEDURE inventory_management.category_finALl does not exist
-2021-09-14 23:30:52 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 23:30:52 ERROR BaseDAOImpl:51 - PROCEDURE inventory_management.category_finALl does not exist
-2021-09-14 23:34:02 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 23:34:15 INFO  GoodsIssueController:55 - show list invoice
-2021-09-14 23:34:15 INFO  InvoiceDAOImpl:48 - Find All
-2021-09-14 23:34:15 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 23:34:26 INFO  GoodsReceiptController:58 - show list invoice
-2021-09-14 23:34:26 INFO  InvoiceDAOImpl:48 - Find All
-2021-09-14 23:34:26 INFO  BaseDAOImpl:21 - connecting
-2021-09-14 23:40:55 INFO  GoodsReceiptController:58 - show list invoice
-2021-09-14 23:40:55 INFO  InvoiceDAOImpl:48 - Find All
-2021-09-14 23:40:55 INFO  BaseDAOImpl:21 - connecting
-2021-09-15 00:03:32 INFO  GoodsReceiptController:58 - show list invoice
-2021-09-15 00:03:32 INFO  InvoiceDAOImpl:48 - Find All
-2021-09-15 00:03:32 INFO  BaseDAOImpl:21 - connecting
-2021-09-15 00:05:05 INFO  GoodsReceiptController:58 - show list invoice
-2021-09-15 00:05:05 INFO  InvoiceDAOImpl:48 - Find All
-2021-09-15 00:05:05 INFO  BaseDAOImpl:21 - connecting
+2021-09-16 22:49:50 INFO  InvoiceDAOImpl:41 - Find By Code
+2021-09-16 22:49:53 INFO  InvoiceDAOImpl:41 - Find By Code
+2021-09-16 22:49:54 INFO  GoodsReceiptController:86 - 
+2021-09-16 22:52:25 INFO  InvoiceDAOImpl:41 - Find By Code
+2021-09-16 22:52:37 INFO  InvoiceDAOImpl:41 - Find By Code
+2021-09-16 22:53:44 INFO  GoodsReceiptController:86 - 
+2021-09-16 22:54:43 INFO  InvoiceDAOImpl:41 - Find By Code
+2021-09-16 22:54:50 INFO  InvoiceDAOImpl:41 - Find By Code
+2021-09-16 22:55:21 INFO  GoodsReceiptController:84 - 
+2021-09-16 22:58:24 INFO  InvoiceDAOImpl:41 - Find By Code
+2021-09-16 22:58:29 INFO  InvoiceDAOImpl:41 - Find By Code
+2021-09-16 23:02:12 INFO  InvoiceDAOImpl:41 - Find By Code
+2021-09-16 23:02:18 INFO  InvoiceDAOImpl:41 - Find By Code
+2021-09-16 23:02:40 INFO  GoodsReceiptController:84 - 
+2021-09-16 23:04:05 INFO  InvoiceDAOImpl:41 - Find By Code
+2021-09-16 23:04:11 INFO  InvoiceDAOImpl:41 - Find By Code
+2021-09-16 23:04:25 INFO  InvoiceDAOImpl:18 - save invoiceInvoiceEntity(code=xx, type=1, qty=1, price=2000, toDate=Mon Sep 13 16:00:00 UTC 2021, fromDate=Fri Sep 24 16:00:00 UTC 2021, productInfos=ProductInfoEntity(code=dep, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-16 23:16:18 INFO  InvoiceDAOImpl:41 - Find By Code
+2021-09-16 23:16:24 INFO  InvoiceDAOImpl:41 - Find By Code
+2021-09-16 23:16:27 INFO  InvoiceDAOImpl:18 - save invoiceInvoiceEntity(code=xx, type=1, qty=1, price=2000, toDate=Mon Sep 13 16:00:00 UTC 2021, fromDate=Fri Sep 24 16:00:00 UTC 2021, productInfos=ProductInfoEntity(code=dep, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-16 23:24:47 INFO  GoodsReceiptController:84 - 
+2021-09-16 23:36:32 INFO  InvoiceDAOImpl:41 - Find By Code
+2021-09-16 23:36:37 INFO  InvoiceDAOImpl:41 - Find By Code
+2021-09-16 23:36:53 INFO  InvoiceDAOImpl:18 - save invoiceInvoiceEntity(code=xx, type=1, qty=1, price=2000, toDate=Mon Sep 13 16:00:00 UTC 2021, fromDate=Fri Sep 24 16:00:00 UTC 2021, productId=1)
+2021-09-16 23:37:05 INFO  GoodsReceiptController:84 - 
+2021-09-16 23:39:06 INFO  InvoiceDAOImpl:41 - Find By Code
+2021-09-16 23:39:09 INFO  InvoiceDAOImpl:41 - Find By Code
+2021-09-16 23:40:11 INFO  InvoiceDAOImpl:18 - save invoiceInvoiceEntity(code=xx, type=1, qty=1, price=2000, toDate=Mon Sep 13 16:00:00 UTC 2021, fromDate=Fri Sep 24 16:00:00 UTC 2021, productId=1)
+2021-09-16 23:40:26 INFO  GoodsReceiptController:84 - 
+2021-09-16 23:45:34 INFO  InvoiceDAOImpl:40 - Find By Code
+2021-09-16 23:45:40 INFO  InvoiceDAOImpl:40 - Find By Code
+2021-09-16 23:46:05 INFO  InvoiceDAOImpl:18 - save invoiceInvoiceEntity(code=xx, type=1, qty=1, price=2000, toDate=Mon Sep 13 16:00:00 UTC 2021, fromDate=Fri Sep 24 16:00:00 UTC 2021, productId=1)
+2021-09-16 23:46:53 INFO  GoodsReceiptController:84 - 
+2021-09-17 00:07:45 INFO  InvoiceDAOImpl:40 - Find By Code
+2021-09-17 00:07:45 INFO  GoodsReceiptController:71 - update invoice
+2021-09-17 00:07:45 INFO  InvoiceDAOImpl:40 - Find By Code
+2021-09-17 00:07:45 ERROR GoodsReceiptController:76 - 
+2021-09-17 00:11:08 INFO  InvoiceDAOImpl:40 - Find By Code
+2021-09-17 00:11:08 INFO  GoodsReceiptController:71 - update invoice
+2021-09-17 00:11:08 INFO  InvoiceDAOImpl:40 - Find By Code
+2021-09-17 00:11:08 ERROR GoodsReceiptController:76 - 
+2021-09-17 00:12:55 INFO  GoodsReceiptController:68 - code = ay
+2021-09-17 00:12:55 INFO  InvoiceDAOImpl:40 - Find By Code
+2021-09-17 00:12:55 INFO  GoodsReceiptController:72 - update invoice
+2021-09-17 00:12:55 INFO  InvoiceDAOImpl:40 - Find By Code
+2021-09-17 00:12:55 ERROR GoodsReceiptController:77 - 
+2021-09-17 00:15:52 INFO  GoodsReceiptController:68 - code = ay
+2021-09-17 00:15:52 INFO  InvoiceDAOImpl:40 - Find By Code
+2021-09-17 00:15:52 INFO  GoodsReceiptController:72 - update invoice
+2021-09-17 00:15:52 INFO  InvoiceDAOImpl:40 - Find By Code
+2021-09-17 00:15:52 ERROR GoodsReceiptController:77 - 
+2021-09-17 00:21:16 INFO  GoodsReceiptController:68 - code = ay
+2021-09-17 00:21:23 INFO  InvoiceDAOImpl:40 - Find By Code
+2021-09-17 00:21:25 INFO  GoodsReceiptController:72 - update invoice
+2021-09-17 00:21:37 INFO  InvoiceDAOImpl:40 - Find By Code
+2021-09-17 00:21:38 ERROR GoodsReceiptController:77 - 
+2021-09-17 00:24:27 INFO  GoodsReceiptController:68 - code = ay
+2021-09-17 00:24:53 INFO  InvoiceDAOImpl:40 - Find By Code
+2021-09-17 00:25:01 INFO  GoodsReceiptController:72 - update invoice
+2021-09-17 00:25:02 INFO  InvoiceDAOImpl:40 - Find By Code
+2021-09-17 00:28:10 ERROR GoodsReceiptController:77 - 
+2021-09-17 00:28:56 INFO  GoodsReceiptController:68 - code = ay
+2021-09-17 00:29:01 INFO  InvoiceDAOImpl:40 - Find By Code
+2021-09-17 00:29:17 INFO  GoodsReceiptController:72 - update invoice
+2021-09-17 00:29:18 INFO  InvoiceDAOImpl:40 - Find By Code
+2021-09-17 00:32:14 INFO  GoodsReceiptController:68 - code = ay
+2021-09-17 00:32:18 INFO  InvoiceDAOImpl:40 - Find By Code
+2021-09-17 00:32:28 INFO  GoodsReceiptController:72 - update invoice
+2021-09-17 00:32:30 INFO  InvoiceDAOImpl:40 - Find By Code
+2021-09-17 00:49:26 INFO  GoodsReceiptController:68 - code = ay
+2021-09-17 00:49:30 INFO  InvoiceDAOImpl:40 - Find By Code
+2021-09-17 00:49:35 INFO  GoodsReceiptController:70 - vvvvInvoiceEntity(code=d, type=1, qty=445, price=66666.00, toDate=2021-07-09, fromDate=2021-09-17, productId=1)
+2021-09-17 00:49:51 INFO  GoodsReceiptController:73 - update invoice
+2021-09-17 00:49:53 INFO  InvoiceDAOImpl:40 - Find By Code
+2021-09-17 01:31:16 ERROR GoodsReceiptController:78 - 

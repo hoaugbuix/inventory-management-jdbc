@@ -18,7 +18,6 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
 
     ResourceBundle resourceBundle = ResourceBundle.getBundle("db");
     public Connection getConnection() {
-        log.info("connecting");
         try {
             Class.forName(resourceBundle.getString("driverName"));
             String url = resourceBundle.getString("url");
