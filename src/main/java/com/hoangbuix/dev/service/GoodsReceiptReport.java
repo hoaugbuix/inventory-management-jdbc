@@ -10,7 +10,10 @@ import java.io.IOException;
 @Service
 public interface GoodsReceiptReport {
     void writeHeaderLine();
+
     void createCell(Row row, int columnCount, Object value, CellStyle style);
+
     void writeDataLines();
+
     void export(HttpServletResponse response) throws IOException;
 }

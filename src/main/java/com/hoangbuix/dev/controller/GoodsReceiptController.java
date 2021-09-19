@@ -43,33 +43,33 @@ public class GoodsReceiptController {
 
     @InitBinder
     private void initBinder(WebDataBinder binder) {
-        if(binder.getTarget()==null) {
+        if (binder.getTarget() == null) {
             return;
         }
-        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         binder.registerCustomEditor(Date.class, new CustomDateEditor(sdf, true));
-        if(binder.getTarget().getClass()== InvoiceEntity.class) {
+        if (binder.getTarget().getClass() == InvoiceEntity.class) {
             binder.setValidator(invoiceValidator);
         }
     }
 
     @GetMapping("/goods-receipt/list")
-    private ResponseEntity<?> getAll(){
+    private ResponseEntity<?> getAll() {
         log.info("show list invoice");
         List<InvoiceEntity> invoices = invoiceService.findAll(Constant.TYPE_GOODS_RECEIPT);
-        if (invoices.isEmpty()){
+        if (invoices.isEmpty()) {
             throw new NotFoundException("invoice is null");
         }
         return new ResponseEntity<>(invoices, HttpStatus.OK);
     }
 
     @PostMapping("/goods-receipt/save")
-    private ResponseEntity<?> save(@Valid @RequestBody CreateInvoiceReq req){
+    private ResponseEntity<?> save(@Valid @RequestBody CreateInvoiceReq req) {
         log.info("code = " + req.getCode());
-        InvoiceEntity invoice =  invoiceService.findByCode(req.getCode());
+        InvoiceEntity invoice = invoiceService.findByCode(req.getCode());
         InvoiceEntity result = null;
         req.setType(Constant.TYPE_GOODS_RECEIPT);
-        if(invoice != null) {
+        if (invoice != null) {
             log.info("update invoice");
             try {
                 invoiceService.update(req);
@@ -77,7 +77,7 @@ public class GoodsReceiptController {
                 e.printStackTrace();
                 log.error(e.getMessage());
             }
-        }else {
+        } else {
             try {
                 result = invoiceService.save(req);
             } catch (Exception e2) {
@@ -89,14 +89,15 @@ public class GoodsReceiptController {
     }
 
     @PutMapping("/goods-receipt/edit/{id}")
-    private ResponseEntity<?> edit(@PathVariable int id, @RequestBody CreateInvoiceReq invoice){
-        try {log.info("Edit invoice with id="+id);
+    private ResponseEntity<?> edit(@PathVariable int id, @RequestBody CreateInvoiceReq invoice) {
+        try {
+            log.info("Edit invoice with id=" + id);
             InvoiceEntity result = invoiceService.findById(id);
             if (result != null) {
                 result.setActiveFlag(invoice.getActiveFlag());
                 invoiceService.update(invoice);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             log.info(e.getMessage());
         }
@@ -105,18 +106,18 @@ public class GoodsReceiptController {
 
 
     @GetMapping("/goods-receipt/view/{id}")
-    private ResponseEntity<?> findById(@PathVariable int id){
+    private ResponseEntity<?> findById(@PathVariable int id) {
         InvoiceEntity invoice = invoiceService.findById(id);
-        if (invoice.getCode() == null){
+        if (invoice.getCode() == null) {
             throw new NotFoundException("No find " + id);
         }
         return new ResponseEntity<>(invoice, HttpStatus.OK);
     }
 
     @GetMapping("/goods-receipt/view-code/{code}")
-    private ResponseEntity<?> findByCode(@PathVariable String code){
+    private ResponseEntity<?> findByCode(@PathVariable String code) {
         InvoiceEntity invoice = invoiceService.findByCode(code);
-        if (invoice.getCode() == null){
+        if (invoice.getCode() == null) {
             throw new NotFoundException("No find " + code);
         }
         return new ResponseEntity<>(invoice, HttpStatus.OK);
@@ -140,11 +141,11 @@ public class GoodsReceiptController {
         return new ResponseEntity<>("export success!", HttpStatus.OK);
     }
 
-    private Map<String,String> initMapProduct(){
+    private Map<String, String> initMapProduct() {
         List<ProductInfoEntity> productInfos = productInfoService.findAll();
         Map<String, String> mapProduct = new HashMap<String, String>();
-        for(ProductInfoEntity productInfo : productInfos) {
-            mapProduct.put(productInfo.getId().toString(),productInfo.getName());
+        for (ProductInfoEntity productInfo : productInfos) {
+            mapProduct.put(productInfo.getId().toString(), productInfo.getName());
         }
 
         return mapProduct;

@@ -13,9 +13,10 @@ import java.util.List;
 @Transactional(rollbackFor = Exception.class)
 public class InvoiceDAOImpl extends BaseDAOImpl<InvoiceEntity> implements InvoiceDAO<InvoiceEntity> {
     final static Logger log = Logger.getLogger(InvoiceDAOImpl.class);
+
     @Override
     public int save(InvoiceEntity invoice) {
-        log.info("save invoice"+ invoice.toString());
+        log.info("save invoice" + invoice.toString());
         String sql = "call invoice_create(?,?,?,?,?,?,?,?,?,?)";
         return insert(sql, invoice.getCode(), invoice.getType(), invoice.getProductInfos().getId(), invoice.getQty(), invoice.getPrice(),
                 invoice.getToDate(), invoice.getFromDate(), invoice.getActiveFlag(), invoice.getCreatedDate(), invoice.getUpdatedDate());

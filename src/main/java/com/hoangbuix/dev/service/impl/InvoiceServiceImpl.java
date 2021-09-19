@@ -5,7 +5,6 @@ import com.hoangbuix.dev.dao.ProductDAO;
 import com.hoangbuix.dev.entity.InvoiceEntity;
 import com.hoangbuix.dev.entity.ProductInfoEntity;
 import com.hoangbuix.dev.exception.DuplicateRecordException;
-import com.hoangbuix.dev.exception.NotFoundException;
 import com.hoangbuix.dev.model.request.create.CreateInvoiceReq;
 import com.hoangbuix.dev.service.HistoryService;
 import com.hoangbuix.dev.service.InvoiceService;
@@ -15,7 +14,6 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -37,27 +35,27 @@ public class InvoiceServiceImpl implements InvoiceService {
     @Override
     public InvoiceEntity save(CreateInvoiceReq req) {
 
-            InvoiceEntity invoice = new InvoiceEntity();
-            Object obj = invoiceDAO.findByCode(req.getCode());
-            ProductInfoEntity productInfo = productDAO.findProductInfoById(req.getProductId());
-            if (obj == null){
-                invoice.setCode(req.getCode());
-                invoice.setType(req.getType());
-                invoice.setProductInfos(productInfo);
+        InvoiceEntity invoice = new InvoiceEntity();
+        Object obj = invoiceDAO.findByCode(req.getCode());
+        ProductInfoEntity productInfo = productDAO.findProductInfoById(req.getProductId());
+        if (obj == null) {
+            invoice.setCode(req.getCode());
+            invoice.setType(req.getType());
+            invoice.setProductInfos(productInfo);
 //                invoice.setProductId(productId);
-                invoice.setQty(req.getQty());
-                invoice.setPrice(req.getPrice());
-                invoice.setToDate(req.getToDate());
-                invoice.setFromDate(req.getFromDate());
-                invoice.setActiveFlag(1);
-                invoice.setCreatedDate(new Timestamp(System.currentTimeMillis()));
-                invoice.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
-            }else {
-                throw new DuplicateRecordException("Dda ton tai");
-            }
-          int  id = invoiceDAO.save(invoice);
-            historyService.save(invoice, Constant.ACTION_ADD);
-            productInStockService.saveOrUpdate(invoice);
+            invoice.setQty(req.getQty());
+            invoice.setPrice(req.getPrice());
+            invoice.setToDate(req.getToDate());
+            invoice.setFromDate(req.getFromDate());
+            invoice.setActiveFlag(1);
+            invoice.setCreatedDate(new Timestamp(System.currentTimeMillis()));
+            invoice.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
+        } else {
+            throw new DuplicateRecordException("Dda ton tai");
+        }
+        int id = invoiceDAO.save(invoice);
+        historyService.save(invoice, Constant.ACTION_ADD);
+        productInStockService.saveOrUpdate(invoice);
 
         return invoiceDAO.findById(id);
     }
@@ -77,7 +75,7 @@ public class InvoiceServiceImpl implements InvoiceService {
             invoiceDAO.update(invoice);
             historyService.save(invoice, Constant.ACTION_EDIT);
             productInStockService.saveOrUpdate(invoice2);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             log.info(e.getMessage());
         }

@@ -30,10 +30,10 @@ public class HistoryController {
     public ResponseEntity<?> findAll() {
         log.info("show list histories");
         List<HistoryEntity> history = historyService.findAll();
-        if (history.isEmpty()){
+        if (history.isEmpty()) {
             throw new NotFoundException("history is null");
         }
-        Map<String,String> mapType = new HashMap<>();
+        Map<String, String> mapType = new HashMap<>();
         mapType.put(String.valueOf(Constant.TYPE_ALL), "All");
         mapType.put(String.valueOf(Constant.TYPE_GOODS_RECEIPT), "Goods Receipt");
         mapType.put(String.valueOf(Constant.TYPE_GOODS_ISSUES), "Goods Issues");

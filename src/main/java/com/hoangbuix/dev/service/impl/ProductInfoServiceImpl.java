@@ -4,7 +4,6 @@ import com.hoangbuix.dev.dao.CategoryDAO;
 import com.hoangbuix.dev.dao.ProductDAO;
 import com.hoangbuix.dev.entity.CategoryEntity;
 import com.hoangbuix.dev.entity.ProductInfoEntity;
-import com.hoangbuix.dev.exception.DuplicateRecordException;
 import com.hoangbuix.dev.exception.InternalServerException;
 import com.hoangbuix.dev.exception.NotFoundException;
 import com.hoangbuix.dev.model.request.create.CreateProductInfoReq;
@@ -29,36 +28,40 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     @Override
     public ProductInfoEntity save(CreateProductInfoReq req) {
         log.info("product info");
-        ProductInfoEntity product = new ProductInfoEntity();
-        Object obj = productDAO.findProductInfoByCode(req.getCode());
-        CategoryEntity category = categoryDAO.findById(req.getCateId());
-           if (obj == null) {
-               product.setCode(req.getCode());
-               product.setName(req.getName());
-               product.setDescription(req.getDescription());
-               product.setImgUrl(req.getImgUrl());
-               if (category.getId() != null && category.getId() != 0){
-                   product.setCateId(category.getId());
-               }else  {
-                   throw new NotFoundException("Không tìm thấy");
-               }
-               product.setActiveFlag(1);
-               product.setCreatedDate(new Timestamp(System.currentTimeMillis()));
-               product.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
-
-           }
-        int id = productDAO.saveProductInfo(product);
+        int id = 0;
+        try {
+            ProductInfoEntity product = new ProductInfoEntity();
+            Object obj = productDAO.findProductInfoByCode(req.getCode());
+            if (req != null && obj == null) {
+                CategoryEntity category = categoryDAO.findById(req.getCateId());
+                product.setCode(req.getCode());
+                product.setName(req.getName());
+                product.setDescription(req.getDescription());
+                product.setImgUrl(req.getImgUrl());
+                if (category.getId() != null && category.getId() != 0) {
+                    product.setCategories(category);
+                }
+                product.setActiveFlag(1);
+                product.setCreatedDate(new Timestamp(System.currentTimeMillis()));
+                product.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
+            }
+            id = productDAO.saveProductInfo(product);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.info(e.getMessage());
+        }
         return productDAO.findProductInfoById(id);
     }
+
     @Override
     public void update(int id, UpdateProductInfoReq req) {
         ProductInfoEntity product = productDAO.findProductInfoById(id);
-        if (product == null) {
-            throw new NotFoundException("");
-        }
         try {
-            product.setActiveFlag(1);
-            product.setCreatedDate(new Timestamp(System.currentTimeMillis()));
+            product.setName(req.getName());
+            product.setCode(req.getCode());
+            product.setDescription(req.getDescription());
+            product.setImgUrl(req.getImgUrl());
+            product.setActiveFlag(req.getActiveFlag());
             product.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
             productDAO.updateProductInfo(product);
         } catch (Exception e) {
@@ -89,18 +92,18 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     @Override
     public ProductInfoEntity findByCode(String code) {
         ProductInfoEntity productInfo = productDAO.findProductInfoByCode(code);
-        if (productInfo.getCode() == null) {
-            throw new NotFoundException("Không tìm thấy code của bạn!");
-        }
+//        if (productInfo.getCode() == null) {
+//            throw new NotFoundException("Không tìm thấy code của bạn!");
+//        }
         return productInfo;
     }
 
     @Override
     public ProductInfoEntity findById(int id) {
-        ProductInfoEntity productInfo=  productDAO.findProductInfoById(id);
-        if (productInfo.getCode() == null) {
-            throw new NotFoundException("Không tìm thấy code của bạn!");
-        }
+        ProductInfoEntity productInfo = productDAO.findProductInfoById(id);
+//        if (productInfo.getCode() == null) {
+//            throw new NotFoundException("Không tìm thấy code của bạn!");
+//        }
         return productInfo;
     }
 }

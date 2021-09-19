@@ -1,8 +1,10 @@
 package com.hoangbuix.dev.model.mapper;
 
+import com.hoangbuix.dev.entity.CategoryEntity;
 import com.hoangbuix.dev.entity.ProductInfoEntity;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class ProductInfoMapper implements RowMapper<ProductInfoEntity> {
     @Override
@@ -17,7 +19,14 @@ public class ProductInfoMapper implements RowMapper<ProductInfoEntity> {
             product.setActiveFlag(resultSet.getInt("active_flag"));
             product.setCreatedDate(resultSet.getDate("created_date"));
             product.setUpdatedDate(resultSet.getDate("updated_date"));
-            product.setCateId(resultSet.getInt("cate_id"));
+//            product.setCateId(resultSet.getInt("cate_id"));
+            try {
+                CategoryEntity category = new CategoryEntity();
+                category.setId(resultSet.getInt("id"));
+                product.setCategories(category);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
             return product;
         } catch (Exception e) {
             e.printStackTrace();

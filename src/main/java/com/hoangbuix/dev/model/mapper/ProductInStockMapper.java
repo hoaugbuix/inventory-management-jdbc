@@ -15,7 +15,7 @@ public class ProductInStockMapper implements RowMapper<ProductInStockEntity> {
             try {
                 ProductInfoEntity product = new ProductInfoEntity();
                 product.setId(resultSet.getInt("id"));
-                product.setCode(resultSet.getString("code"));
+//                product.setCode(resultSet.getString("code"));
 //                product.setName(resultSet.getString("name"));
                 productInStock.setProductInfos(product);
             } catch (Exception e) {

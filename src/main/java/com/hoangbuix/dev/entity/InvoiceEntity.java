@@ -28,7 +28,7 @@ public class InvoiceEntity extends BaseEntity {
 
     @Column(name = "price")
     @DecimalMin(value = "0.0", inclusive = false)
-    @Digits(integer=3, fraction=2)
+    @Digits(integer = 3, fraction = 2)
     private BigDecimal price;
 
     @Column(name = "to_date")

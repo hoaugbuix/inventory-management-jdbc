@@ -21,7 +21,7 @@ public class AuthMapper implements RowMapper<AuthEntity> {
                 MenuEntity menu = new MenuEntity();
                 menu.setId(resultSet.getInt("id"));
                 auth.setMenus(menu);
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             auth.setPermission(resultSet.getInt("permission"));

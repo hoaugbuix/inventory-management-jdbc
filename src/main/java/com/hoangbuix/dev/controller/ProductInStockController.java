@@ -26,7 +26,7 @@ public class ProductInStockController {
     @GetMapping("/product-in-stock/list")
     public ResponseEntity<?> findAll() {
         List<ProductInStockEntity> productInStock = productInStockService.findAll();
-        if (productInStock.isEmpty()){
+        if (productInStock.isEmpty()) {
             throw new NotFoundException("no find");
         }
         return new ResponseEntity<>(productInStock, HttpStatus.OK);

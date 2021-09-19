@@ -22,9 +22,9 @@ BEGIN
             (
                 select count(product_info.id)
                 from product_info
-                where product_info.name
-                  and product_info.code) > 0 then
-        SET @message_text = CONCAT('product_info \'', name, '\' already exists');
+                where product_info.name = _name
+                  and product_info.code = _code) > 0 then
+        SET @message_text = CONCAT('product_info \'', _code, '\' already exists');
         SIGNAL
             SQLSTATE '45000' SET MESSAGE_TEXT = @message_text;
     else
@@ -66,7 +66,9 @@ DELIMITER $$
 CREATE PROCEDURE productInfo_findProductInfoAll()
 begin
     select *
-    from product_info;
+    from product_info
+    where (active_flag = 1
+        or active_flag = 0);
 end$$
 DELIMITER ;
 
@@ -77,9 +79,9 @@ CREATE PROCEDURE productInfo_findProductInfoById(in _id int)
 begin
     select p.*
     from product_info p
-             inner join category c on p.cate_id = c.id
-    where p.active_flag = 1
-       or p.active_flag = 0 and p.id = _id;
+    where p.id = _id
+      and (p.active_flag = 1
+        or p.active_flag = 0);
 end$$
 DELIMITER ;
 
@@ -87,9 +89,10 @@ drop procedure if EXISTS productInfo_findProductInfoByCode;
 DELIMITER $$
 CREATE PROCEDURE productInfo_findProductInfoByCode(in _code varchar(100))
 begin
-    select *
-    from product_info
-    where active_flag = 1
-       or active_flag = 0 and code = _code;
+    select p.*
+    from product_info p
+    where code = _code
+      and (p.active_flag = 1
+        or p.active_flag = 0);
 end$$
 DELIMITER ;

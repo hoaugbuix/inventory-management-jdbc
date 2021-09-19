@@ -1,11 +1,13 @@
 package com.hoangbuix.dev.controller;
 
 import com.hoangbuix.dev.entity.ProductInfoEntity;
+import com.hoangbuix.dev.exception.DuplicateRecordException;
 import com.hoangbuix.dev.model.request.create.CreateProductInfoReq;
 import com.hoangbuix.dev.model.request.update.UpdateProductInfoReq;
 import com.hoangbuix.dev.service.ProductInfoService;
 import com.hoangbuix.dev.validate.ProductInfoValidator;
 import lombok.RequiredArgsConstructor;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.http.HttpStatus;
@@ -23,6 +25,7 @@ import java.util.List;
 @RequiredArgsConstructor
 
 public class ProductInfoController {
+    final Logger log = Logger.getLogger(ProductInfoController.class);
     @Autowired
     private ProductInfoService productInfoService;
 
@@ -44,8 +47,15 @@ public class ProductInfoController {
 
     @PostMapping("/product-info/save")
     private ResponseEntity<?> saveProductInfo(@Valid @RequestBody CreateProductInfoReq req) {
-        ProductInfoEntity product = productInfoService.save(req);
-        return new ResponseEntity<>(product, HttpStatus.OK);
+        log.info(" product = " + req.toString());
+        Object obj = productInfoService.findByCode(req.getCode());
+        ProductInfoEntity result = null;
+        if (obj == null) {
+            result = productInfoService.save(req);
+        } else {
+            throw new DuplicateRecordException("Đã tồn tại");
+        }
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
     @GetMapping("/product-info/edit/{id}")

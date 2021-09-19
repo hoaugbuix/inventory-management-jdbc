@@ -215,3 +215,161 @@
 2021-09-18 16:26:47 INFO  InvoiceDAOImpl:40 - Find By Code = abcdefghiklmnzfx
 2021-09-18 16:27:05 INFO  InvoiceDAOImpl:18 - save invoiceInvoiceEntity(code=abcdefghiklmnzfx, type=1, qty=15, price=20000, toDate=2021-09-13 16:00:00.0, fromDate=2021-09-24 16:00:00.0, productInfos=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
 2021-09-18 16:27:21 INFO  BaseDAOImpl:16 - save history = HistoryEntity(actionName=Add, type=1, qty=15, price=20000, productInfo=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-18 23:44:54 INFO  GoodsReceiptController:68 - code = abcdgyu
+2021-09-18 23:45:03 INFO  InvoiceDAOImpl:40 - Find By Code = abcdgyu
+2021-09-18 23:45:13 INFO  InvoiceDAOImpl:40 - Find By Code = abcdgyu
+2021-09-18 23:45:14 INFO  InvoiceDAOImpl:18 - save invoiceInvoiceEntity(code=abcdgyu, type=1, qty=15, price=20000, toDate=2021-09-13 16:00:00.0, fromDate=2021-09-24 16:00:00.0, productInfos=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-18 23:45:29 INFO  BaseDAOImpl:16 - save history = HistoryEntity(actionName=Add, type=1, qty=15, price=20000, productInfo=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-18 23:55:08 INFO  GoodsReceiptController:68 - code = abcdgyo
+2021-09-18 23:55:15 INFO  InvoiceDAOImpl:40 - Find By Code = abcdgyo
+2021-09-18 23:55:23 INFO  InvoiceDAOImpl:40 - Find By Code = abcdgyo
+2021-09-18 23:55:25 INFO  InvoiceDAOImpl:18 - save invoiceInvoiceEntity(code=abcdgyo, type=1, qty=15, price=20000, toDate=2021-09-13 16:00:00.0, fromDate=2021-09-24 16:00:00.0, productInfos=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-18 23:55:44 INFO  BaseDAOImpl:16 - save history = HistoryEntity(actionName=Add, type=1, qty=15, price=20000, productInfo=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-18 23:58:53 INFO  GoodsReceiptController:68 - code = abcdgyou
+2021-09-18 23:59:00 INFO  InvoiceDAOImpl:40 - Find By Code = abcdgyou
+2021-09-18 23:59:07 INFO  InvoiceDAOImpl:40 - Find By Code = abcdgyou
+2021-09-18 23:59:10 INFO  InvoiceDAOImpl:18 - save invoiceInvoiceEntity(code=abcdgyou, type=1, qty=15, price=20000, toDate=2021-09-13 16:00:00.0, fromDate=2021-09-24 16:00:00.0, productInfos=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-18 23:59:30 INFO  BaseDAOImpl:16 - save history = HistoryEntity(actionName=Add, type=1, qty=15, price=20000, productInfo=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-19 00:00:26 ERROR BaseDAOImpl:51 - PROCEDURE inventory_management.history_findById does not exist
+2021-09-19 00:00:57 INFO  GoodsReceiptController:85 - 
+2021-09-19 00:02:54 INFO  GoodsReceiptController:68 - code = abcdgyoua
+2021-09-19 00:02:57 INFO  InvoiceDAOImpl:40 - Find By Code = abcdgyoua
+2021-09-19 00:03:03 INFO  InvoiceDAOImpl:40 - Find By Code = abcdgyoua
+2021-09-19 00:03:04 INFO  InvoiceDAOImpl:18 - save invoiceInvoiceEntity(code=abcdgyoua, type=1, qty=15, price=20000, toDate=2021-09-13 16:00:00.0, fromDate=2021-09-24 16:00:00.0, productInfos=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-19 00:03:09 INFO  BaseDAOImpl:16 - save history = HistoryEntity(actionName=Add, type=1, qty=15, price=20000, productInfo=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-19 00:04:36 INFO  ProductInStockServiceImpl:26 - product in stock
+2021-09-19 00:04:45 ERROR BaseDAOImpl:51 - PROCEDURE inventory_management.productInStock_finByCode does not exist
+2021-09-19 00:05:01 INFO  GoodsReceiptController:85 - 
+2021-09-19 00:11:41 INFO  GoodsReceiptController:68 - code = abcdgyouaa
+2021-09-19 00:11:45 INFO  InvoiceDAOImpl:40 - Find By Code = abcdgyouaa
+2021-09-19 00:11:51 INFO  InvoiceDAOImpl:40 - Find By Code = abcdgyouaa
+2021-09-19 00:11:53 INFO  InvoiceDAOImpl:18 - save invoiceInvoiceEntity(code=abcdgyouaa, type=1, qty=15, price=20000, toDate=2021-09-13 16:00:00.0, fromDate=2021-09-24 16:00:00.0, productInfos=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-19 00:12:00 INFO  BaseDAOImpl:16 - save history = HistoryEntity(actionName=Add, type=1, qty=15, price=20000, productInfo=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-19 00:13:03 INFO  ProductInStockServiceImpl:26 - product in stock
+2021-09-19 00:13:23 ERROR BaseDAOImpl:51 - PROCEDURE inventory_management.productInStock_finByCode does not exist
+2021-09-19 00:28:39 INFO  GoodsReceiptController:68 - code = abcdgyouaab
+2021-09-19 00:28:43 INFO  InvoiceDAOImpl:40 - Find By Code = abcdgyouaab
+2021-09-19 00:28:49 INFO  InvoiceDAOImpl:40 - Find By Code = abcdgyouaab
+2021-09-19 00:28:51 INFO  InvoiceDAOImpl:18 - save invoiceInvoiceEntity(code=abcdgyouaab, type=1, qty=15, price=20000, toDate=2021-09-13 16:00:00.0, fromDate=2021-09-24 16:00:00.0, productInfos=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-19 00:28:54 INFO  BaseDAOImpl:16 - save history = HistoryEntity(actionName=Add, type=1, qty=15, price=20000, productInfo=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-19 00:29:32 INFO  ProductInStockServiceImpl:26 - product in stock 
+2021-09-19 00:29:37 ERROR BaseDAOImpl:51 - PROCEDURE inventory_management.productInStock_finById does not exist
+2021-09-19 00:33:56 INFO  GoodsReceiptController:68 - code = abcdgyouaabc
+2021-09-19 00:34:02 INFO  InvoiceDAOImpl:40 - Find By Code = abcdgyouaabc
+2021-09-19 00:34:08 INFO  InvoiceDAOImpl:40 - Find By Code = abcdgyouaabc
+2021-09-19 00:34:09 INFO  InvoiceDAOImpl:18 - save invoiceInvoiceEntity(code=abcdgyouaabc, type=1, qty=15, price=20000, toDate=2021-09-13 16:00:00.0, fromDate=2021-09-24 16:00:00.0, productInfos=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-19 00:34:19 INFO  BaseDAOImpl:16 - save history = HistoryEntity(actionName=Add, type=1, qty=15, price=20000, productInfo=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-19 00:34:44 INFO  ProductInStockServiceImpl:26 - product in stock 
+2021-09-19 00:34:49 ERROR BaseDAOImpl:51 - PROCEDURE inventory_management.productInStock_findById does not exist
+2021-09-19 00:35:23 INFO  GoodsReceiptController:85 - 
+2021-09-19 00:38:14 INFO  GoodsReceiptController:68 - code = abcdgyouaabcd
+2021-09-19 00:38:19 INFO  InvoiceDAOImpl:40 - Find By Code = abcdgyouaabcd
+2021-09-19 00:38:24 INFO  InvoiceDAOImpl:40 - Find By Code = abcdgyouaabcd
+2021-09-19 00:38:26 INFO  InvoiceDAOImpl:18 - save invoiceInvoiceEntity(code=abcdgyouaabcd, type=1, qty=15, price=20000, toDate=2021-09-13 16:00:00.0, fromDate=2021-09-24 16:00:00.0, productInfos=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-19 00:38:29 INFO  BaseDAOImpl:16 - save history = HistoryEntity(actionName=Add, type=1, qty=15, price=20000, productInfo=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-19 00:38:49 INFO  ProductInStockServiceImpl:26 - product in stock 
+2021-09-19 00:42:54 INFO  GoodsReceiptController:68 - code = abcdgyouaabcd
+2021-09-19 00:42:58 INFO  InvoiceDAOImpl:40 - Find By Code = abcdgyouaabcd
+2021-09-19 00:43:04 INFO  GoodsReceiptController:73 - update invoice
+2021-09-19 00:43:08 INFO  InvoiceDAOImpl:40 - Find By Code = abcdgyouaabcd
+2021-09-19 00:43:21 INFO  GoodsReceiptController:68 - code = abcdgyouaabcde
+2021-09-19 00:43:31 INFO  InvoiceDAOImpl:40 - Find By Code = abcdgyouaabcde
+2021-09-19 00:43:39 INFO  InvoiceDAOImpl:40 - Find By Code = abcdgyouaabcde
+2021-09-19 00:43:40 INFO  InvoiceDAOImpl:18 - save invoiceInvoiceEntity(code=abcdgyouaabcde, type=1, qty=15, price=20000, toDate=2021-09-13 16:00:00.0, fromDate=2021-09-24 16:00:00.0, productInfos=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-19 00:43:42 INFO  BaseDAOImpl:16 - save history = HistoryEntity(actionName=Add, type=1, qty=15, price=20000, productInfo=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-19 00:43:47 INFO  ProductInStockServiceImpl:26 - product in stock 
+2021-09-19 00:43:54 INFO  ProductInStockServiceImpl:32 - id == 1
+2021-09-19 00:43:59 INFO  ProductInStockServiceImpl:50 - insert to stock qty=15 and price=20000
+2021-09-19 00:54:16 INFO  GoodsReceiptController:68 - code = abcdgyouaabcdef
+2021-09-19 00:54:21 INFO  InvoiceDAOImpl:40 - Find By Code = abcdgyouaabcdef
+2021-09-19 00:54:28 INFO  InvoiceDAOImpl:40 - Find By Code = abcdgyouaabcdef
+2021-09-19 00:54:30 INFO  InvoiceDAOImpl:18 - save invoiceInvoiceEntity(code=abcdgyouaabcdef, type=1, qty=15, price=20000, toDate=2021-09-13 16:00:00.0, fromDate=2021-09-24 16:00:00.0, productInfos=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-19 00:54:31 INFO  BaseDAOImpl:16 - save history = HistoryEntity(actionName=Add, type=1, qty=15, price=20000, productInfo=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, cateId=1, multipartFile=null))
+2021-09-19 00:54:40 INFO  ProductInStockServiceImpl:26 - product in stock 
+2021-09-19 00:54:53 INFO  ProductInStockServiceImpl:32 - id == 1
+2021-09-19 00:54:58 INFO  ProductInStockServiceImpl:50 - insert to stock qty=15 and price=20000
+2021-09-19 01:10:50 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 01:11:52 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 01:14:20 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 01:16:49 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 01:23:37 INFO  ProductInfoServiceImpl:30 - product info
+2021-09-19 01:24:07 INFO  ProductInfoServiceImpl:51 - 
+2021-09-19 01:27:54 INFO  ProductInfoServiceImpl:30 - product info
+2021-09-19 01:36:06 INFO  ProductInfoController:49 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@1e1b8da9
+2021-09-19 01:36:09 INFO  ProductInfoServiceImpl:30 - product info
+2021-09-19 01:39:18 INFO  ProductInfoController:49 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@689b3c3d
+2021-09-19 01:39:26 INFO  ProductInfoServiceImpl:30 - product info
+2021-09-19 01:45:01 INFO  ProductInfoController:49 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@706146cc
+2021-09-19 01:45:01 INFO  ProductInfoServiceImpl:30 - product info
+2021-09-19 01:45:07 INFO  ProductInfoController:49 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@2a4c9749
+2021-09-19 01:45:07 INFO  ProductInfoServiceImpl:30 - product info
+2021-09-19 01:45:07 INFO  ProductInfoServiceImpl:50 - 
+2021-09-19 01:47:15 INFO  ProductInfoController:49 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@6cc6e0ad
+2021-09-19 01:47:15 INFO  ProductInfoServiceImpl:30 - product info
+2021-09-19 01:47:15 INFO  ProductInfoServiceImpl:51 - 
+2021-09-19 01:49:16 INFO  ProductInfoController:49 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@6ba7059d
+2021-09-19 01:49:16 INFO  ProductInfoServiceImpl:30 - product info
+2021-09-19 01:49:17 INFO  ProductInfoServiceImpl:51 - 
+2021-09-19 01:50:48 INFO  ProductInfoController:49 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@242370e8
+2021-09-19 01:50:48 INFO  ProductInfoServiceImpl:30 - product info
+2021-09-19 01:50:48 INFO  ProductInfoServiceImpl:50 - 
+2021-09-19 01:50:50 INFO  ProductInfoController:49 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@722b8eb1
+2021-09-19 01:50:50 INFO  ProductInfoServiceImpl:30 - product info
+2021-09-19 01:50:50 INFO  ProductInfoServiceImpl:50 - 
+2021-09-19 01:51:45 INFO  ProductInfoController:49 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@4ed05228
+2021-09-19 01:51:45 INFO  ProductInfoServiceImpl:30 - product info
+2021-09-19 01:51:45 INFO  ProductInfoServiceImpl:49 - 
+2021-09-19 01:54:57 INFO  ProductInfoController:49 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@665af2b6
+2021-09-19 01:54:57 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 01:54:58 INFO  ProductInfoServiceImpl:55 - 
+2021-09-19 01:55:00 INFO  ProductInfoController:49 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@7261870c
+2021-09-19 01:55:00 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 01:55:00 INFO  ProductInfoServiceImpl:55 - 
+2021-09-19 01:55:01 INFO  ProductInfoController:49 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@6e288ee6
+2021-09-19 01:55:01 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 01:55:01 INFO  ProductInfoServiceImpl:55 - 
+2021-09-19 01:55:33 INFO  ProductInfoController:49 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@6c94f759
+2021-09-19 01:55:33 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 01:58:30 INFO  ProductInfoController:49 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@58204a6b
+2021-09-19 01:58:30 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 01:59:27 INFO  ProductInfoController:49 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@33ab1bd9
+2021-09-19 01:59:31 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 02:05:47 INFO  ProductInfoController:50 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@624b75df
+2021-09-19 02:05:53 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 02:10:26 INFO  ProductInfoController:50 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@5154ece7
+2021-09-19 02:10:26 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 02:11:39 INFO  ProductInfoController:50 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@70a7b45a
+2021-09-19 02:11:43 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 02:14:32 INFO  ProductInfoController:50 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@3ab1c124
+2021-09-19 02:14:39 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 02:15:06 INFO  ProductInfoServiceImpl:52 - 
+2021-09-19 02:17:10 INFO  ProductInfoController:50 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@782f463b
+2021-09-19 02:17:16 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 02:18:53 INFO  ProductInfoController:50 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@77957a44
+2021-09-19 02:18:56 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 02:19:23 INFO  ProductInfoServiceImpl:52 - 
+2021-09-19 02:24:27 INFO  ProductInfoController:50 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@3d57738b
+2021-09-19 02:25:49 INFO  ProductInfoController:50 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@4dee04c6
+2021-09-19 02:25:53 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 02:40:35 INFO  ProductInfoController:50 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@60bb2517
+2021-09-19 02:40:35 ERROR BaseDAOImpl:52 - Unknown column 'p.active_flag' in 'where clause'
+2021-09-19 03:09:33 INFO  ProductInfoController:50 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@32ecfd4a
+2021-09-19 03:12:29 INFO  ProductInfoController:50 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@6bbe52c5
+2021-09-19 03:14:02 INFO  ProductInfoController:50 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@3d1737ac
+2021-09-19 03:14:05 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 03:15:37 INFO  ProductInfoController:50 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@6a1e3b21
+2021-09-19 03:15:40 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 03:18:51 INFO  ProductInfoController:50 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@18e22897
+2021-09-19 03:20:17 INFO  ProductInfoController:50 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@41e11bf9
+2021-09-19 03:20:27 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 03:21:39 INFO  ProductInfoServiceImpl:52 - 
+2021-09-19 03:21:56 INFO  ProductInfoController:50 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@4cbe60d
+2021-09-19 03:22:04 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 03:22:27 INFO  ProductInfoServiceImpl:52 - 
+2021-09-19 03:23:17 INFO  ProductInfoController:50 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@21409e48
+2021-09-19 03:23:25 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 03:23:55 INFO  ProductInfoServiceImpl:52 - 
+2021-09-19 03:24:54 INFO  ProductInfoController:50 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@552071b1
+2021-09-19 03:25:03 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 03:27:22 INFO  ProductInfoController:50 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@51e1c238
+2021-09-19 03:27:30 INFO  ProductInfoServiceImpl:31 - product info

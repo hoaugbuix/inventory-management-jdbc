@@ -71,12 +71,13 @@ DELIMITER ;
 
 drop procedure if EXISTS category_findCategoryById;
 DELIMITER $$
-CREATE PROCEDURE category_findCategoryById(inout _id int)
+CREATE PROCEDURE category_findCategoryById(in _id int)
 begin
     select *
     from category
-    where active_flag = 1
-      and id = _id
+    where id = _id
+      and (active_flag = 1
+        or active_flag = 0)
     order by name;
 end$$
 DELIMITER ;
@@ -87,8 +88,9 @@ CREATE PROCEDURE category_findCategoryByCode(in _code varchar(100))
 begin
     select *
     from category
-    where active_flag = 1
-      and code = _code;
+    where code = _code
+      and (active_flag = 1
+        or active_flag = 0);
 end$$
 DELIMITER ;
 
@@ -99,6 +101,8 @@ CREATE PROCEDURE category_checkProductInCategory(in _id int)
 begin
     select 1
     from product_info
-    where cate_id = _id;
+    where cate_id = _id
+      and (active_flag = 1
+        or active_flag = 0);
 end$$
 DELIMITER ;

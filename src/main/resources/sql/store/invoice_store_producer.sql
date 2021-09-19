@@ -22,7 +22,7 @@ BEGIN
                 select count(invoice.id)
                 from invoice
                 where invoice.code = _code) > 0 then
-        SET @message_text = CONCAT('Catgory \'', name, '\' already exists');
+        SET @message_text = CONCAT('Catgory \'', _code, '\' already exists');
         SIGNAL
             SQLSTATE '45000' SET MESSAGE_TEXT = @message_text;
     else
@@ -70,7 +70,11 @@ drop procedure if EXISTS invoice_findAll;
 DELIMITER $$
 CREATE PROCEDURE invoice_findAll(in _type int)
 begin
-    select * from invoice where active_flag = 1 or active_flag = 0 and type = _type;
+    select *
+    from invoice
+    where type = _type
+      and (active_flag = 1
+        or active_flag = 0);
 end$$
 DELIMITER ;
 
@@ -78,7 +82,11 @@ drop procedure if EXISTS invoice_findById;
 DELIMITER $$
 CREATE PROCEDURE invoice_findById(in _id int)
 begin
-    select * from invoice where active_flag = 1 or active_flag = 0 and id = _id;
+    select *
+    from invoice
+    where id = _id
+      and (active_flag = 1
+        or active_flag = 0);
 end$$
 DELIMITER ;
 
@@ -86,6 +94,10 @@ drop procedure if EXISTS invoice_findByCode;
 DELIMITER $$
 CREATE PROCEDURE invoice_findByCode(in _code nvarchar(50))
 begin
-    select i.* from invoice i where  i.code = _code and i.active_flag = 1 or i.active_flag = 0;
+    select i.*
+    from invoice i
+    where i.code = _code
+      and (active_flag = 1
+        or active_flag = 0);
 end$$
 DELIMITER ;

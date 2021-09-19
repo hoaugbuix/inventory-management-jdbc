@@ -23,7 +23,7 @@ BEGIN
                 from auth
                 where active_flag = 1
                    or active_flag = 0) > 0 then
-        SET @message_text = CONCAT('auth \'', '', '\' already exists');
+        SET @message_text = CONCAT('auth \'', _permision, '\' already exists');
         SIGNAL
             SQLSTATE '45000' SET MESSAGE_TEXT = @message_text;
     else
@@ -62,7 +62,9 @@ DELIMITER $$
 CREATE PROCEDURE auth_findAll()
 begin
     select *
-    from auth;
+    from auth
+    where (active_flag = 1
+        or active_flag = 0);
 end$$
 DELIMITER ;
 
@@ -72,7 +74,9 @@ CREATE PROCEDURE auth_findByRoleIdAndMenuId(in _roleId int, _menuId int)
 begin
     select *
     from auth
-    where active_flag = 1
-       or active_flag = 0 and role_id = _roleId and menu_id = _menuId;
+    where role_id = _roleId
+      and menu_id = _menuId
+      and (active_flag = 1
+        or active_flag = 0);
 end$$
 DELIMITER ;

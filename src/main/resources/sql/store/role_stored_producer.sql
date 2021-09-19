@@ -22,7 +22,7 @@ BEGIN
                 from category
                 where category.name
                   and category.code) > 0 then
-        SET @message_text = CONCAT('Catgory \'', '', '\' already exists');
+        SET @message_text = CONCAT('Catgory \'', _name, '\' already exists');
         SIGNAL
             SQLSTATE '45000' SET MESSAGE_TEXT = @message_text;
     else
@@ -41,8 +41,9 @@ CREATE PROCEDURE findByRoleName(in _roleName varchar(100))
 begin
     select *
     from role
-    where active_flag = 1
-      AND role_name = _roleName;
+    where role_name = _roleName
+      and (active_flag = 1
+        or active_flag = 0);
 end$$
 DELIMITER ;
 
@@ -51,6 +52,8 @@ DELIMITER $$
 CREATE PROCEDURE role_findAll()
 begin
     select *
-    from role;
+    from role
+    where (active_flag = 1
+        or active_flag = 0);
 end$$
 DELIMITER ;

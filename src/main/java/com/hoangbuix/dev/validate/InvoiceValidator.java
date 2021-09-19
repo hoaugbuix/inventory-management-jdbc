@@ -9,7 +9,6 @@ import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 @Component
 public class InvoiceValidator implements Validator {
@@ -29,8 +28,8 @@ public class InvoiceValidator implements Validator {
         ValidationUtils.rejectIfEmpty(errors, "qty", "msg.required");
         ValidationUtils.rejectIfEmpty(errors, "price", "msg.required");
         if (invoice.getCode() != null) {
-            InvoiceEntity results = invoiceService.findByCode( invoice.getCode());
-            if (results != null ) {
+            InvoiceEntity results = invoiceService.findByCode(invoice.getCode());
+            if (results != null) {
                 if (invoice.getId() != null && invoice.getId() != 0) {
                     if (results.getId() != invoice.getId()) {
                         errors.rejectValue("code", "msg.code.exist");

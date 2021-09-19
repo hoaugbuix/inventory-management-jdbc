@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
-import java.util.Date;
 import java.util.List;
 
 @Component
@@ -38,7 +37,7 @@ public class HistoryServiceImpl implements HistoryService {
             history.setCreatedDate(new Timestamp(System.currentTimeMillis()));
             history.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
             id = historyDAO.save(history);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             log.info(e.getMessage());
         }

@@ -22,7 +22,7 @@ BEGIN
                 select count(menu.id)
                 from menu
                 where menu.name) > 0 then
-        SET @message_text = CONCAT('menu \'', name, '\' already exists');
+        SET @message_text = CONCAT('menu \'', _name, '\' already exists');
         SIGNAL
             SQLSTATE '45000' SET MESSAGE_TEXT = @message_text;
     else

@@ -19,7 +19,7 @@ public class InvoiceMapper implements RowMapper<InvoiceEntity> {
                 productInfo.setId(resultSet.getInt("id"));
                 productInfo.setCode(resultSet.getString("code"));
                 invoice.setProductInfos(productInfo);
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 //            invoice.setProductId(resultSet.getInt("product_id"));

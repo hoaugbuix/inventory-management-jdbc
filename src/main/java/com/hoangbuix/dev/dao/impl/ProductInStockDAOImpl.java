@@ -15,7 +15,7 @@ public class ProductInStockDAOImpl extends BaseDAOImpl<ProductInStockEntity> imp
     @Override
     public int save(ProductInStockEntity productInStock) {
         String sql = "call productInStock_create(?, ?, ?, ?, ?, ?)";
-        return insert(sql, productInStock.getProductInfos().getCateId(),
+        return insert(sql, productInStock.getProductInfos().getId(),
                 productInStock.getQty(), productInStock.getPrice(), productInStock.getActiveFlag(),
                 productInStock.getCreatedDate(), productInStock.getUpdatedDate());
     }
@@ -33,14 +33,14 @@ public class ProductInStockDAOImpl extends BaseDAOImpl<ProductInStockEntity> imp
 
     @Override
     public ProductInStockEntity findById(int id) {
-        String sql = "call productInStock_finById(?)";
+        String sql = "call productInStock_findById(?)";
         List<ProductInStockEntity> productInStock = query(sql, new ProductInStockMapper(), id);
         return productInStock.isEmpty() ? null : productInStock.get(0);
     }
 
     @Override
     public ProductInStockEntity findByCode(String code) {
-        String sql = "call productInStock_finByCode(?)";
+        String sql = "call productInStock_findByCode(?)";
         List<ProductInStockEntity> productInStock = query(sql, new ProductInStockMapper(), code);
         return productInStock.isEmpty() ? null : productInStock.get(0);
     }

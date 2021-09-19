@@ -5,7 +5,6 @@ import com.hoangbuix.dev.model.request.create.CreateCategoryReq;
 import com.hoangbuix.dev.model.request.update.UpdateCategoryReq;
 import com.hoangbuix.dev.service.CategoryService;
 import com.hoangbuix.dev.validate.CategoryValidator;
-//import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;

@@ -16,14 +16,15 @@ public class ProductDAOImpl extends BaseDAOImpl<ProductInfoEntity> implements Pr
     public int saveProductInfo(ProductInfoEntity product) {
         String sql = "call productInfo_create(?, ?, ?, ?, ?, ?, ?, ?)";
         return insert(sql, product.getCode(), product.getName(), product.getDescription(),
-                product.getImgUrl(), product.getActiveFlag(), product.getCreatedDate(), product.getUpdatedDate(), product.getCateId());
+                product.getImgUrl(), product.getActiveFlag(), product.getCreatedDate(), product.getUpdatedDate(),
+                product.getCategories().getId());
     }
 
     @Override
     public void updateProductInfo(ProductInfoEntity product) {
         String sql = "call productInfo_update(?,?,?,?,?,?,?)";
         update(sql, product.getCode(), product.getName(), product.getDescription(), product.getImgUrl(),
-                product.getActiveFlag(), product.getUpdatedDate(), product.getCateId());
+                product.getActiveFlag(), product.getUpdatedDate(), product.getCategories().getId());
     }
 
     @Override

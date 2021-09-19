@@ -17,7 +17,7 @@ public class HistoryMapper implements RowMapper<HistoryEntity> {
             try {
                 ProductInfoEntity productInfo = new ProductInfoEntity();
                 productInfo.setId(resultSet.getInt("id"));
-                productInfo.setCode(resultSet.getString("code"));
+//                productInfo.setCode(resultSet.getString("code"));
                 history.setProductInfo(productInfo);
             } catch (Exception e) {
                 e.printStackTrace();

@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-public class GoodsReceiptReportImpl extends AbstractXlsView implements GoodsReceiptReport{
+public class GoodsReceiptReportImpl extends AbstractXlsView implements GoodsReceiptReport {
     private XSSFWorkbook workbook;
     private XSSFSheet sheet;
     private List<InvoiceEntity> listInvoices;
@@ -60,7 +60,7 @@ public class GoodsReceiptReportImpl extends AbstractXlsView implements GoodsRece
             cell.setCellValue((Integer) value);
         } else if (value instanceof Boolean) {
             cell.setCellValue((Boolean) value);
-        }else {
+        } else {
             cell.setCellValue((String) value);
         }
         cell.setCellStyle(style);

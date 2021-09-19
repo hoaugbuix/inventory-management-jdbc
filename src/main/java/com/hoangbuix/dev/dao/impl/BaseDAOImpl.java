@@ -18,6 +18,7 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
     final static Logger log = Logger.getLogger(BaseDAOImpl.class);
 
     ResourceBundle resourceBundle = ResourceBundle.getBundle("db");
+
     public Connection getConnection() {
         try {
             Class.forName(resourceBundle.getString("driverName"));
@@ -117,7 +118,7 @@ public class BaseDAOImpl<E> implements BaseDAO<E> {
                     callable.setTimestamp(index, (Timestamp) parameter);
                 } else if (parameter instanceof Date) {
                     callable.setDate(index, (Date) parameter);
-                } else if (parameter instanceof BigDecimal){
+                } else if (parameter instanceof BigDecimal) {
                     callable.setBigDecimal(index, (BigDecimal) parameter);
                 }
             }

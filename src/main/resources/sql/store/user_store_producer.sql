@@ -26,7 +26,7 @@ BEGIN
                 from user
                 where user.user_name
                   and user.email) > 0 then
-        SET @message_text = CONCAT('User name \'', user_name, '\' already exists');
+        SET @message_text = CONCAT('User name \'', _user_name, '\' already exists');
         SIGNAL
             SQLSTATE '45000' SET MESSAGE_TEXT = @message_text;
     else
@@ -75,7 +75,8 @@ CREATE PROCEDURE user_getAll()
 begin
     select *
     from user
-    where active_flag = 1
+    where (active_flag = 1
+        or active_flag = 0)
     order by first_name;
 end$$
 DELIMITER ;
@@ -86,8 +87,9 @@ CREATE PROCEDURE user_findUserById(inout _id int)
 begin
     select *
     from user
-    where active_flag = 1
-      and id = _id
+    where id = _id
+      and (active_flag = 1
+        or active_flag = 0)
     order by first_name;
 end$$
 DELIMITER ;

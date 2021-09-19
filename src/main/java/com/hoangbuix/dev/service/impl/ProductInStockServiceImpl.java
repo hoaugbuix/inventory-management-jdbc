@@ -23,33 +23,44 @@ public class ProductInStockServiceImpl implements ProductInStockService {
 
     @Override
     public ProductInStockEntity saveOrUpdate(InvoiceEntity invoice) {
-        log.info("product in stock");
-        ProductInfoEntity productInfo = productDAO.findProductInfoById(invoice.getProductInfos().getId());
-        int id = 0;
-        if (invoice.getProductInfos().getId() != 0) {
-            String code = productInfo.getCode();
-            ProductInStockEntity product = productInStockDAO.findByCode(code);
+        log.info("product in stock ");
+        int newId = 0;
+        if (invoice.getProductInfos() != null) {
+            int id = invoice.getProductInfos().getId();
+            ProductInStockEntity product = productInStockDAO.findById(id);
+//            ProductInStockEntity product=null;
+            log.info("id == " + id);
             if (product != null) {
-                log.info("updated qty=" + invoice.getQty() + " and price=" + invoice.getPrice());
-                product.setQty(invoice.getQty());
-                product.setPrice(invoice.getPrice());
+//                product = products;
+                log.info("update qty=" + invoice.getQty() + " and price=" + invoice.getPrice());
+                if (invoice.getType() == 2) {
+                    product.setQty(product.getQty() - invoice.getQty());
+                } else {
+                    product.setQty(product.getQty() + invoice.getQty());
+                }
+
+                // type =1 receipt , type =2 issues
+                if (invoice.getType() == 1) {
+                    product.setPrice(invoice.getPrice());
+                }
                 product.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
                 productInStockDAO.update(product);
-            } else {
-                log.info("insert product in stock=" + invoice.getQty() + " and price=" + invoice.getPrice());
+
+            } else if (invoice.getType() == 1) {
+                log.info("insert to stock qty=" + invoice.getQty() + " and price=" + invoice.getPrice());
                 product = new ProductInStockEntity();
-//                ProductInfoEntity productInfo = new ProductInfoEntity();
-//                productInfo.setId(invoice.getId());
+                ProductInfoEntity productInfo = productDAO.findProductInfoById(invoice.getProductInfos().getId());
                 product.setProductInfos(productInfo);
-                product.setQty(invoice.getQty());
-                product.setPrice(invoice.getPrice());
                 product.setActiveFlag(1);
                 product.setCreatedDate(new Timestamp(System.currentTimeMillis()));
                 product.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
-                id = productInStockDAO.save(product);
+                product.setQty(invoice.getQty());
+                product.setPrice(invoice.getPrice());
+                newId = productInStockDAO.save(product);
             }
         }
-        return productInStockDAO.findById(id);
+
+        return productInStockDAO.findById(newId);
     }
 
     @Override
