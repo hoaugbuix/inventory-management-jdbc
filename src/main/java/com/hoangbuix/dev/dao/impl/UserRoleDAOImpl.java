@@ -14,18 +14,20 @@ public class UserRoleDAOImpl extends BaseDAOImpl<UserRoleEntity> implements User
 
     @Override
     public int save(UserRoleEntity userRole) {
-        StringBuilder sql = new StringBuilder();
-        sql.append("INSERT INTO user_role ");
-        sql.append(" (user_id, role_id, active_flag, created_date, updated_date)");
-        sql.append(" values (?, ?, ?, ?, ?)");
-        return insert(sql.toString(), userRole.getUserId(),
-                userRole.getRoleId(), userRole.getActiveFlag(),
-                userRole.getCreatedDate(), userRole.getUpdatedDate());
+        String sql ="call userRole_create(?, ?)";
+        return insert(sql, userRole.getUsers().getId(), userRole.getRoles().getId());
     }
 
     @Override
     public List<UserRoleEntity> findAll() {
-        String sql = "select * from user_role";
+        String sql = "call userRole_findAll()";
         return query(sql, new UserRoleMapper());
+    }
+
+    @Override
+    public UserRoleEntity findById(int id) {
+        String sql = "call userRole_findById(?)";
+        List<UserRoleEntity> userRole = query(sql, new UserRoleMapper(), id);
+        return userRole.isEmpty() ? null : userRole.get(0);
     }
 }

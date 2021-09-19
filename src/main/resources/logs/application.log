@@ -373,3 +373,45 @@
 2021-09-19 03:25:03 INFO  ProductInfoServiceImpl:31 - product info
 2021-09-19 03:27:22 INFO  ProductInfoController:50 -  product = com.hoangbuix.dev.model.request.create.CreateProductInfoReq@51e1c238
 2021-09-19 03:27:30 INFO  ProductInfoServiceImpl:31 - product info
+2021-09-19 06:25:29 INFO  InvoiceDAOImpl:41 - Find By Code = dep
+2021-09-19 06:25:39 INFO  InvoiceDAOImpl:41 - Find By Code = deps
+2021-09-19 06:25:45 INFO  GoodsReceiptController:68 - code = abcdgyouaabcdef
+2021-09-19 06:25:45 INFO  InvoiceDAOImpl:41 - Find By Code = abcdgyouaabcdef
+2021-09-19 06:25:45 INFO  InvoiceDAOImpl:41 - Find By Code = abcdgyouaabcdef
+2021-09-19 06:25:45 INFO  GoodsReceiptController:85 - Dda ton tai
+2021-09-19 09:05:43 INFO  GoodsReceiptController:68 - code = abcdgyouaabcdef
+2021-09-19 09:05:43 INFO  InvoiceDAOImpl:41 - Find By Code = abcdgyouaabcdef
+2021-09-19 09:05:43 INFO  GoodsReceiptController:73 - update invoice
+2021-09-19 09:05:43 INFO  InvoiceDAOImpl:41 - Find By Code = abcdgyouaabcdef
+2021-09-19 09:05:43 INFO  BaseDAOImpl:16 - save history = HistoryEntity(actionName=Edit, type=0, qty=0, price=null, productInfo=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, categories=CategoryEntity(name=null, code=null, description=null), multipartFile=null))
+2021-09-19 09:05:43 INFO  HistoryServiceImpl:42 - 
+2021-09-19 09:05:43 INFO  ProductInStockServiceImpl:26 - product in stock 
+2021-09-19 09:05:43 INFO  ProductInStockServiceImpl:32 - id == 1
+2021-09-19 09:13:46 INFO  GoodsReceiptController:68 - code = abcdgyouaabcdef
+2021-09-19 09:13:52 INFO  InvoiceDAOImpl:41 - Find By Code = abcdgyouaabcdef
+2021-09-19 09:14:00 INFO  GoodsReceiptController:73 - update invoice
+2021-09-19 09:14:06 INFO  InvoiceDAOImpl:41 - Find By Code = abcdgyouaabcdef
+2021-09-19 09:45:58 INFO  GoodsReceiptController:68 - code = abcdgyouaabcdef
+2021-09-19 09:46:02 INFO  InvoiceDAOImpl:41 - Find By Code = abcdgyouaabcdef
+2021-09-19 09:46:23 INFO  GoodsReceiptController:73 - update invoice
+2021-09-19 09:46:44 INFO  GoodsReceiptController:68 - code = abcdgyouaabcdef
+2021-09-19 09:46:47 INFO  InvoiceDAOImpl:41 - Find By Code = abcdgyouaabcdef
+2021-09-19 09:46:53 INFO  GoodsReceiptController:73 - update invoice
+2021-09-19 09:46:54 INFO  InvoiceDAOImpl:41 - Find By Code = abcdgyouaabcdef
+2021-09-19 09:52:00 INFO  BaseDAOImpl:16 - save history = HistoryEntity(actionName=Edit, type=1, qty=0, price=null, productInfo=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, categories=CategoryEntity(name=null, code=null, description=null), multipartFile=null))
+2021-09-19 09:52:37 INFO  GoodsReceiptController:68 - code = abcdgyouaabcdef
+2021-09-19 09:52:41 INFO  InvoiceDAOImpl:41 - Find By Code = abcdgyouaabcdef
+2021-09-19 09:52:48 INFO  GoodsReceiptController:73 - update invoice
+2021-09-19 09:52:49 INFO  InvoiceDAOImpl:41 - Find By Code = abcdgyouaabcdef
+2021-09-19 09:53:23 INFO  BaseDAOImpl:16 - save history = HistoryEntity(actionName=Edit, type=1, qty=15, price=20000, productInfo=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, categories=CategoryEntity(name=null, code=null, description=null), multipartFile=null))
+2021-09-19 09:53:33 INFO  ProductInStockServiceImpl:26 - product in stock 
+2021-09-19 09:53:39 INFO  ProductInStockServiceImpl:32 - id == 1
+2021-09-19 09:56:19 INFO  GoodsReceiptController:68 - code = abcdgyouaabcdef
+2021-09-19 09:56:23 INFO  InvoiceDAOImpl:41 - Find By Code = abcdgyouaabcdef
+2021-09-19 09:56:29 INFO  GoodsReceiptController:73 - update invoice
+2021-09-19 09:56:30 INFO  InvoiceDAOImpl:41 - Find By Code = abcdgyouaabcdef
+2021-09-19 09:58:30 INFO  BaseDAOImpl:16 - save history = HistoryEntity(actionName=Edit, type=1, qty=10, price=20000, productInfo=ProductInfoEntity(code=deps, name=Desp, description=This is the dep, imgUrl=dep.png, categories=CategoryEntity(name=null, code=null, description=null), multipartFile=null))
+2021-09-19 09:59:00 INFO  ProductInStockServiceImpl:26 - product in stock 
+2021-09-19 09:59:07 INFO  ProductInStockServiceImpl:32 - id == 1
+2021-09-19 11:12:28 ERROR BaseDAOImpl:52 - PROCEDURE inventory_management.findRoleByRoleName does not exist
+2021-09-19 11:14:16 ERROR BaseDAOImpl:52 - PROCEDURE inventory_management.findRoleByRoleName does not exist

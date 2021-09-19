@@ -6,4 +6,6 @@ public interface UserRoleDAO<E> extends BaseDAO<E> {
     int save(E instance);
 
     List<E> findAll();
+
+    E findById(int id);
 }

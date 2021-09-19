@@ -44,7 +44,7 @@ CREATE PROCEDURE invoice_update(
     in _type int,
     in _product_id int,
     in _qty int,
-    in _price decimal(5, 2),
+    in _price decimal(50, 2),
     in _to_date TIMESTAMP,
     in _from_date TIMESTAMP,
     in _description VARCHAR(255),
@@ -55,12 +55,12 @@ body:
 begin
     update invoice
     set code         = _code,
-        type= _type,
+        type			= _type,
         product_id   =_product_id,
         qty          = _qty,
-        price= _price,
-        to_date= _to_date,
-        from_date=_from_date,
+        price		= _price,
+        to_date 	= _to_date,
+        from_date =	_from_date,
         active_flag  = _active_flag,
         updated_date = _updated_date;
 END$$

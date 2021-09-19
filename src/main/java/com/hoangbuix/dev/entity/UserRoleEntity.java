@@ -1,10 +1,9 @@
 package com.hoangbuix.dev.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Setter
 @Getter
@@ -14,16 +13,18 @@ import javax.persistence.Table;
 @Entity(name = "user_role")
 @Table(name = "user_role")
 public class UserRoleEntity extends BaseEntity {
-    //    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinColumn(columnDefinition = "integer", name = "user_id")
-//    private UserEntity users;
-//
-//    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinColumn(columnDefinition = "integer", name = "role_id")
-//    private RoleEntity roles;
-    @Column(name = "user_id")
-    private Integer userId;
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn( name = "user_id")
+    private UserEntity users;
 
-    @Column(name = "role_id")
-    private Integer roleId;
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn( name = "role_id")
+    private RoleEntity roles;
+//    @Column(name = "user_id")
+//    private Integer userId;
+//
+//    @Column(name = "role_id")
+//    private Integer roleId;
 }

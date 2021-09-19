@@ -58,14 +58,12 @@ public class UserServiceImpl implements UserService {
         }
         user = userConverter.toEntity(req);
         int id = userDAO.saveUser(user);
+        UserEntity userNew = userDAO.findUserById(id);
         RoleEntity role = roleDAO.findRoleByName("user");
         if (id != 0) {
             UserRoleEntity userRole = new UserRoleEntity();
-            userRole.setActiveFlag(1);
-            userRole.setCreatedDate(new Timestamp(System.currentTimeMillis()));
-            userRole.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
-            userRole.setUserId(id);
-            userRole.setRoleId(role.getId());
+            userRole.setUsers(userNew);
+            userRole.setRoles(role);
             userRoleDAO.save(userRole);
         }
         return userDAO.findUserById(id);

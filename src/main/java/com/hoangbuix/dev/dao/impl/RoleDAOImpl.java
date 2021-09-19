@@ -35,7 +35,7 @@ public class RoleDAOImpl extends BaseDAOImpl<RoleEntity> implements RoleDAO<Role
 
     @Override
     public RoleEntity findRoleByName(String roleName) {
-        String sql = "call findRoleByRoleName(?)";
+        String sql = "call role_findByRoleName(?)";
         List<RoleEntity> role = query(sql, new RoleMapper(), roleName);
         return role.isEmpty() ? null : role.get(0);
     }

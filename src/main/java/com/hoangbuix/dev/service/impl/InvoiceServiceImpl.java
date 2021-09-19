@@ -50,8 +50,6 @@ public class InvoiceServiceImpl implements InvoiceService {
             invoice.setActiveFlag(1);
             invoice.setCreatedDate(new Timestamp(System.currentTimeMillis()));
             invoice.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
-        } else {
-            throw new DuplicateRecordException("Dda ton tai");
         }
         int id = invoiceDAO.save(invoice);
         historyService.save(invoice, Constant.ACTION_ADD);
@@ -66,7 +64,14 @@ public class InvoiceServiceImpl implements InvoiceService {
             InvoiceEntity invoice = new InvoiceEntity();
             int originQty = invoiceDAO.findByCode(req.getCode()).getQty();
             ProductInfoEntity productInfo = productDAO.findProductInfoById(req.getProductId());
+            invoice.setCode(req.getCode());
+            invoice.setType(req.getType());
             invoice.setProductInfos(productInfo);
+            invoice.setQty(req.getQty());
+            invoice.setPrice(req.getPrice());
+            invoice.setToDate(req.getToDate());
+            invoice.setFromDate(req.getFromDate());
+            invoice.setActiveFlag(req.getActiveFlag());
             invoice.setUpdatedDate(new Timestamp(System.currentTimeMillis()));
             InvoiceEntity invoice2 = new InvoiceEntity();
             invoice2.setProductInfos(invoice.getProductInfos());

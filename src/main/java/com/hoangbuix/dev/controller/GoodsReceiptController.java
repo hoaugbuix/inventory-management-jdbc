@@ -69,7 +69,7 @@ public class GoodsReceiptController {
         InvoiceEntity invoice = invoiceService.findByCode(req.getCode());
         InvoiceEntity result = null;
         req.setType(Constant.TYPE_GOODS_RECEIPT);
-        if (invoice != null) {
+        if (invoice != null && req.getActiveFlag() != 0) {
             log.info("update invoice");
             try {
                 invoiceService.update(req);

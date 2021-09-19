@@ -35,9 +35,9 @@ BEGIN
 END$$
 DELIMITER ;
 
-drop procedure if EXISTS findByRoleName;
+drop procedure if EXISTS role_findByRoleName;
 DELIMITER $$
-CREATE PROCEDURE findByRoleName(in _roleName varchar(100))
+CREATE PROCEDURE role_findByRoleName(in _roleName varchar(100))
 begin
     select *
     from role
