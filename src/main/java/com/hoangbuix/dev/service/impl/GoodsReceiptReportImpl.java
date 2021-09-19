@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-public class GoodsReceiptReportImpl extends AbstractXlsView implements GoodsReceiptReport {
+public class GoodsReceiptReportImpl implements GoodsReceiptReport {
     private XSSFWorkbook workbook;
     private XSSFSheet sheet;
     private List<InvoiceEntity> listInvoices;
@@ -45,11 +45,16 @@ public class GoodsReceiptReportImpl extends AbstractXlsView implements GoodsRece
         style.setFont(font);
 
         createCell(row, 0, "ID", style);
-        createCell(row, 1, "Code", style);
-        createCell(row, 2, "Qty", style);
-        createCell(row, 3, "Price", style);
-        createCell(row, 4, "Product", style);
-        createCell(row, 5, "Updated Date", style);
+        createCell(row, 1, "Type", style);
+        createCell(row, 2, "Code", style);
+        createCell(row, 3, "Qty", style);
+        createCell(row, 4, "Price", style);
+        createCell(row, 5, "Product", style);
+        createCell(row, 6, "To Date", style);
+        createCell(row, 7, "From Date", style);
+        createCell(row, 8, "Active Flag", style);
+        createCell(row, 9, "Created Date", style);
+        createCell(row, 10, "Updated Date", style);
     }
 
     @Override
@@ -78,11 +83,16 @@ public class GoodsReceiptReportImpl extends AbstractXlsView implements GoodsRece
         for (InvoiceEntity invoice : listInvoices) {
             Row row = sheet.createRow(rowCount++);
             int columnCount = 0;
-
             createCell(row, columnCount++, invoice.getId(), style);
+            createCell(row, columnCount++, invoice.getCode(), style);
+            createCell(row, columnCount++, invoice.getType(), style);
             createCell(row, columnCount++, invoice.getQty(), style);
             createCell(row, columnCount++, invoice.getPrice().toString(), style);
-            createCell(row, columnCount++, invoice.getProductInfos().toString(), style);
+            createCell(row, columnCount++, invoice.getProductInfos().getCode(), style);
+            createCell(row, columnCount++, DateUtil.dateToString( invoice.getToDate()), style);
+            createCell(row, columnCount++, DateUtil.dateToString(invoice.getFromDate()), style);
+            createCell(row, columnCount++, invoice.getActiveFlag(), style);
+            createCell(row, columnCount++, DateUtil.dateToString(invoice.getCreatedDate()), style);
             createCell(row, columnCount++, DateUtil.dateToString(invoice.getUpdatedDate()), style);
         }
     }
@@ -97,10 +107,5 @@ public class GoodsReceiptReportImpl extends AbstractXlsView implements GoodsRece
         workbook.close();
 
         outputStream.close();
-    }
-
-    @Override
-    protected void buildExcelDocument(Map<String, Object> map, Workbook workbook, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
-
     }
 }

@@ -70,11 +70,9 @@ drop procedure if EXISTS invoice_findAll;
 DELIMITER $$
 CREATE PROCEDURE invoice_findAll(in _type int)
 begin
-    select *
-    from invoice
-    where type = _type
-      and (active_flag = 1
-        or active_flag = 0);
+    select i.*, p.*
+    from invoice i inner join product_info p on i.product_id = p.id
+    where i.type = _type and (i.active_flag = 1 or i.active_flag = 0);
 end$$
 DELIMITER ;
 

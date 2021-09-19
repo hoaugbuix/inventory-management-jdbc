@@ -415,3 +415,26 @@
 2021-09-19 09:59:07 INFO  ProductInStockServiceImpl:32 - id == 1
 2021-09-19 11:12:28 ERROR BaseDAOImpl:52 - PROCEDURE inventory_management.findRoleByRoleName does not exist
 2021-09-19 11:14:16 ERROR BaseDAOImpl:52 - PROCEDURE inventory_management.findRoleByRoleName does not exist
+2021-09-19 11:31:04 INFO  InvoiceDAOImpl:41 - Find By Code = null
+2021-09-19 11:31:05 ERROR BaseDAOImpl:52 - No value specified for parameter 1
+2021-09-19 11:31:41 INFO  InvoiceDAOImpl:41 - Find By Code = null
+2021-09-19 11:31:42 ERROR BaseDAOImpl:52 - No value specified for parameter 1
+2021-09-19 15:10:27 INFO  InvoiceDAOImpl:41 - Find By Code = null
+2021-09-19 15:10:28 ERROR BaseDAOImpl:52 - No value specified for parameter 1
+2021-09-19 15:14:05 INFO  InvoiceDAOImpl:49 - Find All
+2021-09-19 15:35:29 INFO  InvoiceDAOImpl:49 - Find All
+2021-09-19 15:47:08 INFO  InvoiceDAOImpl:49 - Find All
+2021-09-19 15:47:18 INFO  InvoiceDAOImpl:49 - Find All
+2021-09-19 15:49:16 INFO  InvoiceDAOImpl:49 - Find All
+2021-09-19 15:51:03 INFO  InvoiceDAOImpl:49 - Find All
+2021-09-19 15:53:05 INFO  InvoiceDAOImpl:49 - Find All
+2021-09-19 15:56:42 INFO  InvoiceDAOImpl:49 - Find All
+2021-09-19 16:00:53 INFO  InvoiceDAOImpl:49 - Find All
+2021-09-19 16:02:34 INFO  InvoiceDAOImpl:49 - Find All
+2021-09-19 16:03:46 INFO  InvoiceDAOImpl:49 - Find All
+2021-09-19 16:05:33 INFO  InvoiceDAOImpl:49 - Find All
+2021-09-19 16:06:46 INFO  GoodsReceiptController:58 - show list invoice
+2021-09-19 16:06:46 INFO  InvoiceDAOImpl:49 - Find All
+2021-09-19 16:07:45 INFO  GoodsReceiptController:94 - Edit invoice with id=1
+2021-09-19 16:07:45 INFO  InvoiceDAOImpl:41 - Find By Code = dfft
+2021-09-19 16:07:45 INFO  InvoiceServiceImpl:85 - 

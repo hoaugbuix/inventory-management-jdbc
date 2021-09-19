@@ -127,7 +127,7 @@ public class GoodsReceiptController {
     private ResponseEntity<?> export(HttpServletResponse response) throws IOException {
         InvoiceEntity invoice = new InvoiceEntity();
         invoice.setType(Constant.TYPE_GOODS_RECEIPT);
-        InvoiceEntity listInvoice = invoiceService.findByCode(invoice.getCode());
+        List<InvoiceEntity> listInvoice = invoiceService.findAll(invoice.getType());
         response.setContentType("application/octet-stream");
         DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
         String currentDateTime = dateFormatter.format(new Date());
@@ -136,7 +136,7 @@ public class GoodsReceiptController {
         String headerValue = "attachment; filename=users_" + currentDateTime + ".xlsx";
         response.setHeader(headerKey, headerValue);
 
-        GoodsReceiptReportImpl goodsReceiptReport = new GoodsReceiptReportImpl((List<InvoiceEntity>) listInvoice);
+        GoodsReceiptReportImpl goodsReceiptReport = new GoodsReceiptReportImpl(listInvoice);
         goodsReceiptReport.export(response);
         return new ResponseEntity<>("export success!", HttpStatus.OK);
     }
