@@ -438,3 +438,4 @@
 2021-09-19 16:07:45 INFO  GoodsReceiptController:94 - Edit invoice with id=1
 2021-09-19 16:07:45 INFO  InvoiceDAOImpl:41 - Find By Code = dfft
 2021-09-19 16:07:45 INFO  InvoiceServiceImpl:85 - 
+2021-09-21 10:03:10 INFO  GoodsReceiptController:58 - show list invoice
